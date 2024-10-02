@@ -1,22 +1,26 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { DarkModeContext } from "../../Contexts/NightLightContext";
+import "./Navbar.css";
 
 const Navbar = () => {
-    const [darkMode, setDarkMode] = useState(true);
-    
+  const { handleDarkMode, darkMode } = useContext(DarkModeContext);
+  // const [darkMode, setDarkMode] = useState(false);
 
-    const handleDarkMode = () => {
-        setDarkMode(!darkMode);
-        console.log(darkMode)
-    }
+  // const handleDarkMode = () => {
+  //   setDarkMode(!darkMode);
+  // };
 
+  const toggleDarkMode = () => {
+    handleDarkMode();
+  };
   return (
     <div>
-      <div className="px-20 mt-5 navbar bg-base-100">
+      <div className="px-20 mt-5 navbar text-white">
         <div className="flex-1 ml-20">
           <Link to={"/"} className="text-start block">
             <span className="text-4xl">SHANTA</span>
-            <span className="flex space-x-3 mt-3 font-thin">
+            <span className="flex space-x-3 mt-3 font-thin text-white">
               <ul>H</ul>
               <ul>O</ul>
               <ul>L</ul>
@@ -28,17 +32,33 @@ const Navbar = () => {
             </span>
           </Link>
         </div>
-        <div className="flex-none mr-10">
+        <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link onClick={handleDarkMode} className={`${darkMode ? "dark-mode" : "light-mode"}`}>
-              {darkMode ? "Light" : "Dark"}
+              <Link
+                onClick={toggleDarkMode}
+                className={`${darkMode ? "dark-mode" : "light-mode"}`}
+              >
+                {darkMode ? "Light" : "Dark"}
               </Link>
             </li>
-            <li>
+            <li
+              className="dropdown"
+              style={{ position: "relative", width: "350px",}}
+            >
               <details>
-                <summary>Menu</summary>
-                <ul className="bg-base-100 rounded-t-none p-2">
+                <summary
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "flex-end",
+                    gap: "5px",
+                    cursor: "pointer",
+                  }}
+                >
+                  Menu
+                </summary>
+                <ul className="dropdown-content bg-base-100 rounded-t-none p-2 ">
                   <li>
                     <a>Search Projects</a>
                   </li>
