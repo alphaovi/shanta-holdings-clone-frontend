@@ -1,0 +1,13 @@
+.primary-color{
+    color: #978c21
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+  }
+  
+  .light-mode {
+    background-color: white;
+    color: black;
+  }
