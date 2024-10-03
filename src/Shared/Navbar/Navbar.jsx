@@ -44,7 +44,7 @@ const Navbar = () => {
             </li>
             <li
               className="dropdown"
-              style={{ position: "relative", width: "350px",}}
+              style={{ position: "relative", width: "350px" }}
             >
               <details>
                 <summary
@@ -60,7 +60,7 @@ const Navbar = () => {
                 </summary>
                 <ul className="dropdown-content bg-base-100 rounded-t-none p-2 ">
                   <li>
-                    <a>Search Projects</a>
+                    <input className="border-b-5" style={{borderBottom:"1px solid white"}} type="text" placeholder="Search Projects" />
                   </li>
                   <li>
                     <a>Home</a>
