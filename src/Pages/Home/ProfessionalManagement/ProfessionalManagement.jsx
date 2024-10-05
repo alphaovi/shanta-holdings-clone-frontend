@@ -1,10 +1,10 @@
 import Marquee from "react-fast-marquee";
 import "./ProfessionalManagement.css";
 import { useEffect, useRef, useState } from "react";
+import { GoMute, GoUnmute } from "react-icons/go";
 
 const ProfessionalManagement = () => {
   const videoRef = useRef(null);
-  // const [isPlaying, setIsPlaying] = useState(true);
   const [isMute, setIsMute] = useState(true);
 
   useEffect(() => {
@@ -43,10 +43,14 @@ const ProfessionalManagement = () => {
         ></video>
         <p
           onClick={handleMute}
-          className="flex justify-end mr-20 relative "
-          style={{ top: "-80px" }}
+          className="flex justify-end mr-16 relative"
+          style={{ top: "-100px" }}
         >
-          {isMute ? "Unmute" : "mute"}
+          {isMute ? (
+            <GoMute className="border rounded-full w-20 h-20 p-2" />
+          ) : (
+            <GoUnmute className="border rounded-full w-20 h-20 p-2" />
+          )}
         </p>
       </div>
     </section>
