@@ -1,6 +1,8 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import "./HeaderCarousel.css";
+
 
 const HeaderCarousel = () => {
   const settings = {
@@ -40,7 +42,7 @@ const HeaderCarousel = () => {
     },
   ];
   return (
-    <div className=" w-10/12" style={{ margin: "0 auto" }}>
+    <div className="scrollable-element " style={{ margin: "0 auto" }}>
       <Slider {...settings}>
         {photos.map((photo) => (
           <div key={photo.id}>

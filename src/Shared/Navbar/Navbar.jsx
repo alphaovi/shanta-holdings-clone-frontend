@@ -4,23 +4,23 @@ import { DarkModeContext } from "../../Contexts/NightLightContext";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const { handleDarkMode, darkMode } = useContext(DarkModeContext);
+  const darkModeContext  = useContext(DarkModeContext);
+
+  const { darkMode, setDarkMode } = darkModeContext;
   // const [darkMode, setDarkMode] = useState(false);
 
   // const handleDarkMode = () => {
   //   setDarkMode(!darkMode);
   // };
 
-  const toggleDarkMode = () => {
-    handleDarkMode();
-  };
+
   return (
-    <div>
-      <div className="px-20 mt-5 navbar text-white">
+    <div >
+      <div className="px-20 py-5 navbar">
         <div className="flex-1 ml-20">
           <Link to={"/"} className="text-start block">
             <span className="text-4xl">SHANTA</span>
-            <span className="flex space-x-3 mt-3 font-thin text-white">
+            <span className="flex space-x-3 mt-3 font-thin ">
               <ul>H</ul>
               <ul>O</ul>
               <ul>L</ul>
@@ -32,11 +32,11 @@ const Navbar = () => {
             </span>
           </Link>
         </div>
-        <div className="flex-none">
+        <div className="flex-none ">
           <ul className="menu menu-horizontal px-1">
-            <li>
+            <li className="bg-none">
               <Link
-                onClick={toggleDarkMode}
+                onClick={() => setDarkMode(!darkMode)}
                 className={`${darkMode ? "dark-mode" : "light-mode"}`}
               >
                 {darkMode ? "Light" : "Dark"}
@@ -52,7 +52,7 @@ const Navbar = () => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "flex-end",
-                    gap: "5px",
+                    // gap: "5px",
                     cursor: "pointer",
                   }}
                 >

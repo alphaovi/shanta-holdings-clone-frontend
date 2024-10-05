@@ -6,7 +6,7 @@ const Footer = () => {
           <li className=" hover:text-[#8D8426]">Hotline: 16634</li>
           <li className=" hover:text-[#8D8426]">Sales: +88017151415</li>{" "}
           <li className=" hover:text-[#8D8426]">
-            Email: info@innovatiteIt.com
+            Email: info@innovative.it.com
           </li>
           <p className="text-sm  mt-10 font-bold">
             Copyright © {new Date().getFullYear()} - All right reserved by ACME

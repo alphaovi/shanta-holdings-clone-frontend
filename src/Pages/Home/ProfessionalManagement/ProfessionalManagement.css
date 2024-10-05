@@ -1,0 +1,16 @@
+.parallax-container {
+    position: relative;
+    background-attachment: fixed;
+    background-position-y: 100%; /* Set initial position to bottom */
+    height: 100vh;
+  }
+  
+  .parallax-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 25%;
+    object-fit: cover;
+    transform: translateY(100%); /* Initial offset to push image down */
+  }
