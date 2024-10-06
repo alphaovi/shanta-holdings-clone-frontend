@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "projectType": "commercial",
+    "projectName": "dhaka tower",
+    "address": "203-204, Tejogoan",
+    "projectImg": "https://cms.shantaholdings.com/images/RIN6-eFsBt5ioe8g88W8ZEuYb7c=/3439/fill-2560x1440-c0/1_FyKhG2S.jpg?t=1728194336017",
+    "projectVideo": "https://cms.shantaholdings.com/media/media/SHL_Final_Without_Super-28.02.24_2.mp4"
+  },
+  {
+    "id": "2",
+    "projectType": "Residential",
+    "projectName": "Atlantis",
+    "address": "Plot 18, Road 62, North Gulshan",
+    "projectImg": "https://cms.shantaholdings.com/images/rkoXewbcixzg8vsasFD4VxtwBuQ=/1654/fill-2560x1440-c0%7Cformat-avif/Atlantis_5.jpg",
+    "projectVideo": "https://cms.shantaholdings.com/media/media/SHL_Final_Without_Super-28.02.24_2.mp4"
+  },
+  {
+    "id": "3",
+    "projectType": "Residential",
+    "projectName": "Evermore",
+    "address": "Plot 4/1, road 75 and 80, North Gulshan",
+    "projectImg": "https://cms.shantaholdings.com/images/EyIX_DVwbWD1Mkfc4Oi2YwE8n0w=/163/fill-1120x628-c0%7Cformat-avif/1694347488kUw3f.jpg",
+    "projectVideo": "https://cms.shantaholdings.com/media/media/SHL_Final_Without_Super-28.02.24_2.mp4"
+  },
+  {
+    "id": "4",
+    "projectType": "Residential",
+    "projectName": "Majesta",
+    "address": "Plot 06, road 67, North Gulshan",
+    "projectImg": "https://cms.shantaholdings.com/images/V_sd1s9kT51UPfbcB_grfxzdDUs=/2332/fill-800x600-c0%7Cformat-avif/Atlantis_Home_Vid_Thumbnail.jpg",
+    "projectVideo": "https://cms.shantaholdings.com/media/media/SHL_Final_Without_Super-28.02.24_2.mp4"
+  },
+  {
+    "id": "5",
+    "projectType": "Residential",
+    "projectName": "Moin's Harbour",
+    "address": "Plot 58, Road 5/A, Dhanmondi",
+    "projectImg": "https://cms.shantaholdings.com/images/WWOtf24BqP5LnHTjeMsSwmO1iwY=/3651/fill-800x600-c0%7Cformat-avif/Featured_Project_Thumbnail.png",
+    "projectVideo": "https://cms.shantaholdings.com/media/media/SHL_Final_Without_Super-28.02.24_2.mp4"
+  }
+]

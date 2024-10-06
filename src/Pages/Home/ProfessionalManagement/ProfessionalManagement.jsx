@@ -15,8 +15,8 @@ const ProfessionalManagement = () => {
 
   const handleMute = () => {
     const video = videoRef.current;
-    setIsMute(!isMute);
     video.muted = !isMute;
+    setIsMute(!isMute);
   };
 
   return (
@@ -43,13 +43,13 @@ const ProfessionalManagement = () => {
         ></video>
         <p
           onClick={handleMute}
-          className="flex justify-end mr-16 relative"
-          style={{ top: "-100px" }}
+          className="flex justify-end mr-8 relative"
+          style={{ top: "-90px" }}
         >
           {isMute ? (
-            <GoMute className="border rounded-full w-20 h-20 p-2" />
+            <GoMute className="border rounded-full w-16 h-16 p-2" />
           ) : (
-            <GoUnmute className="border rounded-full w-20 h-20 p-2" />
+            <GoUnmute className="border rounded-full w-16 h-16 p-2" />
           )}
         </p>
       </div>
