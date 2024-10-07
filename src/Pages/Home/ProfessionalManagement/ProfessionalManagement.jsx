@@ -13,7 +13,7 @@ const ProfessionalManagement = () => {
     video.play();
   }, [isMute]);
 
-  const handleMute = () => {
+  const toggleHandleMute = () => {
     const video = videoRef.current;
     video.muted = !isMute;
     setIsMute(!isMute);
@@ -42,7 +42,7 @@ const ProfessionalManagement = () => {
           controls={false}
         ></video>
         <p
-          onClick={handleMute}
+          onClick={toggleHandleMute}
           className="flex justify-end mr-8 relative"
           style={{ top: "-90px" }}
         >
