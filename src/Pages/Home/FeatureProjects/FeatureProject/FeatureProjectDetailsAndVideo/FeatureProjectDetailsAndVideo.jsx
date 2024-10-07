@@ -1,10 +1,10 @@
 import Slider from "react-slick/lib/slider";
 import useProjectData from "../../../../../Hooks/useProjectData";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const FeatureProjectDetailsAndVideo = () => {
   const [featureProjects] = useProjectData([]);
-  const videoRef = useRef();
+  const videoRef = useRef(null);
 
   // slider2 and slider3 setting
   const settings2 = {
@@ -22,32 +22,42 @@ const FeatureProjectDetailsAndVideo = () => {
     arrows: false,
   };
 
-  // const handleVideoPlayer = () => {};
+  const handleVideoPlaye = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      videoRef.current.muted = true;
+    }
+  };
+
+  //   useEffect for calling the video play function
+  useEffect(() => {
+    handleVideoPlaye();
+  }, []);
   return (
     <section>
       <div className="ml-36 -mt-[480px] uppercase">
-      <h1 className="text-xl mb-2 font-bold">Feature Projects</h1>
+        <h1 className="text-xl mb-2 font-bold">Feature Projects</h1>
         <Slider {...settings2}>
           {featureProjects.map((featureProject) => (
             <div key={featureProject.id}>
-              
               <h1 className="text-xl">{featureProject.projectType}</h1>
               <h1 className="text-4xl mt-4">{featureProject.projectName}</h1>
               <p className="text-xl mt-6">{featureProject.address}</p>
+              <button
+                onClick={() => console.log("HI")}
+                className="btn btn-outline text-white mt-16"
+              >
+                View Project
+              </button>
             </div>
           ))}
         </Slider>
-          <button className="btn btn-outline text-white mt-16">View Project</button>
       </div>
       <div className="w-[550px] mr-20 -mt-60  float-end">
         <Slider {...settings2}>
           {featureProjects.map((featureProject) => (
             <div key={featureProject.id}>
-              <video
-                ref={videoRef}
-                src={featureProject.projectVideo}
-                controls={false}
-              ></video>
+              <video ref={videoRef} src={featureProject.projectVideo}></video>
             </div>
           ))}
         </Slider>
