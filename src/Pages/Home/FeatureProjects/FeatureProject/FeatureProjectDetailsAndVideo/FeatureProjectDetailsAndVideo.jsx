@@ -10,7 +10,7 @@ const FeatureProjectDetailsAndVideo = () => {
   const settings2 = {
     dots: false,
     infinite: true,
-    speed: 2000,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -25,17 +25,21 @@ const FeatureProjectDetailsAndVideo = () => {
   // const handleVideoPlayer = () => {};
   return (
     <section>
-      <div className="ml-36 -mt-[350px] text-gray-700">
+      <div className="ml-36 -mt-[480px] uppercase">
+      <h1 className="text-xl mb-2 font-bold">Feature Projects</h1>
         <Slider {...settings2}>
           {featureProjects.map((featureProject) => (
             <div key={featureProject.id}>
-              <h1>{featureProject.projectType}</h1>
-              <p>{featureProject.projectName}</p>
+              
+              <h1 className="text-xl">{featureProject.projectType}</h1>
+              <h1 className="text-4xl mt-4">{featureProject.projectName}</h1>
+              <p className="text-xl mt-6">{featureProject.address}</p>
             </div>
           ))}
         </Slider>
+          <button className="btn btn-outline text-white mt-16">View Project</button>
       </div>
-      <div className="w-[550px] mr-20 -mt-44 float-end">
+      <div className="w-[550px] mr-20 -mt-60  float-end">
         <Slider {...settings2}>
           {featureProjects.map((featureProject) => (
             <div key={featureProject.id}>

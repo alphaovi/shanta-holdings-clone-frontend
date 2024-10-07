@@ -24,7 +24,7 @@ const FeatureProject = () => {
 
   return (
     <section className="mb-[420px]">
-      <div className="scrollable-element px-5">
+      <div className="scrollable-element px-5 opacity-50">
         <Slider {...settings1}>
           {featureProjects.map((featureProject) => (
             <div key={featureProject.id} className="">
