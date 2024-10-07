@@ -1,35 +1,19 @@
-import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick/lib/slider";
 import FeatureProjectDetailsAndVideo from "./FeatureProjectDetailsAndVideo/FeatureProjectDetailsAndVideo";
+import useProjectData from "../../../../Hooks/useProjectData";
 
 const FeatureProject = () => {
-  const [featureProjects, setFeatureProjects] = useState([]);
-
-  // useEffect using for data loading
-  useEffect(() => {
-    fetch("featureProject.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setFeatureProjects(data);
-      });
-
-  }, []);
-
-  // useEffect for vidoe player
-  // useEffect(() => {
-  //   const videoAutoPlay = videoRef.current.play;
-  //   videoAutoPlay();
-  // }, []);
+  const [featureProjects] = useProjectData();
 
   // this setting is for slider1
   const settings1 = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 8000,
     pauseOnHover: false,
     fade: false,
     button: false,
@@ -39,11 +23,11 @@ const FeatureProject = () => {
   };
 
   return (
-    <section className="mb-20">
+    <section className="mb-[420px]">
       <div className="scrollable-element px-5">
         <Slider {...settings1}>
           {featureProjects.map((featureProject) => (
-            <div key={featureProject.id}>
+            <div key={featureProject.id} className="">
               <img
                 src={featureProject.projectImg}
                 alt={`Slide ${featureProject.id}`}

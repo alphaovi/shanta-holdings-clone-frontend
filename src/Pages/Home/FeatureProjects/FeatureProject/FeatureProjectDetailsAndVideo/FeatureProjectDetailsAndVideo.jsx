@@ -1,30 +1,20 @@
-import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick/lib/slider";
+import useProjectData from "../../../../../Hooks/useProjectData";
+import { useRef } from "react";
 
 const FeatureProjectDetailsAndVideo = () => {
-  const [featureProjects, setFeatureProjects] = useState([]);
+  const [featureProjects] = useProjectData([]);
   const videoRef = useRef();
-
-
-  useEffect(() => {
-    fetch("featureProject.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setFeatureProjects(data);
-      });
-      
-  }, []);
-
 
   // slider2 and slider3 setting
   const settings2 = {
     dots: false,
     infinite: true,
-    speed: 1000,
+    speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 8000,
     pauseOnHover: false,
     fade: false,
     button: false,
@@ -34,8 +24,8 @@ const FeatureProjectDetailsAndVideo = () => {
 
   // const handleVideoPlayer = () => {};
   return (
-    <div>
-      <div>
+    <section>
+      <div className="ml-36 -mt-[350px] text-gray-700">
         <Slider {...settings2}>
           {featureProjects.map((featureProject) => (
             <div key={featureProject.id}>
@@ -45,7 +35,7 @@ const FeatureProjectDetailsAndVideo = () => {
           ))}
         </Slider>
       </div>
-      <div>
+      <div className="w-[550px] mr-20 -mt-44 float-end">
         <Slider {...settings2}>
           {featureProjects.map((featureProject) => (
             <div key={featureProject.id}>
@@ -58,7 +48,7 @@ const FeatureProjectDetailsAndVideo = () => {
           ))}
         </Slider>
       </div>
-    </div>
+    </section>
   );
 };
 
