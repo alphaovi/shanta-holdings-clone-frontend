@@ -1,0 +1,38 @@
+[
+    {
+        "id":"1",
+        "title": "7M",
+        "name": "Total Area Built",
+        "other": "Million sft"
+    },
+    {
+        "id":"2",
+        "title": "19",
+        "name": "Years Since",
+        "other": "Inception"
+    },
+    {
+        "id":"3",
+        "title": "42",
+        "name": "Number of Completed",
+        "other": "Projects"
+    },
+    {
+        "id":"4",
+        "title": "100+",
+        "name": "Number of",
+        "other": "Projects"
+    },
+    {
+        "id":"5",
+        "title": "1200+",
+        "name": "Happy Clients",
+        "other": ""
+    },
+    {
+        "id":"6",
+        "title": "11M",
+        "name": "Total Area in Pipeline",
+        "other": "Million sft"
+    }
+]

@@ -41,7 +41,7 @@ const FeatureProjectDetailsAndVideo = () => {
           {featureProjects.map((featureProject) => (
             <div key={featureProject.id}>
               <h1 className="text-xl">{featureProject.projectType}</h1>
-              <h1 className="text-4xl mt-4">{featureProject.projectName}</h1>
+              <h1 className="text-4xl mt-4 font-semibold">{featureProject.projectName}</h1>
               <p className="text-xl mt-6">{featureProject.address}</p>
               <button
                 onClick={() => console.log("HI")}
