@@ -3,9 +3,9 @@ const Footer = () => {
     <footer className="footer  text-base-content p-10 bg-[#5F613A]">
       <nav>
         <ul className="text-2xl font-bold text-white">
-          <li className=" hover:text-[#8D8426]">Hotline: 16634</li>
-          <li className=" hover:text-[#8D8426]">Sales: +88017151415</li>{" "}
-          <li className=" hover:text-[#8D8426]">
+          <li className=" hover:text-[#8D8426] hover:underline cursor-pointer">Hotline: 16634</li>
+          <li className=" hover:text-[#8D8426] hover:underline cursor-pointer">Sales: +88017151415</li>{" "}
+          <li className=" hover:text-[#8D8426] hover:underline cursor-pointer">
             Email: info@innovative.it.com
           </li>
           <p className="text-sm  mt-10 font-bold">
@@ -16,7 +16,7 @@ const Footer = () => {
       </nav>
       <nav className="text-white ml-44 pl-16">
         <h3 className="text-2xl">Address</h3>
-        <p className="hover:text-[#8D8426] hover:underline">187,188/B, Shanta Forum, East Tower, Level 20-22, 22 Bir Uttam Mir Shawkat Sarak, Dhaka 1208</p>
+        <p className="hover:text-[#8D8426] hover:underline cursor-pointer text-xl">187,188/B, Shanta Forum, East Tower, Level 20-22, 22 Bir Uttam Mir Shawkat Sarak, Dhaka 1208</p>
         <div className="grid grid-flow-col gap-4">
           <a>
             <svg
