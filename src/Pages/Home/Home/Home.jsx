@@ -4,6 +4,7 @@ import LandMarks from "../LandMarks/LandMarks";
 import LandMarksDetailsAndPhotos from "../LandMarksDetailsAndPhotos/LandMarksDetailsAndPhotos";
 import Portfolio from "../Portfolio/Portfolio";
 import ProfessionalManagement from "../ProfessionalManagement/ProfessionalManagement";
+import Projects from "../Projects/Projects";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <FeatureProjects></FeatureProjects>
       <LandMarks></LandMarks>
       <LandMarksDetailsAndPhotos></LandMarksDetailsAndPhotos>
+      <Projects></Projects>
     </div>
   );
 };
