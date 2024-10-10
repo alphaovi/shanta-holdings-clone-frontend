@@ -1,3 +1,4 @@
+import Explores from "../Explores/Explores";
 import FeatureProjects from "../FeatureProjects/FeatureProjects";
 import HeaderAndPhotos from "../HeaderAndPhotos/HeaderAndPhotos";
 import LandMarks from "../LandMarks/LandMarks";
@@ -16,6 +17,7 @@ const Home = () => {
       <LandMarks></LandMarks>
       <LandMarksDetailsAndPhotos></LandMarksDetailsAndPhotos>
       <Projects></Projects>
+      <Explores></Explores>
     </div>
   );
 };
