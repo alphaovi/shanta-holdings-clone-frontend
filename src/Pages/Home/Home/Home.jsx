@@ -1,3 +1,4 @@
+import LetConnect from "../Connect/LetConnect";
 import Explores from "../Explores/Explores";
 import FeatureProjects from "../FeatureProjects/FeatureProjects";
 import HeaderAndPhotos from "../HeaderAndPhotos/HeaderAndPhotos";
@@ -18,6 +19,7 @@ const Home = () => {
       <LandMarksDetailsAndPhotos></LandMarksDetailsAndPhotos>
       <Projects></Projects>
       <Explores></Explores>
+      <LetConnect></LetConnect>
     </div>
   );
 };

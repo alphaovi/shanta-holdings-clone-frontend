@@ -1,14 +1,23 @@
+import { useEffect, useRef } from "react";
 import Slider from "react-slick/lib/slider";
 
 const Explore = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    videoRef.current.play();
+    // video.muted = isMute;
+    // video.play();
+  }, []);
+
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 10000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 10000,
     pauseOnHover: false,
     fade: true,
     button: false,
@@ -19,27 +28,45 @@ const Explore = () => {
   const photos = [
     {
       id: 1,
-      url: "https://cms.shantaholdings.com/media/media/This_is_Shanta_Preview.mp4",
+      name: "Dhaka Tower",
+      url: "https://cms.shantaholdings.com/media/media/DT_Preview.mp4",
     },
     {
       id: 2,
-      url: "https://cms.shantaholdings.com/images/pzcv8IahCiq3cjSAMxoM-6bMJI4=/3563/fill-2560x1440-c0%7Cformat-avif/Majesta.jpg",
+      name: "Pinnacle",
+      url: "https://cms.shantaholdings.com/images/86--5tKulkR3GneUgPDfXkZ7ncA=/161/fill-1120x628-c0/16092648450piti.jpg?t=1728708306801",
     },
     {
       id: 3,
-      url: "https://cms.shantaholdings.com/images/RobOfTCN-P9uZZNnb3qv45vk_XA=/163/fill-1120x628-c0/1694347488kUw3f.jpg?t=1728543228892",
+      name: "Evermore",
+      url: "https://cms.shantaholdings.com/images/RobOfTCN-P9uZZNnb3qv45vk_XA=/163/fill-1120x628-c0/1694347488kUw3f.jpg?t=1728708306802",
     },
     {
       id: 4,
-      url: "https://cms.shantaholdings.com/images/RobOfTCN-P9uZZNnb3qv45vk_XA=/163/fill-1120x628-c0/1694347488kUw3f.jpg?t=1728543228892",
+      name: "Utopia",
+      url: "https://cms.shantaholdings.com/images/fKMEub0_ovUbsZHrGmxSlSsPbR4=/164/fill-1120x628-c0/1596038525qby3y.jpg?t=1728708306805",
     },
     {
       id: 5,
-      url: "https://cms.shantaholdings.com/images/fKMEub0_ovUbsZHrGmxSlSsPbR4=/164/fill-1120x628-c0/1596038525qby3y.jpg?t=1728543228894",
+      name: "This is Shanta",
+      url: "https://cms.shantaholdings.com/media/media/This_is_Shanta_Preview.mp4",
+    },
+    {
+      id: 6,
+      name: "Forum",
+      url: "https://cms.shantaholdings.com/media/media/Forum_Preview.mp4",
+    },
+    {
+      id: 7,
+      name: "Transforming Land into Landmarks",
+      url: "https://cms.shantaholdings.com/media/media/Untitled_design.mp4",
     },
   ];
   return (
-    <div className="scrollable-element mx-auto">
+    <div
+      className="scrollable-element mx-auto"
+      style={{ width: "950px", height: "90vh" }}
+    >
       <Slider {...sliderSettings}>
         {photos.map((photo) => {
           const isVideo = photo.url.endsWith(".mp4");
@@ -47,20 +74,15 @@ const Explore = () => {
           return (
             <div key={photo.id}>
               {isVideo ? (
-                <video
-                  controls
-                  style={{ width: "100%", height: "90vh" }}
-                  src={photo.url}
-                >
+                <video controls={false} ref={videoRef} src={photo.url}>
                   Your browser does not support the video tag.
                 </video>
               ) : (
-                <img
-                  src={photo.url}
-                  alt={`Slide ${photo.id}`}
-                  style={{ width: "100%", height: "90vh" }}
-                />
+                <img src={photo.url} alt={`Slide ${photo.id}`} />
               )}
+              <h1 className="text-6xl text-center -mt-10 opacity-50 ">
+                {photo.name}
+              </h1>
             </div>
           );
         })}

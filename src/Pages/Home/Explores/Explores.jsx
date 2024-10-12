@@ -2,13 +2,13 @@ import Explore from "./Explore/Explore";
 
 const Explores = () => {
   return (
-    <section>
+    <section className="">
       <div>
-        <h1 className="text-6xl text-center font-semibold uppercase">
+        <h1 className="text-6xl mb-10 text-center font-semibold uppercase">
           Explore
         </h1>
       </div>
-      <div>
+      <div className="">
         <Explore></Explore>
       </div>
     </section>
