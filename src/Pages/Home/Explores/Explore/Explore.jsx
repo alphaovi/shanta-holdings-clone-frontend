@@ -1,14 +1,16 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { GoMute, GoUnmute } from "react-icons/go";
 import Slider from "react-slick/lib/slider";
 
 const Explore = () => {
   const videoRef = useRef(null);
+  const [isMute, setIsMute] = useState(true);
 
   useEffect(() => {
-    videoRef.current.play();
-    // video.muted = isMute;
-    // video.play();
-  }, []);
+    const video = videoRef.current;
+    video.muted = isMute;
+    video.play();
+  }, [isMute]);
 
   const sliderSettings = {
     dots: true,
@@ -23,6 +25,12 @@ const Explore = () => {
     button: false,
     cssEase: "linear",
     arrows: false,
+  };
+
+  const toggleHandleMute = () => {
+    const video = videoRef.current;
+    video.muted = !isMute;
+    setIsMute(!isMute);
   };
 
   const photos = [
@@ -70,11 +78,16 @@ const Explore = () => {
       <Slider {...sliderSettings}>
         {photos.map((photo) => {
           const isVideo = photo.url.endsWith(".mp4");
-          console.log(photo.url);
+          // console.log(photo.url);
           return (
             <div key={photo.id}>
               {isVideo ? (
-                <video controls={false} ref={videoRef} src={photo.url}>
+                <video
+                  controls={false}
+                  ref={videoRef}
+                  src={photo.url}
+                  onClick={toggleHandleMute}
+                >
                   Your browser does not support the video tag.
                 </video>
               ) : (

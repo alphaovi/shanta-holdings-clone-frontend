@@ -1,10 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../Contexts/NightLightContext";
 import "./Navbar.css";
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
 const Navbar = () => {
-  const darkModeContext  = useContext(DarkModeContext);
+  const darkModeContext = useContext(DarkModeContext);
+  const [showSubitems, setShowSubitems] = useState(false);
 
   const { darkMode, setDarkMode } = darkModeContext;
   // const [darkMode, setDarkMode] = useState(false);
@@ -13,9 +15,12 @@ const Navbar = () => {
   //   setDarkMode(!darkMode);
   // };
 
+  const handleShowSubitems = () => {
+    setShowSubitems(!showSubitems);
+  };
 
   return (
-    <div >
+    <div>
       <div className="px-20 py-5 navbar">
         <div className="flex-1 ml-20">
           <Link to={"/"} className="text-start block">
@@ -60,10 +65,37 @@ const Navbar = () => {
                 </summary>
                 <ul className="dropdown-content bg-base-100 rounded-t-none p-2 ">
                   <li>
-                    <input className="border-b-5" style={{borderBottom:"1px solid white"}} type="text" placeholder="Search Projects" />
+                    <input
+                      className="border-b-5"
+                      style={{ borderBottom: "1px solid white" }}
+                      type="text"
+                      placeholder="Search Projects"
+                    />
                   </li>
                   <li>
                     <a>Home</a>
+                  </li>
+                  <li>
+                    <a
+                      className="dropdwon flex items-center"
+                      onClick={handleShowSubitems}
+                    >
+                      About Shanta
+                      <FaRegArrowAltCircleRight className="ml-2 text-white" />
+                    </a>
+                    {showSubitems && (
+                      <ul className="p-2">
+                        <li>
+                          <a>Our Story</a>
+                        </li>
+                        <li>
+                          <a>Our Team</a>
+                        </li>
+                        <li>
+                          <a>Why Shanta</a>
+                        </li>
+                      </ul>
+                    )}
                   </li>
                   <li>
                     <a>Projects</a>
@@ -79,12 +111,6 @@ const Navbar = () => {
                   </li>
                   <li>
                     <a>Contact Us</a>
-                  </li>
-                  <li>
-                    <a>Link 1</a>
-                  </li>
-                  <li>
-                    <a>Link 2</a>
                   </li>
                 </ul>
               </details>

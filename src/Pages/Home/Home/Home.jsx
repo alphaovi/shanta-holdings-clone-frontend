@@ -1,6 +1,6 @@
 import LetConnect from "../Connect/LetConnect";
 import Explores from "../Explores/Explores";
-import FeatureProjects from "../FeatureProjects/FeatureProjects";
+import FeatureProject from "../FeatureProjects/FeatureProject/FeatureProject";
 import HeaderAndPhotos from "../HeaderAndPhotos/HeaderAndPhotos";
 import LandMarks from "../LandMarks/LandMarks";
 import LandMarksDetailsAndPhotos from "../LandMarksDetailsAndPhotos/LandMarksDetailsAndPhotos";
@@ -14,7 +14,7 @@ const Home = () => {
       <HeaderAndPhotos></HeaderAndPhotos>
       <Portfolio></Portfolio>
       <ProfessionalManagement></ProfessionalManagement>
-      <FeatureProjects></FeatureProjects>
+      <FeatureProject></FeatureProject>
       <LandMarks></LandMarks>
       <LandMarksDetailsAndPhotos></LandMarksDetailsAndPhotos>
       <Projects></Projects>

@@ -1,6 +1,7 @@
 import Slider from "react-slick/lib/slider";
 import useProjectData from "../../../../../Hooks/useProjectData";
 import { useEffect, useRef } from "react";
+import FeatureProjectSlide from "./FeatureProjectRightVideo";
 
 const FeatureProjectDetailsAndVideo = () => {
   const [featureProjects] = useProjectData([]);
@@ -22,7 +23,7 @@ const FeatureProjectDetailsAndVideo = () => {
     arrows: false,
   };
 
-  const handleVideoPlaye = () => {
+  const handleVideoPlayer = () => {
     if (videoRef.current) {
       videoRef.current.play();
       videoRef.current.muted = true;
@@ -31,7 +32,7 @@ const FeatureProjectDetailsAndVideo = () => {
 
   //   useEffect for calling the video play function
   useEffect(() => {
-    handleVideoPlaye();
+    handleVideoPlayer();
   }, []);
   return (
     <section>
@@ -54,13 +55,7 @@ const FeatureProjectDetailsAndVideo = () => {
         </Slider>
       </div>
       <div className="w-[550px] mr-20 -mt-60  float-end">
-        <Slider {...settings2}>
-          {featureProjects.map((featureProject) => (
-            <div key={featureProject.id}>
-              <video ref={videoRef} src={featureProject.projectVideo}></video>
-            </div>
-          ))}
-        </Slider>
+        <FeatureProjectSlide></FeatureProjectSlide>
       </div>
     </section>
   );
