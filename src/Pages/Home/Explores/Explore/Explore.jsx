@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { GoMute, GoUnmute } from "react-icons/go";
 import Slider from "react-slick/lib/slider";
 
 const Explore = () => {

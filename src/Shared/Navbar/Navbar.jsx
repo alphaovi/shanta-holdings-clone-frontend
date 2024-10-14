@@ -2,7 +2,10 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../Contexts/NightLightContext";
 import "./Navbar.css";
-import { FaRegArrowAltCircleRight } from "react-icons/fa";
+import {
+  FaRegArrowAltCircleLeft,
+  FaRegArrowAltCircleRight,
+} from "react-icons/fa";
 
 const Navbar = () => {
   const darkModeContext = useContext(DarkModeContext);
@@ -17,6 +20,10 @@ const Navbar = () => {
 
   const handleShowSubitems = () => {
     setShowSubitems(!showSubitems);
+  };
+
+  const handleBackClick = () => {
+    setShowSubitems(false);
   };
 
   return (
@@ -39,7 +46,7 @@ const Navbar = () => {
         </div>
         <div className="flex-none ">
           <ul className="menu menu-horizontal px-1">
-            <li className="bg-none">
+            <li className="bg-none ">
               <Link
                 onClick={() => setDarkMode(!darkMode)}
                 className={`${darkMode ? "dark-mode" : "light-mode"}`}
@@ -47,74 +54,114 @@ const Navbar = () => {
                 {darkMode ? "Light" : "Dark"}
               </Link>
             </li>
-            <li
-              className="dropdown"
-              style={{ position: "relative", width: "350px" }}
-            >
-              <details>
-                <summary
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "flex-end",
-                    // gap: "5px",
-                    cursor: "pointer",
-                  }}
+            {!showSubitems && (
+              <>
+                <li
+                  className="dropdown"
+                  style={{ position: "relative", width: "350px" }}
                 >
-                  Menu
-                </summary>
-                <ul className="dropdown-content bg-base-100 rounded-t-none p-2 ">
-                  <li>
-                    <input
-                      className="border-b-5"
-                      style={{ borderBottom: "1px solid white" }}
-                      type="text"
-                      placeholder="Search Projects"
-                    />
-                  </li>
-                  <li>
-                    <a>Home</a>
-                  </li>
-                  <li>
-                    <a
-                      className="dropdwon flex items-center"
-                      onClick={handleShowSubitems}
+                  <details>
+                    <summary
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "flex-end",
+                        // gap: "5px",
+                        cursor: "pointer",
+                      }}
                     >
-                      About Shanta
-                      <FaRegArrowAltCircleRight className="ml-2 text-white" />
-                    </a>
-                    {showSubitems && (
-                      <ul className="p-2">
-                        <li>
-                          <a>Our Story</a>
-                        </li>
-                        <li>
-                          <a>Our Team</a>
-                        </li>
-                        <li>
-                          <a>Why Shanta</a>
-                        </li>
-                      </ul>
-                    )}
-                  </li>
-                  <li>
-                    <a>Projects</a>
-                  </li>
-                  <li>
-                    <a>Life At Shanta</a>
-                  </li>
-                  <li>
-                    <a>Careers</a>
-                  </li>
-                  <li>
-                    <a>News & Events</a>
-                  </li>
-                  <li>
-                    <a>Contact Us</a>
-                  </li>
-                </ul>
-              </details>
-            </li>
+                      Menu
+                    </summary>
+                    <ul className="dropdown-content bg-base-100 rounded-t-none p-2 ">
+                      <li>
+                        <input
+                          className="border-b-5"
+                          style={{ borderBottom: "1px solid white" }}
+                          type="text"
+                          placeholder="Search Projects"
+                        />
+                      </li>
+                      <li>
+                        <a>Home</a>
+                      </li>
+                      <li>
+                        <a
+                          className="dropdwon flex items-center"
+                          onClick={handleShowSubitems}
+                        >
+                          About Shanta
+                          <FaRegArrowAltCircleRight className="ml-2 text-white" />
+                        </a>
+                      </li>
+                      <li>
+                        <a>Projects</a>
+                      </li>
+                      <li>
+                        <a>Life At Shanta</a>
+                      </li>
+                      <li>
+                        <a>Careers</a>
+                      </li>
+                      <li>
+                        <a>News & Events</a>
+                      </li>
+                      <li>
+                        <a>Contact Us</a>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+              </>
+            )}
+            {/* show subitems for about shanta */}
+            {showSubitems && (
+              <ul className=" p-2 bg-none rounded">
+                <li
+                  className="dropdown"
+                  style={{ position: "relative", width: "350px" }}
+                >
+                  <summary
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "flex-start",
+                      marginBottom: "5px",
+                      fontWeight: "bold",
+                      // gap: "5px",
+                      cursor: "pointer",
+                    }}
+                    onClick={handleBackClick}
+                  >
+                    <FaRegArrowAltCircleLeft />
+                    Back
+                  </summary>
+                </li>
+                <li className="text-2xl text-[#8E8A1F]">
+                  <a>About Shanta</a>
+                </li>
+                <li>
+                  <a>Our Story</a>
+                </li>
+                <li>
+                  <a>Our Team</a>
+                </li>
+                <li>
+                  <a>Why Shanta?</a>
+                </li>
+                <li>
+                  <a>Our Business</a>
+                </li>
+                <li>
+                  <a>Our Clients</a>
+                </li>
+                <li>
+                  <a>EHS</a>
+                </li>
+                <li>
+                  <a>CSR</a>
+                </li>
+              </ul>
+            )}
           </ul>
         </div>
       </div>
