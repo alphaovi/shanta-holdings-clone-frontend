@@ -7,7 +7,7 @@ import {
   FaRegArrowAltCircleRight,
 } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar2 = () => {
   const darkModeContext = useContext(DarkModeContext);
   const [showSubitems, setShowSubitems] = useState(false);
   const [showProjects, setShowProjects] = useState(false);
@@ -72,43 +72,43 @@ const Navbar = () => {
               />
             </li>
             <li>
-              <Link to="/">Home</Link>
+              <a>Home</a>
             </li>
             <li>
-              <Link
+              <a
                 className="dropdwon flex items-center"
                 onClick={handleShowSubitems}
               >
                 About Shanta
                 <FaRegArrowAltCircleRight className="ml-2 text-white" />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
+              <a
                 className="dropdwon flex items-center"
                 onClick={handleShowProjects}
               >
                 Projects
                 <FaRegArrowAltCircleRight className="ml-2 text-white" />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/">Life At Shanta</Link>
+              <a>Life At Shanta</a>
             </li>
             <li>
-              <Link to="/">Careers</Link>
+              <a>Careers</a>
             </li>
             <li>
-              <Link to="/">News & Events</Link>
+              <a>News & Events</a>
             </li>
             <li>
-              <Link to="/"
+              <a
                 className="dropdwon flex items-center"
                 onClick={handleShowContacts}
               >
                 Contact Us
                 <FaRegArrowAltCircleRight className="ml-2 text-white" />
-              </Link>
+              </a>
             </li>
           </ul>
         </details>
@@ -118,6 +118,15 @@ const Navbar = () => {
 
   const navSubItems = (
     <>
+      <div>
+        <div className="px-20 py-5 navbar">
+          <div className="flex-1 ml-20">
+           
+          </div>
+        </div>
+      </div>
+
+      {/* main code */}
       <ul className=" p-2 bg-none rounded">
         <li
           className="dropdown"
@@ -140,28 +149,28 @@ const Navbar = () => {
           </summary>
         </li>
         <li className="text-2xl text-[#8E8A1F]">
-          <Link>About Shanta</Link>
+          <a>About Shanta</a>
         </li>
         <li>
-          <Link to="/our-story">Our Story</Link>
+          <a>Our Story</a>
         </li>
         <li>
-          <Link to="/">Our Team</Link>
+          <a>Our Team</a>
         </li>
         <li>
-          <Link to="/">Why Shanta?</Link>
+          <a>Why Shanta?</a>
         </li>
         <li>
-          <Link to="/">Our Business</Link>
+          <a>Our Business</a>
         </li>
         <li>
-          <Link to="/">Our Clients</Link>
+          <a>Our Clients</a>
         </li>
         <li>
-          <Link to="/">EHS</Link>
+          <a>EHS</a>
         </li>
         <li>
-          <Link to="/">CSR</Link>
+          <a>CSR</a>
         </li>
       </ul>
     </>
@@ -190,19 +199,19 @@ const Navbar = () => {
           </summary>
         </li>
         <li className="text-2xl text-[#8E8A1F]">
-          <Link to="/">Projects</Link>
+          <a>Projects</a>
         </li>
         <li>
-          <Link to="/">Ongoing</Link>
+          <a>Ongoing</a>
         </li>
         <li>
-          <Link to="/">Upcoming</Link>
+          <a>Upcoming</a>
         </li>
         <li>
-          <Link to="/">Completed</Link>
+          <a>Completed</a>
         </li>
         <li>
-          <Link to="/">Completed Projects</Link>
+          <a>Completed Projects</a>
         </li>
       </ul>
     </>
@@ -230,21 +239,20 @@ const Navbar = () => {
           </summary>
         </li>
         <li className="text-2xl text-[#8E8A1F]">
-          <Link to="/">Contact Us</Link>
+          <a>Contact Us</a>
         </li>
         <li>
-          <Link to="/">3653525</Link>
+          <a>3653525</a>
         </li>
         <li>
-          <Link to="/">Upcoming</Link>
+          <a>Upcoming</a>
         </li>
         <li>
-          <Link to="/">Completed</Link>
+          <a>Completed</a>
         </li>
       </ul>
     </>
   );
-
   return (
     <div>
       <div className="px-20 py-5 navbar">
@@ -291,4 +299,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar2;
