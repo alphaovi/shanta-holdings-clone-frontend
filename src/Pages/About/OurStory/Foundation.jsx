@@ -1,5 +1,6 @@
 import { useState } from "react";
 import labourPhoto from "../../../assets/images/About/Our-story/Foundation.2e16d0ba.fill-518x648-c0 (1).jpg";
+import { FaRegArrowAltCircleDown } from "react-icons/fa";
 
 const Foundation = () => {
   const [showMore, setShowMore] = useState(false);
@@ -8,21 +9,21 @@ const Foundation = () => {
     setShowMore(!showMore);
   };
   return (
-    <section className="text-white bg-[#5C5151]">
+    <section className="text-white bg-[#5C5151] ">
       <div>
-        <h1 className="text-6xl font-normal ml-20 text-white p-10">
+        <h1 className="text-6xl font-normal ml-20 text-white p-10 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300">
           Foundation
         </h1>
       </div>
       <div className="m-10 flex">
         <div className="mx-20">
-          <img style={{ width: "6000px" }} src={labourPhoto} alt="Foundation" />
+          <img className="transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300" style={{ width: "6000px" }} src={labourPhoto} alt="Foundation" />
         </div>
-        <div className="mt-40">
+        <div className="mt-40 ">
           <h3 className="text-2xl font-bold mb-5">
             Construction a new standard of excellence
           </h3>
-          <p>
+          <p className="transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300">
             Shanta started its journey in 1988 in the ready-made garment (RMG)
             sector and became one of the forerunners in RMG export by
             establishing leading industries such as Shanta Garments Ltd, Shanta
@@ -31,7 +32,7 @@ const Foundation = () => {
             some of the most renowned apparel brands of USA and Europe.
           </p>
           <br />
-          <p>
+          <p className="transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300">
             Shanta is also a key founding member and majority stakeholder of the{" "}
             <a
               className="font-bold underline cursor-pointer"
@@ -107,7 +108,7 @@ const Foundation = () => {
           <br />
 
           {showMore && (
-            <div
+            <div className="transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300"
               style={{
                 maxHeight: showMore ? "150px" : "0",
                 overflowY: "auto",
@@ -162,10 +163,11 @@ const Foundation = () => {
             </div>
           )}
           <button
-            className="btn btn-outline my-10 text-white hover:oranger-400 hover:bg-white-500"
+            className="btn btn-outline my-10 text-white hover:oranger-400 hover:bg-[#5C5151] hover:text-white underline border-x-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300"
             onClick={handleShowMore}
           >
-            Read More
+            <span>Read More </span>
+            <FaRegArrowAltCircleDown />
           </button>
         </div>
       </div>
