@@ -1,6 +1,7 @@
 import Foundation from "./Foundation";
 import OurLogoRationale from "./OurLogoRationale";
 import OurStoryPhoto from "./OurStoryPhoto";
+import Values from "./Values/Values";
 import VissionAndMission from "./VissionAndMission";
 import WhoWeAre from "./WhoWeAre";
 
@@ -17,10 +18,11 @@ const OurStory = () => {
         <Foundation></Foundation>
         <WhoWeAre></WhoWeAre>
         <OurLogoRationale></OurLogoRationale>
-      </div>
-      <div className="">
         <VissionAndMission></VissionAndMission>
+        <Values></Values>
       </div>
+      
+      
     </>
   );
 };
