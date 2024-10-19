@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
 import { SlMinus, SlPlus } from "react-icons/sl";
 
 const Value = ({ value }) => {

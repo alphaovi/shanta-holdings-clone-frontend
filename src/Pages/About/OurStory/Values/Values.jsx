@@ -2,18 +2,14 @@ import { useEffect, useState } from "react";
 import valuePhoto from "../../../../assets/images/About/Our-story/Values_OVWVTw0.2e16d0ba.fill-602x401-c0 (1).png";
 import Value from "./Value";
 
-
-
-
 const Values = () => {
   const [values, setValues] = useState([]);
 
-
   useEffect(() => {
     fetch("values.json")
-    .then(res => res.json())
-    .then(data => setValues(data))
-  } , [])
+      .then((res) => res.json())
+      .then((data) => setValues(data));
+  }, []);
   return (
     <section className="bg-[#212121]">
       <div>
@@ -36,8 +32,10 @@ const Values = () => {
             our DNA and drives toward our motto of “setting standards”.
           </p>
         </div>
-        <div  className="flex-1 text-white">
-          {values.map(value => <Value key={value._id} value={value}></Value>)}
+        <div className="flex-1 text-white">
+          {values.map((value) => (
+            <Value key={value._id} value={value}></Value>
+          ))}
         </div>
       </div>
     </section>

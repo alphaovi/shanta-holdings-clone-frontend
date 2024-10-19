@@ -146,22 +146,22 @@ const Navbar = () => {
           <Link to="/our-story">Our Story</Link>
         </li>
         <li>
-          <Link to="/">Our Team</Link>
+          <Link to="/our-team">Our Team</Link>
         </li>
         <li>
-          <Link to="/">Why Shanta?</Link>
+          <Link to="/why-shanta">Why Shanta?</Link>
         </li>
         <li>
-          <Link to="/">Our Business</Link>
+          <Link to="/our-business">Our Business</Link>
         </li>
         <li>
-          <Link to="/">Our Clients</Link>
+          <Link to="/our-clients">Our Clients</Link>
         </li>
         <li>
-          <Link to="/">EHS</Link>
+          <Link to="/ehs">EHS</Link>
         </li>
         <li>
-          <Link to="/">CSR</Link>
+          <Link to="/csr">CSR</Link>
         </li>
       </ul>
     </>
