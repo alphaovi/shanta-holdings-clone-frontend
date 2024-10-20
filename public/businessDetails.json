@@ -1,0 +1,37 @@
+[
+    {
+        "id": "1",
+        "name": "Finance Service",
+        "img":"https://i.ibb.co.com/3TMB0yN/SHL-Finance-2e16d0ba-fill-395x490-c0.png",
+        "services": ["Shanta Security", "Shanta Asset Management", "Shanta Equity", "Shanta Life Insurance"]
+    },
+    {
+        "id": "2",
+        "name": "Retail",
+        "img":"https://i.ibb.co.com/r6Xdr1K/Retail-2e16d0ba-fill-395x490-c0.png",
+        "services": ["Shanta Lifestyle", "Shanta Distributions"]
+    },
+    {
+        "id": "3",
+        "name": "F&B",
+        "img":"https://i.ibb.co.com/XLHQ48L/FB-HTO91-KD-2e16d0ba-fill-395x490-c0.png",
+        "services": ["Shanta Multiverse"]
+    },
+    {
+        "id": "4",
+        "name": "Construction",
+        "img":"https://i.ibb.co.com/Y0bqKML/Construction-2e16d0ba-fill-395x490-c0-format-avif-4-BCJQ76.jpg",
+        "services": ["Shanta Engineering and Constructions Ltd"]
+    },
+    {
+        "id": "5",
+        "name": "Property Management",
+        "img":"https://i.ibb.co.com/rvgTfZL/Untitled-design2-2e16d0ba-fill-395x490-c0.png",
+        "services": ["Shantat Property Management"]
+    }
+]
+
+
+
+
+
