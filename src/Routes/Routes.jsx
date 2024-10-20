@@ -7,6 +7,7 @@ import About from "../Layout/About";
 import OurTeam from "../Pages/About/OurTeam/OurTeam";
 import WhyShanta from "../Pages/About/WhyShanta/WhyShanta";
 import OurBusiness from "../Pages/About/OurBusiness/OurBusiness/OurBusiness";
+import OurClients from "../Pages/About/OurClients/OurClients/OurClients";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/our-business",
         element: <OurBusiness></OurBusiness>
+      },
+      {
+        path: "/our-clients",
+        element: <OurClients></OurClients>
       }
     ],
   },

@@ -8,6 +8,7 @@ const OurBusinessTitleAndPhoto = () => {
       <div className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 px-20">
         <img src={ourBusinessImage} alt="" />
       </div>
+      
     </section>
   );
 };
