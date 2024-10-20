@@ -6,8 +6,8 @@ const OurLogoRationale = () => {
       <div className="flex-1">
         <img className="w-full h-auto"  src={ourLogo} alt="Our Logo" />
       </div>
-      <div className="flex-1 p-20  text-xl -mt-18">
-        <h1 className="uppercase text-5xl font-semibold text-white">Our logo <br />rationale</h1>
+      <div className="flex-1 p-20  text-xl -mt-18 text-white">
+        <h1 className="uppercase text-5xl text-white">Our logo <br />rationale</h1>
         <br />
         <p>
           The concept for our logo is derived from the shape of human hands, the
