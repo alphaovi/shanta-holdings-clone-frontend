@@ -5,7 +5,7 @@ const WhyShantaPhoto = () => {
     return (
         <section>
             <div>
-<h1 className="uppercase">Why Shanta</h1>
+<h1 className="text-8xl font-bold text-center uppercase">Why Shanta</h1>
             </div>
             <div>
 <img src={whyShantaPhoto} alt="" />
