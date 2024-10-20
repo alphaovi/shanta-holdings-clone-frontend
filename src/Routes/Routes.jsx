@@ -8,6 +8,8 @@ import OurTeam from "../Pages/About/OurTeam/OurTeam";
 import WhyShanta from "../Pages/About/WhyShanta/WhyShanta";
 import OurBusiness from "../Pages/About/OurBusiness/OurBusiness/OurBusiness";
 import OurClients from "../Pages/About/OurClients/OurClients/OurClients";
+import EnvironmentHealthSafety from "../Pages/About/EnvironmentHealthSafety/EnvironmentHealthSafety/EnvironmentHealthSafety";
+import Csr from "../Pages/About/CSR/CSR/CSR";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
       {
         path: "/our-clients",
         element: <OurClients></OurClients>
+      },
+      {
+        path: "/ehs",
+        element: <EnvironmentHealthSafety></EnvironmentHealthSafety>
+      },
+      {
+        path: "/csr",
+        element: <Csr></Csr>
       }
     ],
   },
