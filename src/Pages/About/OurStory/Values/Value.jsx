@@ -16,6 +16,7 @@ const Value = ({ value }) => {
           className=" float-right mr-10 -mt-10 "
           onClick={handleShowDetails}
         >
+          
           {showDetails ? <SlMinus /> : <SlPlus />}
         </button>
         {showDetails ? <p className="text-xl ">{detail}</p> : ""}

@@ -1,7 +1,14 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import sliderImage1 from "../../../assets/images/chuti-harmony/header-slider/1.jpg"
+import sliderImage2 from "../../../assets/images/chuti-harmony/header-slider/2.jpg"
+import sliderImage3 from "../../../assets/images/chuti-harmony/header-slider/3.jpg"
+import sliderImage4 from "../../../assets/images/chuti-harmony/header-slider/4.jpg"
+import sliderImage5 from "../../../assets/images/chuti-harmony/header-slider/5.jpg"
+import sliderImage6 from "../../../assets/images/chuti-harmony/header-slider/6.jpg"
 import "./HeaderCarousel.css";
+
 
 
 const HeaderCarousel = () => {
@@ -12,7 +19,7 @@ const HeaderCarousel = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 9000,
     pauseOnHover: false,
     fade: true,
     button: false,
@@ -22,23 +29,27 @@ const HeaderCarousel = () => {
   const photos = [
     {
       id: 1,
-      url: "https://cms.shantaholdings.com/images/WREXEOJwZ3w92cxgZ_QF--PEyRo=/3649/fill-2560x1440-c0%7Cformat-avif/Feature_Project_Moins.jpg",
+      url: sliderImage1
     },
     {
       id: 2,
-      url: "https://cms.shantaholdings.com/images/pzcv8IahCiq3cjSAMxoM-6bMJI4=/3563/fill-2560x1440-c0%7Cformat-avif/Majesta.jpg",
+      url: sliderImage2,
     },
     {
       id: 3,
-      url: "https://cms.shantaholdings.com/images/_Oj4CQIRm7XAfrrhEJdwOCicYNc=/3515/fill-2560x1440-c0%7Cformat-avif/Aronno_3.jpg",
+      url: sliderImage3,
     },
     {
       id: 4,
-      url: "https://cms.shantaholdings.com/images/TDZfJ6I_MNz0B8RijOx3VC1gV1Q=/158/fill-2560x1440-c0%7Cformat-avif/APUL0568-HDR-Pano.jpg",
+      url: sliderImage4,
     },
     {
       id: 5,
-      url: "https://cms.shantaholdings.com/images/6sRBCj0mVQT_LyOFgKSkbccIVsk=/155/fill-2560x1440-c0%7Cformat-avif/3Y0A3122-HDR.jpg",
+      url: sliderImage5,
+    },
+    {
+      id: 6,
+      url: sliderImage6,
     },
   ];
   return (

@@ -7,19 +7,40 @@ import LandMarksDetailsAndPhotos from "../LandMarksDetailsAndPhotos/LandMarksDet
 import Portfolio from "../Portfolio/Portfolio";
 import ProfessionalManagement from "../ProfessionalManagement/ProfessionalManagement";
 import Projects from "../Projects/Projects";
+import ProjectsImageSlider from "../Projects/ProjectsImageSlider/ProjectsImageSlider";
+import "./Home.css";
 
 const Home = () => {
   return (
-    <div>
-      <HeaderAndPhotos></HeaderAndPhotos>
-      <Portfolio></Portfolio>
-      <ProfessionalManagement></ProfessionalManagement>
-      <FeatureProject></FeatureProject>
-      <LandMarks></LandMarks>
-      <LandMarksDetailsAndPhotos></LandMarksDetailsAndPhotos>
-      <Projects></Projects>
-      <Explores></Explores>
-      <LetConnect></LetConnect>
+    <div className="main-home">
+      <div>
+        <HeaderAndPhotos></HeaderAndPhotos>
+      </div>
+      <div className="">
+        <Portfolio></Portfolio>
+      </div>
+      <div className="">
+        <ProfessionalManagement></ProfessionalManagement>
+      </div>
+      <div className="">
+        <Projects></Projects>
+      </div>
+      <div className="">
+        <FeatureProject></FeatureProject>
+      </div>
+      <div className="">
+        <LandMarks></LandMarks>
+      </div>
+      <div>
+        <LandMarksDetailsAndPhotos></LandMarksDetailsAndPhotos>
+      </div>
+
+      <div className="">
+        <Explores></Explores>
+      </div>
+      <div className="lg:mt-40 md:-mt-20">
+        <LetConnect></LetConnect>
+      </div>
     </div>
   );
 };

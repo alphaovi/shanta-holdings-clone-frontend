@@ -8,7 +8,7 @@ import director3 from "../../../../assets/images/About/Our-Team/Rectangle_5807_Y
 
 const BoardOfDirectors = () => {
   const managingDirectorDetails =
-    "A distinguished and perceptive entrepreneur, Khondoker Monir Uddin, the founder and promoter of Shanta, opts to do business by providing world-class products and services in Bangladesh. With his visionary leadership and extensive business knowledge, Shanta drives forward to not only provide superior quality products and services but to demonstrate unparalleled foresight by developing iconic projects which are the epitome of modern architecture, safe, functional and comfortable living. The reputation and success of Shanta are testaments to his strong ethics and relentless focus on quality, innovation and social responsibility. He is widely regarded as one of the most successful entrepreneurs in Bangladesh.";
+    "A distinguished and perceptive entrepreneur, Khondoker Monir Uddin, the founder and promoter of Chuti, opts to do business by providing world-class products and services in Bangladesh. With his visionary leadership and extensive business knowledge, Chuti drives forward to not only provide superior quality products and services but to demonstrate unparalleled foresight by developing iconic projects which are the epitome of modern architecture, safe, functional and comfortable living. The reputation and success of Chuti are testaments to his strong ethics and relentless focus on quality, innovation and social responsibility. He is widely regarded as one of the most successful entrepreneurs in Bangladesh.";
   return (
     <section>
       <div className="my-20">

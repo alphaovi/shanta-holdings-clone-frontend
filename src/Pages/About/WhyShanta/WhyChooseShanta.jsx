@@ -4,7 +4,7 @@ const WhyChooseShanta = () => {
   return (
     <section className="text-center m-28">
       <div>
-        <h1 className="text-4xl font-bold uppercase mb-10">Why Choose Shanta Holdings</h1>
+        <h1 className="text-4xl font-bold uppercase mb-10">Why Choose Chuti Harmony</h1>
       </div>
       <div>
         <p className="font-bold px-20 mx-20">

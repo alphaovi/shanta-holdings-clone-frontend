@@ -1,11 +1,16 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../Contexts/NightLightContext";
+import navbarLogoForDark from "../../assets/images/chuti-harmony/chuti-harmony-logo-black.png";
+import navbarLogoForLight from "../../assets/images/chuti-harmony/chuti-harmony-logo.png";
 import "./Navbar.css";
 import {
   FaRegArrowAltCircleLeft,
   FaRegArrowAltCircleRight,
 } from "react-icons/fa";
+import { CiMenuBurger } from "react-icons/ci";
+import { FaToggleOn } from "react-icons/fa";
+import { FaToggleOff } from "react-icons/fa";
 
 const Navbar = () => {
   const darkModeContext = useContext(DarkModeContext);
@@ -49,8 +54,11 @@ const Navbar = () => {
 
   const navMainItems = (
     <>
-      <li className="dropdown" style={{ position: "relative", width: "350px" }}>
-        <details>
+      <li
+        className="dropdown nav-font"
+        style={{ position: "relative", width: "500px" }}
+      >
+        <details className="font-family1">
           <summary
             style={{
               display: "flex",
@@ -59,10 +67,12 @@ const Navbar = () => {
               // gap: "5px",
               cursor: "pointer",
             }}
+            className="text-2xl"
           >
             Menu
+            <CiMenuBurger className="ml-2 " />
           </summary>
-          <ul className="dropdown-content bg-base-100 rounded-t-none p-2 ">
+          <ul className="dropdown-content bg-base-100 rounded-t-none p-2 " >
             <li>
               <input
                 className="border-b-5"
@@ -93,7 +103,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/">Life At Shanta</Link>
+              <Link to="/life-at-shanta">Life At Shanta</Link>
             </li>
             <li>
               <Link to="/">Careers</Link>
@@ -102,7 +112,8 @@ const Navbar = () => {
               <Link to="/">News & Events</Link>
             </li>
             <li>
-              <Link to="/"
+              <Link
+                to="/"
                 className="dropdwon flex items-center"
                 onClick={handleShowContacts}
               >
@@ -246,44 +257,52 @@ const Navbar = () => {
   );
 
   return (
-    <div>
+    <div className="">
       <div className="px-20 py-5 navbar">
         <div className="flex-1 ml-20">
           <Link to={"/"} className="text-start block">
-            <span className="text-4xl">SHANTA</span>
-            <span className="flex space-x-3 mt-3 font-thin ">
-              <ul>H</ul>
-              <ul>O</ul>
-              <ul>L</ul>
-              <ul>D</ul>
-              <ul>I</ul>
-              <ul>N</ul>
-              <ul>G</ul>
-              <ul>S</ul>
-            </span>
+            {darkMode ? (
+              <img src={navbarLogoForLight} alt="" className="h-20" />
+            ) : (
+              <img src={navbarLogoForDark} alt="" className="h-20" />
+            )}
           </Link>
         </div>
-        <div className="flex-none ">
-          <ul className="menu menu-horizontal px-1">
-            <li className="bg-none ">
-              <Link
+        <div className="flex-none font-familyPortfolio">
+          <ul className="menu menu-horizontal px-1 flex justify-center">
+            <li className={`${darkMode ? "text-white" : "text-black"} `}>
+              <p
                 onClick={() => setDarkMode(!darkMode)}
-                className={`${darkMode ? "dark-mode" : "light-mode"}`}
+                className={`${
+                  darkMode ? "dark-mode" : "light-mode"
+                } bg-none text-2xl`}
               >
                 {darkMode ? "Light" : "Dark"}
-              </Link>
+              </p>
             </li>
-            {/* for the main menu */}
-            {!showSubitems && !showProjects && !showContacts && navMainItems}
+            <div
+              className="mt-[6px] cursor-pointer"
+              onClick={() => setDarkMode(!darkMode)}
+            >
+              {darkMode ? (
+                <FaToggleOff className="h-7 w-7 text-[#8F8933]" />
+              ) : (
+                <FaToggleOn className="h-7 w-7 text-[#8F8933]" />
+              )}
+            </div>
+            <div>
+              {/* for the main menu */}
+              {!showSubitems && !showProjects && !showContacts && navMainItems}
 
-            {/* show subitems for about shanta */}
-            {showSubitems && navSubItems}
+              {/* show subitems for about shanta */}
+              {showSubitems && navSubItems}
 
-            {/* show projects submenu */}
-            {showProjects && navProjectItems}
+              {/* show projects submenu */}
+              {showProjects && navProjectItems}
 
-            {/* show contacts submenu */}
-            {showContacts && navContactItems}
+              {/* show contacts submenu */}
+              {showContacts && navContactItems}
+            </div>
           </ul>
         </div>
       </div>

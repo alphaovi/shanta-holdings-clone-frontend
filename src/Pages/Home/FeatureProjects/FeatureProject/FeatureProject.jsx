@@ -1,9 +1,13 @@
 import Slider from "react-slick/lib/slider";
 import FeatureProjectDetailsAndVideo from "./FeatureProjectDetailsAndVideo/FeatureProjectDetailsAndVideo";
 import useProjectData from "../../../../Hooks/useProjectData";
+import { useContext } from "react";
+import { DarkModeContext } from "../../../../Contexts/NightLightContext";
+
 
 const FeatureProject = () => {
-  const [featureProjects] = useProjectData();
+  const { darkMode } = useContext(DarkModeContext);
+  const [featureProjects, error] = useProjectData();
 
   // this setting is for slider1
   const settings1 = {
@@ -22,12 +26,23 @@ const FeatureProject = () => {
     vertical: true,
   };
 
+  if (error) {
+    return <p className="text-red-500">Error: {error}</p>;
+  }
+  if (!featureProjects.length) {
+    return <p>Loading feature projects....</p>;
+  }
+
+
+
   return (
-    <section className="mb-[420px]">
-      <div className="scrollable-element px-5 opacity-50">
+    <section className="mb-[420px] featureProject-font">
+      <div
+        className={`${darkMode ? "opacity-50" : ""} scrollable-element px-5 `}
+      >
         <Slider {...settings1}>
           {featureProjects.map((featureProject) => (
-            <div key={featureProject.id} className="">
+            <div key={featureProject._id} className="">
               <img
                 src={featureProject.projectImg}
                 alt={`Slide ${featureProject.id}`}

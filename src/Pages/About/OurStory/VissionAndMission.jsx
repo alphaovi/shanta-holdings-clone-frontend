@@ -1,7 +1,15 @@
-import missionImage from "../../../assets/images/About/Our-story/mission2.jpg";
-import visionImage from "../../../assets/images/About/Our-story/vision-image.png";
+// import missionImage from "../../../assets/images/About/Our-story/mission2.jpg";
+// import visionImage from "../../../assets/images/About/Our-story/vision-image.png";
+import useOurStoryData from "../../../Hooks/useOurStoryData";
 
 const VissionAndMission = () => {
+  const [ourStory] = useOurStoryData();
+
+  if (!ourStory) {
+    return <p>Loading...</p>;
+  }
+
+  
   return (
     <section className=" bg-[#5C5151] text-white">
       <div className="lg:flex mx-20 p-20">
@@ -15,11 +23,9 @@ const VissionAndMission = () => {
             <span>N</span>
           </h1>
           <p className="text-xl mr-10 my-10">
-            To become the most trusted brand in the region by offering
-            comprehensive solutions to the diverse needs of the communities we
-            serve.
+            {ourStory.visionTitle}
           </p>
-          <img src={visionImage} alt="Vision Image" />
+          <img src={ourStory.visionImage} alt="Vision Image" />
         </div>
         <div className="transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300">
           <h1 className="text-6xl ">
@@ -32,10 +38,9 @@ const VissionAndMission = () => {
             <span>N</span>
           </h1>
           <p className="text-xl mr-10 my-10">
-            To set new standards through innovation and sustainable solutions
-            that exceed the expectations of all our stakeholders.
+            {ourStory.missionTitle}
           </p>
-          <img className="w-full" src={missionImage} alt="Mission Image" />
+          <img className="w-full" src={ourStory.misssionImage} alt="Mission Image" />
         </div>
       </div>
     </section>

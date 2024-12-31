@@ -1,39 +1,55 @@
 import { useContext } from "react";
 import HeaderCarousel from "./HeaderCarousel";
 import { DarkModeContext } from "../../../Contexts/NightLightContext";
+import { MotionAnimate } from "react-motion-animate";
+
 
 const HeaderAndPhotos = () => {
   const darkModeContext = useContext(DarkModeContext);
-  const {darkMode} = darkModeContext;
-  
+  const { darkMode } = darkModeContext;
+
   return (
-    <div style={{"backgroundColor": darkMode ? "#212121" : "white", "color": darkMode ?  "#212121" : "white" }}>
-      <div>
-        <h1 className="text-8xl font-thin text-black letter-spacing-6 mb-10 text-center transition delay-150" >
-          <span></span>
-          <span className="m-2 p-2 text-white">s</span>
-          <span className="m-2 p-2 text-white">e</span>
-          <span className="m-2 p-2 text-white">t</span>
-          <span className="m-2 p-2 text-white">t</span>
-          <span className="m-2 p-2 text-white">i</span>
-          <span className="m-2 p-2 text-white">n</span>
-          <span className="m-2 p-2 text-white">g</span>
-          <span className="m-2 p-2 text-white"></span>
-          <span className="m-2 p-2 text-white">s</span>
-          <span className="m-2 p-2 text-white">t</span>
-          <span className="m-2 p-2 text-white">a</span>
-          <span className="m-2 p-2 text-white">n</span>
-          <span className="m-2 p-2 text-white">d</span>
-          <span className="m-2 p-2 text-white">a</span>
-          <span className="m-2 p-2 text-white">r</span>
-          <span className="m-2 p-2 text-white">d</span>
-          <span className="m-2 p-2 text-white">s</span>
-        </h1>
+    <MotionAnimate
+      animation="fadeInUp"
+      reset={true}
+      distance={200}
+      delay={1}
+      speed={1}
+    >
+      <div
+        style={{
+          backgroundColor: darkMode ? "#212121" : "white",
+          color: darkMode ? "white" : "#212121",
+        }}
+        className="px-3 sm:px-8 lg:px-16 py-6"
+      >
+        {/* Header Section */}
+        <div className="text-center">
+          <h1
+            className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-thin letter-spacing-6 mb-6 sm:mb-10 transition delay-150 ${
+              darkMode ? "text-white" : "text-black"
+            }`}
+          >
+            {/* Animated Letters */}
+            {"settings standards".split("").map((char, idx) => (
+              <span
+                key={idx}
+                className={`inline-block m-1 sm:m-2 p-1 sm:p-2 ${
+                  darkMode ? "text-white" : "text-black"
+                }`}
+              >
+                {char.trim() ? char : "\u00A0"}
+              </span>
+            ))}
+          </h1>
+        </div>
+
+        {/* Carousel Section */}
+        <div className="mb-6 sm:mb-10">
+          <HeaderCarousel />
+        </div>
       </div>
-      <div className="mb-10">
-        <HeaderCarousel></HeaderCarousel>
-      </div>
-    </div>
+    </MotionAnimate>
   );
 };
 

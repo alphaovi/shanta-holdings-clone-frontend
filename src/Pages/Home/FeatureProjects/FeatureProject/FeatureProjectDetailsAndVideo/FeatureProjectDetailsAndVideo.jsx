@@ -1,9 +1,12 @@
 import Slider from "react-slick/lib/slider";
 import useProjectData from "../../../../../Hooks/useProjectData";
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import FeatureProjectSlide from "./FeatureProjectRightVideo";
+import { DarkModeContext } from "../../../../../Contexts/NightLightContext";
+import { FiArrowRightCircle } from "react-icons/fi";
 
 const FeatureProjectDetailsAndVideo = () => {
+  const { darkMode } = useContext(DarkModeContext);
   const [featureProjects] = useProjectData([]);
   const videoRef = useRef(null);
 
@@ -36,20 +39,25 @@ const FeatureProjectDetailsAndVideo = () => {
   }, []);
   return (
     <section>
-      <div className="ml-36 -mt-[480px] uppercase">
-        <h1 className="text-xl mb-2 font-bold">Feature Projects</h1>
+      <div className={`ml-36 -mt-[480px] uppercase text-white  `}>
+        <h1 className="text-xl mb-2 text-white">Feature Projects</h1>
         <Slider {...settings2}>
           {featureProjects.map((featureProject) => (
-            <div key={featureProject.id}>
-              <h1 className="text-xl">{featureProject.projectType}</h1>
-              <h1 className="text-4xl mt-4 font-semibold">{featureProject.projectName}</h1>
+            <div key={featureProject._id} className={`${darkMode ? "" : "opacity-75"}`}>
+              <h1 className="text-[18.5px]">{featureProject.projectType}</h1>
+              <h1 className="text-4xl mt-4 ">{featureProject.projectName}</h1>
               <p className="text-xl mt-6">{featureProject.address}</p>
-              <button
-                onClick={() => console.log("HI")}
-                className="btn btn-outline text-white mt-16"
-              >
-                View Project
-              </button>
+              <div>
+                <button
+                  onClick={() => console.log("HI")}
+                  className={`${
+                    darkMode ? "text-white" : "text-white "
+                  } btn btn-outline  mt-16 featureProject-font text-xl border-none bg-none `}
+                >
+                <FiArrowRightCircle/>  View Project
+                </button>
+                
+              </div>
             </div>
           ))}
         </Slider>

@@ -21,13 +21,13 @@ const TheTeam = () => {
         </p>
         <p className="flex-1 mx-10 p-20">
           In the pursuit of our overarching mission to enhance lifestyles and
-          unlock potential, Shanta Holdings has curated a team of highly
+          unlock potential, Chuti Holdings has curated a team of highly
           experienced professionals, adeptly trained both domestically and
           internationally. Our roster boasts over 200 full-time employees,
           encompassing a diverse range of expertise in development, management,
           and construction disciplines. A harmonious blend of individuals with
           backgrounds in business and technical fields tirelessly endeavors to
-          fulfill the core mission of Shanta Holdings.
+          fulfill the core mission of Chuti Holdings.
         </p>
       </div>
     </section>
