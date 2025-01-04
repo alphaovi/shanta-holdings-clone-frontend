@@ -47,7 +47,7 @@ const AdminConnect = () => {
 
     try {
       const response = await axios.post(
-        `https://api.imgbb.com/1/upload?key=YOUR_IMGBB_API_KEY`,
+        `https://api.imgbb.com/1/upload?key=9f989d9dc9f26cdee1f0e39188190099`,
         formData
       );
       return response.data.data.url;

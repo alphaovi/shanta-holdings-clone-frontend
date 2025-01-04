@@ -26,6 +26,7 @@ import AdminConnect from "../Pages/BackendControl/Home/AdminConnect/AdminConnect
 import AdminGetExplore from "../Pages/BackendControl/Home/AdminExploreProject/AdminGetExplore/AdminGetExplore";
 import AdminCreateExplore from "../Pages/BackendControl/Home/AdminExploreProject/AdminCreateExplore/AdminCreateExplore";
 import AdminOurStory from "../Pages/BackendControl/OurStory/AdminOurStory";
+import AdminOurTeam from "../Pages/BackendControl/OurTeam/AdminOurTeam";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,7 @@ const router = createBrowserRouter([
         path: "/our-business",
         element: <OurBusiness></OurBusiness>,
       },
+
       {
         path: "/our-clients",
         element: <OurClients></OurClients>,
@@ -133,6 +135,10 @@ const router = createBrowserRouter([
       {
         path: "/admin/our-story",
         element: <AdminOurStory></AdminOurStory>
+      },
+      {
+        path: "/admin/our-team",
+        element: <AdminOurTeam></AdminOurTeam>
       },
     ],
   },

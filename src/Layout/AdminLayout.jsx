@@ -33,6 +33,9 @@ const AdminLayout = () => {
             <li>
               <Link to={"/admin/our-story"}>Our Story</Link>
             </li>
+            <li>
+              <Link to={"/admin/our-team"}>Our Team</Link>
+            </li>
           </ul>
         </div>
       </div>
