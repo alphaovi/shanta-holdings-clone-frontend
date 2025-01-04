@@ -2,8 +2,10 @@ import { useState } from "react";
 import TeamStandardsPhoto from "./TeamStandardsPhoto";
 import { useEffect } from "react";
 
+
 const TeamStandards = () => {
     const [bounce, setBounce] = useState(true);
+    
 
   useEffect(() => {
     // Stop the animation after 2 seconds (2000 milliseconds)

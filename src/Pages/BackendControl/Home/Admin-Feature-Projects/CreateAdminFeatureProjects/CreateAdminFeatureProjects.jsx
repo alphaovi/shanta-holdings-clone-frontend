@@ -55,7 +55,7 @@ const CreateAdminFeatureProjects = () => {
       const newProject = {
         projectType: project.projectType,
         projectName: project.projectName,
-        address: project.address, // Ensure correct field name
+        address: project.address, 
         projectImg: imageUrl,
         projectVideo: project.projectVideo,
       };

@@ -1,10 +1,28 @@
-import teamStandardPhoto from "../../../../assets/images/About/Our-Team/Rectangle_5803_3.2e16d0ba.fill-1280x720-c0.png"
+import useTeamCoverAndMD from "../../../../Hooks/useTeamCoverAndMD";
+
 const TeamStandardsPhoto = () => {
-    return (
-        <div>
-            <img src={teamStandardPhoto} alt="" />
-        </div>
-    );
+  const [ourManagementTeamDatas, , error] = useTeamCoverAndMD();
+
+  // Display error message if fetching fails
+  if (error) {
+    return <p className="text-red-500">Error: {error}</p>;
+  }
+
+  // Show a loading message until data is fetched
+  if (!ourManagementTeamDatas) {
+    return <p>Loading...</p>;
+  }
+
+  return (
+    <div>
+      {/* Ensure teamCoverPhoto exists */}
+      <img
+        src={ourManagementTeamDatas.teamCoverPhoto}
+        alt="Team Cover"
+        className="w-full h-auto"
+      />
+    </div>
+  );
 };
 
 export default TeamStandardsPhoto;

@@ -1,6 +1,11 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
+import useTeamData from "../../../Hooks/useTeamData";
+import AdminOurTeamData from "./AdminOurTeamData";
+import useSeniorTeam from "../../../Hooks/useSeniorTeam";
+import AdminGetAndDeleteSeniorTeam from "./AdminGetAndDeleteSeniorTeam";
 
 const AdminOurTeam = () => {
   const [teamData, setTeamData] = useState({
@@ -17,8 +22,13 @@ const AdminOurTeam = () => {
     fullTeamDescriptionTwo: "",
   });
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [ourTeamDatas, setOurTeamDatas] = useTeamData();
+
+  const [ourSeniorTeams, setOurSeniorTeams, seniorTeamError, seniorTeamLoading] = useSeniorTeam();
+
+  const [isLoading, setIsLoading] = useState(true);
   const [previewImages, setPreviewImages] = useState({}); // Holds previews of fetched and selected images
+  const [error, setError] = useState(null);
 
   const fileInputRefs = {
     teamCoverPhoto: useRef(null),
@@ -112,187 +122,273 @@ const AdminOurTeam = () => {
     }
   };
 
+  const handleDeleteTeamMember = async (teamTwoId) => {
+    try {
+      await axios.delete(
+        `http://localhost:5000/api/v1/team-two/team-two/${teamTwoId}`
+      );
+      // Remove the deleted project from the state
+      setOurTeamDatas((prevTeamTwoMembers) =>
+        prevTeamTwoMembers.filter(
+          (prevTeamTwoMember) => prevTeamTwoMember._id !== teamTwoId
+        )
+      );
+    } catch (err) {
+      console.error("Failed to delete project:", err);
+      alert("Could not delete the project. Please try again.");
+    }
+  };
+
+  const handleDeleteSeniorTeamMember = async (seniorTeamId) => {
+    try {
+      const response = await axios.delete(
+        `http://localhost:5000/api/v1/senior-team/senior-team/${seniorTeamId}`
+      );
+
+      if (response.status === 200) {
+        // Update the senior teams state after successful deletion
+        setOurSeniorTeams((prev) =>
+          prev.filter((team) => team._id !== seniorTeamId)
+        );
+        toast.success("Senior team member deleted successfully");
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to delete Senior Team Member");
+    }
+  };
+
   return (
     <>
       <div>
         <h1 className="text-2xl font-bold text-center mb-10">Our Team</h1>
 
-        <form onSubmit={handleTeamUpdate} className="space-y-4">
-          <div className="space-y-4 space-x-5 grid lg:grid-cols-2 justify-around">
-            {/* Team Cover Photo */}
-            <div>
-              <label>Cover Image</label>
-              {previewImages.teamCoverPhoto && (
-                <img
-                  src={previewImages.teamCoverPhoto}
-                  alt="Cover Preview"
-                  className="w-40 h-40 object-cover mb-4"
-                />
-              )}
-              <input
-                type="file"
-                ref={fileInputRefs.teamCoverPhoto}
-                className="border border-gray-300 rounded w-full p-2"
-                onChange={() => handleImageChange("teamCoverPhoto")}
-              />
-            </div>
-
-            {/* Managing Director Name */}
-            <div>
-              <label>Managing Director Name</label>
-              <input
-                type="text"
-                className="border border-gray-300 rounded w-full p-2"
-                value={teamData.managingDirectorName}
-                onChange={(e) =>
-                  setTeamData({
-                    ...teamData,
-                    managingDirectorName: e.target.value,
-                  })
-                }
-              />
-            </div>
-
-            {/* Managing Director Details */}
-            <div>
-              <label>Managing Director Details</label>
-              <textarea
-                className="textarea textarea-bordered h-40 w-full"
-                value={teamData.managingDirectorDetails}
-                onChange={(e) =>
-                  setTeamData({
-                    ...teamData,
-                    managingDirectorDetails: e.target.value,
-                  })
-                }
-              ></textarea>
-            </div>
-
-            {/* Managing Director Image */}
-            <div>
-              <label>Managing Director Image</label>
-              {previewImages.managingDirectorImage && (
-                <img
-                  src={previewImages.managingDirectorImage}
-                  alt="MD Preview"
-                  className="w-40 h-40 object-cover mb-4"
-                />
-              )}
-              <input
-                type="file"
-                ref={fileInputRefs.managingDirectorImage}
-                className="border border-gray-300 rounded w-full p-2"
-                onChange={() => handleImageChange("managingDirectorImage")}
-              />
-            </div>
-
-            {/* CEO Name */}
-            <div>
-              <label>CEO Name</label>
-              <input
-                type="text"
-                className="border border-gray-300 rounded w-full p-2"
-                value={teamData.ceoName}
-                onChange={(e) =>
-                  setTeamData({
-                    ...teamData,
-                    ceoName: e.target.value,
-                  })
-                }
-              />
-            </div>
-
-            {/* CEO Photo */}
-            <div>
-              <label>CEO Photo</label>
-              {previewImages.ceoPhoto && (
-                <img
-                  src={previewImages.ceoPhoto}
-                  alt="CEO Preview"
-                  className="w-40 h-40 object-cover mb-4"
-                />
-              )}
-              <input
-                type="file"
-                ref={fileInputRefs.ceoPhoto}
-                className="border border-gray-300 rounded w-full p-2"
-                onChange={() => handleImageChange("ceoPhoto")}
-              />
-            </div>
-
-            {/* CEO About */}
-            <div>
-              <label>CEO About</label>
-              <textarea
-                className="textarea textarea-bordered h-40 w-full"
-                value={teamData.ceoAbout}
-                onChange={(e) =>
-                  setTeamData({
-                    ...teamData,
-                    ceoAbout: e.target.value,
-                  })
-                }
-              ></textarea>
-            </div>
-
-            {/* Full Team Image */}
-            <div>
-              <label>Full Team Image</label>
-              {previewImages.fullTeamImage && (
-                <img
-                  src={previewImages.fullTeamImage}
-                  alt="Team Preview"
-                  className="w-40 h-40 object-cover mb-4"
-                />
-              )}
-              <input
-                type="file"
-                ref={fileInputRefs.fullTeamImage}
-                className="border border-gray-300 rounded w-full p-2"
-                onChange={() => handleImageChange("fullTeamImage")}
-              />
-            </div>
-
-            {/* Full Team Description One */}
-            <div>
-              <label>Full Team Description One</label>
-              <textarea
-                className="textarea textarea-bordered h-40 w-full"
-                value={teamData.fullTeamDescriptionOne}
-                onChange={(e) =>
-                  setTeamData({
-                    ...teamData,
-                    fullTeamDescriptionOne: e.target.value,
-                  })
-                }
-              ></textarea>
-            </div>
-
-            {/* Full Team Description Two */}
-            <div>
-              <label>Full Team Description Two</label>
-              <textarea
-                className="textarea textarea-bordered h-40 w-full"
-                value={teamData.fullTeamDescriptionTwo}
-                onChange={(e) =>
-                  setTeamData({
-                    ...teamData,
-                    fullTeamDescriptionTwo: e.target.value,
-                  })
-                }
-              ></textarea>
-            </div>
+        <div className="mb-20">
+          <div>
+            <Link
+              to={"/admin/create-our-team"}
+              className="btn btn-success bg-[#8E8A20] border-none text-white hover:bg-[#8E8A20]"
+            >
+              Create Team
+            </Link>
           </div>
-
-          <div className="space-y-4 space-x-5 grid lg:grid-cols-2 justify-around">
-            <input
-              className="btn btn-secondary bg-[#8E8A20] hover:bg-lime-900 border-none"
-              type="submit"
-              value="Update Our Team"
-              disabled={isLoading}
-            />
+          <div className="grid grid-cols-2 gap-4">
+            {ourTeamDatas.map((ourTeamData) => (
+              <AdminOurTeamData
+                key={ourTeamData._id}
+                ourTeamData={ourTeamData}
+                onDelete={handleDeleteTeamMember}
+              ></AdminOurTeamData>
+            ))}
           </div>
-        </form>
+        </div>
+        <div className="mb-20">
+          <div>
+            <Link
+              to={"/admin/create-our-senior-team"}
+              className="btn btn-success bg-[#8E8A20] border-none text-white hover:bg-[#8E8A20]"
+            >
+              Create Senior Team
+            </Link>
+          </div>
+          <div className="mb-20">
+        
+        <div className="grid grid-cols-2">
+          {seniorTeamLoading ? (
+            <p>Loading...</p>
+          ) : seniorTeamError ? (
+            <p className="text-red-500">Error: {seniorTeamError}</p>
+          ) : (
+            ourSeniorTeams.map((team) => (
+              <AdminGetAndDeleteSeniorTeam
+                key={team._id}
+                ourSeniorTeam={team}
+                onDelete={handleDeleteSeniorTeamMember}
+              />
+            ))
+          )}
+        </div>
+      </div>
+        </div>
+
+        <div>
+          <form onSubmit={handleTeamUpdate} className="space-y-4">
+            <div className="space-y-4 grid lg:grid-cols-2 gap-20 justify-around">
+              {/* Team Cover Photo */}
+              <div>
+                <label>Cover Image</label>
+                {previewImages.teamCoverPhoto && (
+                  <img
+                    src={previewImages.teamCoverPhoto}
+                    alt="Cover Preview"
+                    className="w-40 h-40 object-cover mb-4"
+                  />
+                )}
+                <input
+                  type="file"
+                  ref={fileInputRefs.teamCoverPhoto}
+                  className="border border-gray-300 rounded w-full p-2"
+                  onChange={() => handleImageChange("teamCoverPhoto")}
+                />
+              </div>
+
+              {/* Managing Director Name */}
+              <div>
+                <label>Managing Director Name</label>
+                <input
+                  type="text"
+                  className="border border-gray-300 rounded w-full p-2"
+                  value={teamData.managingDirectorName}
+                  onChange={(e) =>
+                    setTeamData({
+                      ...teamData,
+                      managingDirectorName: e.target.value,
+                    })
+                  }
+                />
+              </div>
+
+              {/* Managing Director Details */}
+              <div>
+                <label>Managing Director Details</label>
+                <textarea
+                  className="textarea textarea-bordered h-40 w-full"
+                  value={teamData.managingDirectorDetails}
+                  onChange={(e) =>
+                    setTeamData({
+                      ...teamData,
+                      managingDirectorDetails: e.target.value,
+                    })
+                  }
+                ></textarea>
+              </div>
+
+              {/* Managing Director Image */}
+              <div>
+                <label>Managing Director Image</label>
+                {previewImages.managingDirectorImage && (
+                  <img
+                    src={previewImages.managingDirectorImage}
+                    alt="MD Preview"
+                    className="w-40 h-40 object-cover mb-4"
+                  />
+                )}
+                <input
+                  type="file"
+                  ref={fileInputRefs.managingDirectorImage}
+                  className="border border-gray-300 rounded w-full p-2"
+                  onChange={() => handleImageChange("managingDirectorImage")}
+                />
+              </div>
+
+              {/* CEO Name */}
+              <div>
+                <label>CEO Name</label>
+                <input
+                  type="text"
+                  className="border border-gray-300 rounded w-full p-2"
+                  value={teamData.ceoName}
+                  onChange={(e) =>
+                    setTeamData({
+                      ...teamData,
+                      ceoName: e.target.value,
+                    })
+                  }
+                />
+              </div>
+
+              {/* CEO Photo */}
+              <div>
+                <label>CEO Photo</label>
+                {previewImages.ceoPhoto && (
+                  <img
+                    src={previewImages.ceoPhoto}
+                    alt="CEO Preview"
+                    className="w-40 h-40 object-cover mb-4"
+                  />
+                )}
+                <input
+                  type="file"
+                  ref={fileInputRefs.ceoPhoto}
+                  className="border border-gray-300 rounded w-full p-2"
+                  onChange={() => handleImageChange("ceoPhoto")}
+                />
+              </div>
+
+              {/* CEO About */}
+              <div>
+                <label>CEO About</label>
+                <textarea
+                  className="textarea textarea-bordered h-40 w-full"
+                  value={teamData.ceoAbout}
+                  onChange={(e) =>
+                    setTeamData({
+                      ...teamData,
+                      ceoAbout: e.target.value,
+                    })
+                  }
+                ></textarea>
+              </div>
+
+              {/* Full Team Image */}
+              <div>
+                <label>Full Team Image</label>
+                {previewImages.fullTeamImage && (
+                  <img
+                    src={previewImages.fullTeamImage}
+                    alt="Team Preview"
+                    className="w-40 h-40 object-cover mb-4"
+                  />
+                )}
+                <input
+                  type="file"
+                  ref={fileInputRefs.fullTeamImage}
+                  className="border border-gray-300 rounded w-full p-2"
+                  onChange={() => handleImageChange("fullTeamImage")}
+                />
+              </div>
+
+              {/* Full Team Description One */}
+              <div>
+                <label>Full Team Description One</label>
+                <textarea
+                  className="textarea textarea-bordered h-40 w-full"
+                  value={teamData.fullTeamDescriptionOne}
+                  onChange={(e) =>
+                    setTeamData({
+                      ...teamData,
+                      fullTeamDescriptionOne: e.target.value,
+                    })
+                  }
+                ></textarea>
+              </div>
+
+              {/* Full Team Description Two */}
+              <div>
+                <label>Full Team Description Two</label>
+                <textarea
+                  className="textarea textarea-bordered h-40 w-full"
+                  value={teamData.fullTeamDescriptionTwo}
+                  onChange={(e) =>
+                    setTeamData({
+                      ...teamData,
+                      fullTeamDescriptionTwo: e.target.value,
+                    })
+                  }
+                ></textarea>
+              </div>
+            </div>
+
+            <div className="space-y-4 space-x-5 grid lg:grid-cols-2 justify-around">
+              <input
+                className="btn btn-secondary bg-[#8E8A20] hover:bg-lime-900 border-none"
+                type="submit"
+                value="Update Our Team"
+                disabled={isLoading}
+              />
+            </div>
+          </form>
+        </div>
       </div>
     </>
   );
