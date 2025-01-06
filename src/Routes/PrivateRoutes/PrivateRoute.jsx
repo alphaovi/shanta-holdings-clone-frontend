@@ -10,13 +10,13 @@ const PrivateRoute = () => {
     return <span className="loading loading-spinner loading-md"></span>;
   }
 
-  if (!user) {
-    navigate("/login");
+  if (user) {
+    navigate("/admin");
   }
   else{
-    navigate("/admin")
+    navigate("/login")
   }
-  return <Navigate to="/login"></Navigate>;
+  return <Navigate to="/admin"></Navigate>;
 };
 
 export default PrivateRoute;

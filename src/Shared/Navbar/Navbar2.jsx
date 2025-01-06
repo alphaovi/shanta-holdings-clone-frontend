@@ -126,7 +126,17 @@ const Navbar2 = () => {
               <li className="hover:text-[#8F8933]">
                 <Link to="/">Home</Link>
               </li>
-              <li>
+              <li className="hover:text-[#8F8933]">
+                <Link to="/our-story">Our Story</Link>
+              </li>
+              <li className="hover:text-[#8F8933]">
+                <Link to={"/our-team"}>Our Team</Link>
+              </li>
+              <li className="hover:text-[#8F8933]">
+                <Link to={"/our-business"}>Our Business</Link>
+              </li>
+              {/* Uncomment if for active About chuti */}
+              {/* <li>
                 <button
                   onClick={() => showSubMenu("about")}
                   className="flex items-center w-full hover:text-[#8F8933]"
@@ -134,7 +144,7 @@ const Navbar2 = () => {
                   About Chuti{" "}
                   <MdOutlineKeyboardArrowRight className="ml-3 md:ml-5" />
                 </button>
-              </li>
+              </li> */}
               <li>
                 <button
                   onClick={() => showSubMenu("projects")}
@@ -144,10 +154,13 @@ const Navbar2 = () => {
                   <MdOutlineKeyboardArrowRight className="ml-3 md:ml-5" />
                 </button>
               </li>
-              <li className="mt-5 md:mt-10 hover:text-[#8F8933]">
+              {/* <li className="mt-5 md:mt-10 hover:text-[#8F8933]">
                 <Link to="/life-at-chuti">Life At Chuti</Link>
+              </li> */}
+              <li className="mt-5 md:mt-10 hover:text-[#8F8933]">
+                <Link to="/contact">Contact</Link>
               </li>
-              <li>
+              {/* <li>
                 <button
                   onClick={() => showSubMenu("contact")}
                   className="flex items-center w-full hover:text-[#8F8933]"
@@ -155,12 +168,13 @@ const Navbar2 = () => {
                   Contact Us{" "}
                   <MdOutlineKeyboardArrowRight className="ml-3 md:ml-5" />
                 </button>
-              </li>
+              </li> */}
             </ul>
           )}
 
           {/* Submenus */}
-          {currentMenu === "about" && (
+          {/* uncomment and it'll active */}
+          {/* {currentMenu === "about" && (
             <ul className="menu-list space-y-3 md:space-y-4 p-4 md:p-6 ml-3 md:ml-5">
               <li>
                 <button
@@ -186,7 +200,7 @@ const Navbar2 = () => {
                 <Link to={"/our-clients"}>Our Clients</Link>
               </li>
             </ul>
-          )}
+          )} */}
 
           {currentMenu === "projects" && (
             <ul className="menu-list space-y-3 md:space-y-4 p-4 md:p-6 ml-3 md:ml-5 mt-5 md:mt-10">
@@ -204,7 +218,7 @@ const Navbar2 = () => {
             </ul>
           )}
 
-          {currentMenu === "contact" && (
+          {/* {currentMenu === "contact" && (
             <ul className="menu-list space-y-3 md:space-y-4 p-4 md:p-6 ml-3 md:ml-5">
               <li>
                 <button
@@ -219,7 +233,7 @@ const Navbar2 = () => {
               <li className="hover:text-[#8F8933]"><Link to={"/email"}>Email</Link></li>
               <li className="hover:text-[#8F8933]"><Link to={"/support"}>Support</Link></li>
             </ul>
-          )}
+          )} */}
 
           <div className="flex gap-5 md:gap-8 ml-3 md:ml-5 mt-5 md:mt-10 justify-center text-3xl md:text-4xl ">
             <CiFacebook className="border-[#978c21] text-white border-2 rounded-full p-1 hover:text-[#8F8933]" />

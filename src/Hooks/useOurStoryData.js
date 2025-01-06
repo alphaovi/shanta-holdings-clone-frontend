@@ -9,7 +9,7 @@ const useOurStoryData = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/v1/our-story/our-story"
+          "https://shanti-holdings-backend.vercel.app/api/v1/our-story/our-story"
         );
         const data = response.data.data;
         // console.log(data);

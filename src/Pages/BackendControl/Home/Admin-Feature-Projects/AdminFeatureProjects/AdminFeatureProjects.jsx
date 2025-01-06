@@ -12,7 +12,7 @@ const AdminFeatureProjects = () => {
   const fetchFeatureProjects = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/v1/feature-project/feature-project"
+        "https://shanti-holdings-backend.vercel.app/api/v1/feature-project/feature-project"
       );
       if (response.data.data) {
         setFeatureProjects(response.data.data);
@@ -33,7 +33,7 @@ const AdminFeatureProjects = () => {
   const handleDeleteProject = async (projectId) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/v1/feature-project/feature-project/${projectId}`
+        `https://shanti-holdings-backend.vercel.app/api/v1/feature-project/feature-project/${projectId}`
       );
       // Remove the deleted project from the state
       setFeatureProjects((prevProjects) =>
@@ -57,7 +57,12 @@ const AdminFeatureProjects = () => {
       </div>
       <div>
         {isLoading ? (
-          <p>Loading...</p>
+          <div>
+            <span className="loading loading-bars loading-xs"></span>
+            <span className="loading loading-bars loading-sm"></span>
+            <span className="loading loading-bars loading-md"></span>
+            <span className="loading loading-bars loading-lg"></span>
+          </div>
         ) : error ? (
           <p className="text-red-500">Error: {error}</p>
         ) : (

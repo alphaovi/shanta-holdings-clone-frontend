@@ -24,7 +24,7 @@ const LetConnect = () => {
     const fetchedData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/v1/connect/connect"
+          "https://shanti-holdings-backend.vercel.app/api/v1/connect/connect"
         );
         const data = response.data.data;
         setConnectData(data);
@@ -104,9 +104,7 @@ const LetConnect = () => {
         <img
           className={``}
           style={{ height: "300px", width: "600px" }}
-          src={
-            connectData.image
-          }
+          src={connectData.image}
           alt=""
         />
       </div>

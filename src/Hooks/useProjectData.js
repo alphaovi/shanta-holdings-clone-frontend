@@ -8,7 +8,7 @@ const useProjectData = () => {
     const fetchProjects = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/v1/feature-project/feature-project`
+          `https://shanti-holdings-backend.vercel.app/api/v1/feature-project/feature-project`
         );
         const data = await response.json();
 

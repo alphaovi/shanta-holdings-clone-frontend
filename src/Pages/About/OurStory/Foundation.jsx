@@ -9,7 +9,14 @@ const Foundation = () => {
   const [showMore, setShowMore] = useState(false);
 
   if (!ourStory) {
-    return <p>Loading...</p>;
+    return (
+      <div>
+        <span className="loading loading-bars loading-xs"></span>
+        <span className="loading loading-bars loading-sm"></span>
+        <span className="loading loading-bars loading-md"></span>
+        <span className="loading loading-bars loading-lg"></span>
+      </div>
+    );
   }
 
   const handleShowMore = () => {
@@ -23,7 +30,7 @@ const Foundation = () => {
           Foundation
         </h1>
       </div>
-      <div className="m-10 flex">
+      <div className="m-10 lg:flex">
         <div className="mx-20">
           <img
             className="transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300"

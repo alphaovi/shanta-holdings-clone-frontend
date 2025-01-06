@@ -32,7 +32,7 @@ const AdminOurStory = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/v1/our-story/our-story"
+          "https://shanti-holdings-backend.vercel.app/api/v1/our-story/our-story"
         );
         const data = response.data.data;
         setStoryData(data);
@@ -96,7 +96,7 @@ const AdminOurStory = () => {
       }
 
       const response = await axios.patch(
-        "http://localhost:5000/api/v1/our-story/our-story",
+        "https://shanti-holdings-backend.vercel.app/api/v1/our-story/our-story",
         updatedData
       );
 
@@ -176,9 +176,9 @@ const AdminOurStory = () => {
               return (
                 <div key={key}>
                   <label>{key}</label>
-                  <input
+                  <textarea
                     type="text"
-                    className="border border-gray-300 rounded w-full p-2"
+                    className="border border-gray-300 rounded w-full p-2 textarea textarea-bordered textarea-lg  max-w-xs"
                     value={storyData[key]}
                     onChange={(e) => handleInputChange(key, e.target.value)}
                   />

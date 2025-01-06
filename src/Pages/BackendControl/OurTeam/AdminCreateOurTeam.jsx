@@ -73,7 +73,7 @@ const AdminCreateOurTeam = () => {
       console.log("Payload being sent to backend:", newTeamTwoData);
 
       const response = await axios.post(
-        `http://localhost:5000/api/v1/team-two/team-two`,
+        `https://shanti-holdings-backend.vercel.app/api/v1/team-two/team-two`,
         newTeamTwoData
       );
 
@@ -99,7 +99,10 @@ const AdminCreateOurTeam = () => {
   return (
     <div>
       <h1 className="text-3xl text-center font-bold mb-5">Create New Team</h1>
-      <Link to={"/admin/our-team"} className="btn btn-primary text-white w-20 mb-5">
+      <Link
+        to={"/admin/our-team"}
+        className="btn btn-primary text-white w-20 mb-5"
+      >
         <FaArrowAltCircleLeft />
       </Link>
       <form onSubmit={handleCreateTeamTwo}>

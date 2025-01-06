@@ -10,7 +10,7 @@ const useSeniorTeam = () => {
     const fetchOurSeniorTeam = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/v1/senior-team/senior-team"
+          "https://shanti-holdings-backend.vercel.app/api/v1/senior-team/senior-team"
         );
 
         // Assuming the API returns data in a format like { data: [...] }

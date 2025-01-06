@@ -14,7 +14,7 @@ const Portfolio = () => {
     const fetchPortfolioData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/v1/portfolio"
+          "https://shanti-holdings-backend.vercel.app/api/v1/portfolio"
         );
         if (response.data && response.data.data && response.data.data[0]) {
           setPortfolioData(response.data.data[0]);

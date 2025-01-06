@@ -16,7 +16,7 @@ const AdminCreateExplore = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/v1/explore-project/explore-project",
+        "https://shanti-holdings-backend.vercel.app/api/v1/explore-project/explore-project",
         project
       );
 

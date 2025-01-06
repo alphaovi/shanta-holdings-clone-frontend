@@ -29,6 +29,7 @@ import AdminOurStory from "../Pages/BackendControl/OurStory/AdminOurStory";
 import AdminOurTeam from "../Pages/BackendControl/OurTeam/AdminOurTeam";
 import AdminCreateOurTeam from "../Pages/BackendControl/OurTeam/AdminCreateOurTeam";
 import AdminCreateSeniorTeam from "../Pages/BackendControl/OurTeam/AdminCreateSeniorTeam";
+import Contact from "../Pages/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
       {
         path: "/life-at-chuti",
         element: <LifeAtShanta></LifeAtShanta>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
       },
     ],
   },

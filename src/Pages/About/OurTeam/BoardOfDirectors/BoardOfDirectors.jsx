@@ -17,7 +17,14 @@ const BoardOfDirectors = () => {
 
   // Show loading state until data is fetched
   if (!ourManagementTeamDatas) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <span className="loading loading-bars loading-xs"></span>
+        <span className="loading loading-bars loading-sm"></span>
+        <span className="loading loading-bars loading-md"></span>
+        <span className="loading loading-bars loading-lg"></span>
+      </div>
+    );
   }
 
   const handleToggleShowBio = (_id) => {
@@ -31,7 +38,7 @@ const BoardOfDirectors = () => {
         <h1 className="text-6xl font-bold text-center">Board Of Directors</h1>
       </div>
       <div className="mx-20">
-        <div className="flex">
+        <div className="lg:flex">
           <div className="flex-1">
             <img src={ourManagementTeamDatas.managingDirectorImage} alt="" />
           </div>
@@ -48,7 +55,7 @@ const BoardOfDirectors = () => {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-3">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2">
           {ourTeamDatas.map((ourTeamData) => (
             <div className="mb-10 flex-1 p-2" key={ourTeamData._id}>
               <img className="h-60 w-72" src={ourTeamData.photo} alt="" />

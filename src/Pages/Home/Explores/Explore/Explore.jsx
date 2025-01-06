@@ -16,7 +16,7 @@ const ExploreVideos = () => {
     try {
       setIsLoading(true);
       const response = await axios.get(
-        "http://localhost:5000/api/v1/explore-project/explore-project"
+        "https://shanti-holdings-backend.vercel.app/api/v1/explore-project/explore-project"
       );
       console.log(response.data);
       setVideos(response.data.data || []); // Ensure videos is an array
@@ -33,7 +33,9 @@ const ExploreVideos = () => {
   }, []);
 
   const extractYouTubeID = (url) => {
-    const match = url?.match(/(?:youtu\.be\/|youtube\.com(?:\/embed\/|\/v\/|\/watch\?v=|\/\?v=))([^&?\/\s]{11})/);
+    const match = url?.match(
+      /(?:youtu\.be\/|youtube\.com(?:\/embed\/|\/v\/|\/watch\?v=|\/\?v=))([^&?\/\s]{11})/
+    );
     return match ? match[1] : null;
   };
 
@@ -102,10 +104,10 @@ const ExploreVideos = () => {
                   className="absolute bottom-4 right-4  text-white px-4 py-2 rounded"
                 >
                   {isMute ? (
-                              <GoMute className="border rounded-full w-16 h-16 p-2" />
-                            ) : (
-                              <GoUnmute className="border rounded-full w-16 h-16 p-2 " />
-                            )}
+                    <GoMute className="border rounded-full w-16 h-16 p-2" />
+                  ) : (
+                    <GoUnmute className="border rounded-full w-16 h-16 p-2 " />
+                  )}
                 </button>
               </div>
             );

@@ -8,11 +8,10 @@ const Footer = () => {
     const fetchedData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/v1/connect/connect"
+          "https://shanti-holdings-backend.vercel.app/api/v1/connect/connect"
         );
         const data = response.data.data;
         setContactData(data);
-
       } catch (error) {
         console.log(error);
       }

@@ -13,7 +13,7 @@ const AdminGetExplore = () => {
     try {
       setIsLoading(true);
       const response = await axios.get(
-        "http://localhost:5000/api/v1/explore-project/explore-project"
+        "https://shanti-holdings-backend.vercel.app/api/v1/explore-project/explore-project"
       );
       console.log(response.data);
       setProjects(response.data.data); // Adjust if API response structure differs
@@ -28,10 +28,12 @@ const AdminGetExplore = () => {
   const deleteProject = async (projectId) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/v1/explore-project/explore-project/${projectId}`
+        `https://shanti-holdings-backend.vercel.app/api/v1/explore-project/explore-project/${projectId}`
       );
       toast.success("Project deleted successfully!");
-      setProjects((prev) => prev.filter((project) => project._id !== projectId));
+      setProjects((prev) =>
+        prev.filter((project) => project._id !== projectId)
+      );
     } catch (error) {
       console.error("Error deleting project:", error);
       toast.error("Failed to delete project");
@@ -65,7 +67,9 @@ const AdminGetExplore = () => {
     <section>
       <div>
         <Link to={"/admin/create-explore"}>
-          <button className="btn btn-primary mb-10">Create Explore Project</button>
+          <button className="btn btn-primary bg-[#8E8A20] border-none text-white hover:bg-[#9c992b] mb-10">
+            Create Explore Project
+          </button>
         </Link>
       </div>
       <div>
@@ -77,13 +81,11 @@ const AdminGetExplore = () => {
             {projects.map((project) => {
               const videoId = extractYouTubeID(project.url);
               return (
-                <div
-                  key={project._id}
-                  className="border p-2 mx-5 rounded"
-                >
+                <div key={project._id} className="border p-2 mx-5 rounded">
                   <div>
                     <p className="mb-5 text-xl">
-                      Name of project: <span className="font-bold">{project.name}</span>
+                      Name of project:{" "}
+                      <span className="font-bold">{project.name}</span>
                     </p>
                     {videoId ? (
                       <YouTube

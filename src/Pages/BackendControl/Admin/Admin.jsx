@@ -19,7 +19,7 @@ const Admin = () => {
       <div>
         <div className="navbar bg-base-100">
           <div className="flex-1">
-            <h1 className="text-xl">Welcome,</h1>
+            <h1 className="text-xl">Welcome to Chuti Harmony Admin</h1>
             <h1 className="mx-10">{user?.email || navigate("/login")}</h1>
           </div>
           <div className="flex-none">

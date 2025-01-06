@@ -10,7 +10,7 @@ const AdminConnect = () => {
     description2: "",
     hotline: "",
     sales: "",
-    email:"",
+    email: "",
     address: "",
     image: "",
   });
@@ -24,7 +24,7 @@ const AdminConnect = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/v1/connect/connect"
+          "https://shanti-holdings-backend.vercel.app/api/v1/connect/connect"
         );
         const data = response.data.data; // Adjust based on your API's response structure
         setConnectionData(data);
@@ -79,7 +79,7 @@ const AdminConnect = () => {
       };
 
       const response = await axios.patch(
-        "http://localhost:5000/api/v1/connect/connect",
+        "https://shanti-holdings-backend.vercel.app/api/v1/connect/connect",
         updatedData
       );
 
@@ -112,7 +112,9 @@ const AdminConnect = () => {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-center mb-10">Admin Connect</h1>
+      <h1 className="text-3xl font-bold text-center mb-10">
+        Admin Contact / Connect
+      </h1>
       <form onSubmit={handleConnectionUpdate} className="space-y-4">
         <div>
           <label>Title One</label>

@@ -24,9 +24,14 @@ const AdminOurTeam = () => {
 
   const [ourTeamDatas, setOurTeamDatas] = useTeamData();
 
-  const [ourSeniorTeams, setOurSeniorTeams, seniorTeamError, seniorTeamLoading] = useSeniorTeam();
+  const [
+    ourSeniorTeams,
+    setOurSeniorTeams,
+    seniorTeamError,
+    seniorTeamLoading,
+  ] = useSeniorTeam();
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [previewImages, setPreviewImages] = useState({}); // Holds previews of fetched and selected images
   const [error, setError] = useState(null);
 
@@ -42,7 +47,7 @@ const AdminOurTeam = () => {
     const fetchedData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/v1/team-member/team-member"
+          "https://shanti-holdings-backend.vercel.app/api/v1/team-member/team-member"
         );
         const loadedData = response.data.data;
         setTeamData(loadedData);
@@ -103,11 +108,12 @@ const AdminOurTeam = () => {
   // Update team data
   const handleTeamUpdate = async (event) => {
     event.preventDefault();
+
     setIsLoading(true);
 
     try {
       const response = await axios.patch(
-        "http://localhost:5000/api/v1/team-member/team-member",
+        "https://shanti-holdings-backend.vercel.app/api/v1/team-member/team-member",
         teamData
       );
 
@@ -125,7 +131,7 @@ const AdminOurTeam = () => {
   const handleDeleteTeamMember = async (teamTwoId) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/v1/team-two/team-two/${teamTwoId}`
+        `https://shanti-holdings-backend.vercel.app/api/v1/team-two/team-two/${teamTwoId}`
       );
       // Remove the deleted project from the state
       setOurTeamDatas((prevTeamTwoMembers) =>
@@ -142,7 +148,7 @@ const AdminOurTeam = () => {
   const handleDeleteSeniorTeamMember = async (seniorTeamId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/v1/senior-team/senior-team/${seniorTeamId}`
+        `https://shanti-holdings-backend.vercel.app/api/v1/senior-team/senior-team/${seniorTeamId}`
       );
 
       if (response.status === 200) {
@@ -172,7 +178,7 @@ const AdminOurTeam = () => {
               Create Team
             </Link>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-3 gap-4">
             {ourTeamDatas.map((ourTeamData) => (
               <AdminOurTeamData
                 key={ourTeamData._id}
@@ -181,6 +187,9 @@ const AdminOurTeam = () => {
               ></AdminOurTeamData>
             ))}
           </div>
+        </div>
+        <div className="text-3xl text-center my-10 font-bold ">
+          <h1>Our Senior Team</h1>
         </div>
         <div className="mb-20">
           <div>
@@ -192,23 +201,30 @@ const AdminOurTeam = () => {
             </Link>
           </div>
           <div className="mb-20">
-        
-        <div className="grid grid-cols-2">
-          {seniorTeamLoading ? (
-            <p>Loading...</p>
-          ) : seniorTeamError ? (
-            <p className="text-red-500">Error: {seniorTeamError}</p>
-          ) : (
-            ourSeniorTeams.map((team) => (
-              <AdminGetAndDeleteSeniorTeam
-                key={team._id}
-                ourSeniorTeam={team}
-                onDelete={handleDeleteSeniorTeamMember}
-              />
-            ))
-          )}
+            <div className="grid grid-cols-3 gap-4 ">
+              {seniorTeamLoading ? (
+                <div>
+                  <span className="loading loading-bars loading-xs"></span>
+                  <span className="loading loading-bars loading-sm"></span>
+                  <span className="loading loading-bars loading-md"></span>
+                  <span className="loading loading-bars loading-lg"></span>
+                </div>
+              ) : seniorTeamError ? (
+                <p className="text-red-500">Error: {seniorTeamError}</p>
+              ) : (
+                ourSeniorTeams.map((team) => (
+                  <AdminGetAndDeleteSeniorTeam
+                    key={team._id}
+                    ourSeniorTeam={team}
+                    onDelete={handleDeleteSeniorTeamMember}
+                  />
+                ))
+              )}
+            </div>
+          </div>
         </div>
-      </div>
+        <div className="text-3xl text-center my-10 font-bold ">
+          <h1>Update Your Team Information</h1>
         </div>
 
         <div>
@@ -216,7 +232,7 @@ const AdminOurTeam = () => {
             <div className="space-y-4 grid lg:grid-cols-2 gap-20 justify-around">
               {/* Team Cover Photo */}
               <div>
-                <label>Cover Image</label>
+                <label className="font-bold text-xl">Cover Image</label>
                 {previewImages.teamCoverPhoto && (
                   <img
                     src={previewImages.teamCoverPhoto}
@@ -234,7 +250,9 @@ const AdminOurTeam = () => {
 
               {/* Managing Director Name */}
               <div>
-                <label>Managing Director Name</label>
+                <label className="font-bold text-xl">
+                  Managing Director Name
+                </label>
                 <input
                   type="text"
                   className="border border-gray-300 rounded w-full p-2"
@@ -250,7 +268,9 @@ const AdminOurTeam = () => {
 
               {/* Managing Director Details */}
               <div>
-                <label>Managing Director Details</label>
+                <label className="font-bold text-xl">
+                  Managing Director Details
+                </label>
                 <textarea
                   className="textarea textarea-bordered h-40 w-full"
                   value={teamData.managingDirectorDetails}
@@ -265,7 +285,9 @@ const AdminOurTeam = () => {
 
               {/* Managing Director Image */}
               <div>
-                <label>Managing Director Image</label>
+                <label className="font-bold text-xl">
+                  Managing Director Image
+                </label>
                 {previewImages.managingDirectorImage && (
                   <img
                     src={previewImages.managingDirectorImage}
@@ -283,7 +305,7 @@ const AdminOurTeam = () => {
 
               {/* CEO Name */}
               <div>
-                <label>CEO Name</label>
+                <label className="font-bold text-xl">CEO Name</label>
                 <input
                   type="text"
                   className="border border-gray-300 rounded w-full p-2"
@@ -299,7 +321,7 @@ const AdminOurTeam = () => {
 
               {/* CEO Photo */}
               <div>
-                <label>CEO Photo</label>
+                <label className="font-bold text-xl">CEO Photo</label>
                 {previewImages.ceoPhoto && (
                   <img
                     src={previewImages.ceoPhoto}
@@ -317,7 +339,7 @@ const AdminOurTeam = () => {
 
               {/* CEO About */}
               <div>
-                <label>CEO About</label>
+                <label className="font-bold text-xl">CEO About</label>
                 <textarea
                   className="textarea textarea-bordered h-40 w-full"
                   value={teamData.ceoAbout}
@@ -332,7 +354,7 @@ const AdminOurTeam = () => {
 
               {/* Full Team Image */}
               <div>
-                <label>Full Team Image</label>
+                <label className="font-bold text-xl">Full Team Image</label>
                 {previewImages.fullTeamImage && (
                   <img
                     src={previewImages.fullTeamImage}
@@ -350,7 +372,9 @@ const AdminOurTeam = () => {
 
               {/* Full Team Description One */}
               <div>
-                <label>Full Team Description One</label>
+                <label className="font-bold text-xl">
+                  Full Team Description One
+                </label>
                 <textarea
                   className="textarea textarea-bordered h-40 w-full"
                   value={teamData.fullTeamDescriptionOne}
@@ -365,7 +389,9 @@ const AdminOurTeam = () => {
 
               {/* Full Team Description Two */}
               <div>
-                <label>Full Team Description Two</label>
+                <label className="font-bold text-xl">
+                  Full Team Description Two
+                </label>
                 <textarea
                   className="textarea textarea-bordered h-40 w-full"
                   value={teamData.fullTeamDescriptionTwo}
@@ -383,7 +409,7 @@ const AdminOurTeam = () => {
               <input
                 className="btn btn-secondary bg-[#8E8A20] hover:bg-lime-900 border-none"
                 type="submit"
-                value="Update Our Team"
+                value={isLoading ? "Updating..." : "Update Our Team"}
                 disabled={isLoading}
               />
             </div>

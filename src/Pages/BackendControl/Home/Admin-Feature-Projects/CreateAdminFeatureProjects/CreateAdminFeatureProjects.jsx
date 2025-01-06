@@ -55,7 +55,7 @@ const CreateAdminFeatureProjects = () => {
       const newProject = {
         projectType: project.projectType,
         projectName: project.projectName,
-        address: project.address, 
+        address: project.address,
         projectImg: imageUrl,
         projectVideo: project.projectVideo,
       };
@@ -63,7 +63,7 @@ const CreateAdminFeatureProjects = () => {
       console.log("Sending data to API:", newProject); // Debugging
 
       const response = await axios.post(
-        "http://localhost:5000/api/v1/feature-project/create-feature-project",
+        "https://shanti-holdings-backend.vercel.app/api/v1/feature-project/create-feature-project",
         newProject
       );
 

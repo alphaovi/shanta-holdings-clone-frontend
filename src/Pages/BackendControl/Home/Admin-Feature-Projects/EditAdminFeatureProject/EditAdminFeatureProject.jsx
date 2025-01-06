@@ -13,7 +13,7 @@ const EditAdminFeatureProject = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/api/v1/feature-project/feature-project/${projectId}`
+      `https://shanti-holdings-backend.vercel.app/api/v1/feature-project/feature-project/${projectId}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -64,7 +64,7 @@ const EditAdminFeatureProject = () => {
       // Update the project data
       const updatedProject = { ...project, projectImg: imageUrl };
       const response = await axios.patch(
-        `http://localhost:5000/api/v1/feature-project/feature-project/${projectId}`,
+        `https://shanti-holdings-backend.vercel.app/api/v1/feature-project/feature-project/${projectId}`,
         updatedProject
       );
       setProject(response.data);

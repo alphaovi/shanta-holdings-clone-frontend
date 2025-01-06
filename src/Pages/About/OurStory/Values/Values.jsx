@@ -14,12 +14,19 @@ const Values = () => {
   }, []);
 
   if (!ourStory) {
-    return <p>Loading...</p>;
+    return (
+      <div>
+        <span className="loading loading-bars loading-xs"></span>
+        <span className="loading loading-bars loading-sm"></span>
+        <span className="loading loading-bars loading-md"></span>
+        <span className="loading loading-bars loading-lg"></span>
+      </div>
+    );
   }
   return (
     <section className="bg-[#212121]">
       <div>
-        <h1 className="text-8xl text-white text-center mb-20 pt-10">
+        <h1 className="lg:text-8xl text-white text-center mb-15 pt-10">
           <span className="mr-40">V</span>
           <span className="mr-40">A</span>
           <span className="mr-40">L</span>
