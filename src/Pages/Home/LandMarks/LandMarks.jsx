@@ -30,7 +30,7 @@ const LandMarks = () => {
   }, []);
 
   return (
-    <section className="mt-10 sm:mt-20 md:mt-24 lg:mt-32">
+    <section className="mt-10  md:mt-24 lg:mt-32">
       <div className="text-center font-familyLandMarks px-5 sm:px-10 md:px-16">
         {/* You can choose to use the animation directly */}
         {/* <motion.div

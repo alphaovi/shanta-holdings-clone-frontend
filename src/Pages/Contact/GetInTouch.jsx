@@ -11,7 +11,7 @@ const GetInTouch = () => {
     const fetchedData = async () => {
       try {
         const response = await axios.get(
-          "https://shanti-holdings-backend.vercel.app/api/v1/connect/connect"
+          "https://chutiharmony-server.vercel.app/api/v1/connect/connect"
         );
         const data = response.data.data;
         setContactData(data);
@@ -35,7 +35,7 @@ const GetInTouch = () => {
       </div>
       <div className="-mt-32">
         <div className="hero  min-h-screen">
-          <div className="hero-content grid grid-cols-2 gap-20 font-medium mt-32">
+          <div className="hero-content grid lg:grid-cols-2 gap-20 font-medium mt-32">
             <div>
               <img src="https://i.ibb.co.com/yp0H29x/8.jpg" alt="" />
             </div>

@@ -4,7 +4,7 @@ const LandMarksDetailsAndPhotos = () => {
   const [commitment, setCommitment] = useState("");
 
   useEffect(() => {
-    fetch("https://shanti-holdings-backend.vercel.app/api/v1/withness/withness")
+    fetch("https://chutiharmony-server.vercel.app/api/v1/withness/withness")
       .then((res) => res.json())
       .then((data) => {
         setCommitment(data.data);
@@ -13,7 +13,7 @@ const LandMarksDetailsAndPhotos = () => {
   }, []);
 
   return (
-    <section className="flex cols-3 items-center justify-center text-3xl p-20 font-familyPortfolio">
+    <section className="lg:flex cols-3 items-center justify-center text-3xl p-20 font-familyPortfolio">
       <div>
         <div className="mb-20 font-familyPortfolio w-72">
           <p className="text-[#8E8A1F]">{commitment.totalAreaInputOne}+</p>

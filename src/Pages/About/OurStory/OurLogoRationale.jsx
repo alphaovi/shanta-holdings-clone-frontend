@@ -20,11 +20,11 @@ const OurLogoRationale = () => {
 
   return (
     <section
-      className={`flex ${
+      className={`lg:grid grid-cols-2 ${
         darkMode ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
-      <div className="flex-1">
+      <div className="">
         <img className="w-full h-auto p-20" src={ourLogo} alt="Our Logo" />
       </div>
       <div className="flex-1 p-20  text-xl -mt-18">

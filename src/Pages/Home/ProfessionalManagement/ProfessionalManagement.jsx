@@ -72,7 +72,7 @@ const ProfessionalManagement = () => {
           <Marquee>
             <p
               className={`${
-                darkMode ? "text-white" : "text-black"
+                darkMode ? "text-white" : "text-black bg-[#FFFFFF80]"
               } text-5xl font-bold uppercase space-y-5`}
             >
               Prime Locations . Leading Consultants . Top Quality Materials .

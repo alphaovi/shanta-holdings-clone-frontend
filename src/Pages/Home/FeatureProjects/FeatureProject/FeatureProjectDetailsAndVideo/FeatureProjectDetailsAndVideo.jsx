@@ -37,32 +37,46 @@ const FeatureProjectDetailsAndVideo = () => {
   useEffect(() => {
     handleVideoPlayer();
   }, []);
+
   return (
-    <section>
-      <div className={`ml-36 -mt-[480px] uppercase text-white  `}>
-        <h1 className="text-xl mb-2 text-white">Feature Projects</h1>
+    <section className="px-4 sm:px-8 lg:px-16">
+      <div
+        className={`ml-8 lg:ml-36 mt-8 sm:mt-12 lg:-mt-[480px] uppercase text-white`}
+      >
+        <h1 className="text-lg sm:text-xl mb-2 text-white">
+          Feature Projects
+        </h1>
         <Slider {...settings2}>
           {featureProjects.map((featureProject) => (
-            <div key={featureProject._id} className={`${darkMode ? "" : "opacity-75"}`}>
-              <h1 className="text-[18.5px]">{featureProject.projectType}</h1>
-              <h1 className="text-4xl mt-4 ">{featureProject.projectName}</h1>
-              <p className="text-xl mt-6">{featureProject.address}</p>
+            <div
+              key={featureProject._id}
+              className={`${darkMode ? "" : "opacity-75"}`}
+            >
+              <h1 className="text-base sm:text-lg lg:text-[18.5px]">
+                {featureProject.projectType}
+              </h1>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl mt-4">
+                {featureProject.projectName}
+              </h1>
+              <p className="text-base sm:text-lg lg:text-xl mt-6">
+                {featureProject.address}
+              </p>
               <div>
                 <button
                   onClick={() => console.log("HI")}
                   className={`${
                     darkMode ? "text-white" : "text-white "
-                  } btn btn-outline  mt-16 featureProject-font text-xl border-none bg-none `}
+                  } btn btn-outline mt-8 sm:mt-12 lg:mt-16 featureProject-font text-sm sm:text-lg lg:text-xl border-none bg-none`}
                 >
-                <FiArrowRightCircle/>  View Project
+                  <FiArrowRightCircle className="inline-block mr-2" />
+                  View Project
                 </button>
-                
               </div>
             </div>
           ))}
         </Slider>
       </div>
-      <div className="w-[550px] mr-20 -mt-60  float-end">
+      <div className="w-full sm:w-[450px] lg:w-[550px] mx-auto lg:mr-20 mt-12 lg:-mt-60 float-none lg:float-end">
         <FeatureProjectSlide></FeatureProjectSlide>
       </div>
     </section>

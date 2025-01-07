@@ -16,7 +16,7 @@ const ExploreVideos = () => {
     try {
       setIsLoading(true);
       const response = await axios.get(
-        "https://shanti-holdings-backend.vercel.app/api/v1/explore-project/explore-project"
+        "https://chutiharmony-server.vercel.app/api/v1/explore-project/explore-project"
       );
       console.log(response.data);
       setVideos(response.data.data || []); // Ensure videos is an array

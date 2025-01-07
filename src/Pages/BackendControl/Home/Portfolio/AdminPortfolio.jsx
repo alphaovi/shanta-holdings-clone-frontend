@@ -16,7 +16,7 @@ const AdminPortfolio = () => {
 
     try {
       const response = await axios.patch(
-        "https://shanti-holdings-backend.vercel.app/api/v1/portfolio/update-portfolio",
+        "https://chutiharmony-server.vercel.app/api/v1/portfolio/update-portfolio",
         {
           description: updateDescription,
         }
@@ -33,7 +33,7 @@ const AdminPortfolio = () => {
     const fetchPortfolioData = async () => {
       try {
         const response = await axios.get(
-          "https://shanti-holdings-backend.vercel.app/api/v1/portfolio"
+          "https://chutiharmony-server.vercel.app/api/v1/portfolio"
         );
         if (response.data && response.data.data && response.data.data[0]) {
           setPortfolioData(response.data.data[0]);

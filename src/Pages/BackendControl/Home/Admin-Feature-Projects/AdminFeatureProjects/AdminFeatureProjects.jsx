@@ -12,7 +12,7 @@ const AdminFeatureProjects = () => {
   const fetchFeatureProjects = async () => {
     try {
       const response = await axios.get(
-        "https://shanti-holdings-backend.vercel.app/api/v1/feature-project/feature-project"
+        "https://chutiharmony-server.vercel.app/api/v1/feature-project/feature-project"
       );
       if (response.data.data) {
         setFeatureProjects(response.data.data);
@@ -33,7 +33,7 @@ const AdminFeatureProjects = () => {
   const handleDeleteProject = async (projectId) => {
     try {
       await axios.delete(
-        `https://shanti-holdings-backend.vercel.app/api/v1/feature-project/feature-project/${projectId}`
+        `https://chutiharmony-server.vercel.app/api/v1/feature-project/feature-project/${projectId}`
       );
       // Remove the deleted project from the state
       setFeatureProjects((prevProjects) =>

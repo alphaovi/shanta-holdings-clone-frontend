@@ -9,7 +9,7 @@ const useTeamCoverAndMD = () => {
     const fetchOurTeamData = async () => {
       try {
         const response = await axios.get(
-          `https://shanti-holdings-backend.vercel.app/api/v1/team-member/team-member`
+          `https://chutiharmony-server.vercel.app/api/v1/team-member/team-member`
         );
 
         if (response.data?.data) {

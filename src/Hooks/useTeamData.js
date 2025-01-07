@@ -8,7 +8,7 @@ const useTeamData = () => {
     const fetchOurTeamTwo = async () => {
       try {
         const response = await fetch(
-          `https://shanti-holdings-backend.vercel.app/api/v1/team-two/team-two`
+          `https://chutiharmony-server.vercel.app/api/v1/team-two/team-two`
         );
         const data = await response.json();
 

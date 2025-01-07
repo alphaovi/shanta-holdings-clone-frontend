@@ -8,7 +8,7 @@ const Footer = () => {
     const fetchedData = async () => {
       try {
         const response = await axios.get(
-          "https://shanti-holdings-backend.vercel.app/api/v1/connect/connect"
+          "https://chutiharmony-server.vercel.app/api/v1/connect/connect"
         );
         const data = response.data.data;
         setContactData(data);
@@ -29,7 +29,7 @@ const Footer = () => {
           <li className="hover:text-[#b6af61] hover:underline cursor-pointer">
             Sales: {contactData.sales}
           </li>
-          <li className="hover:text-[#b6af61] hover:underline cursor-pointer ">
+          <li className="hover:text-[#b6af61] lg:w-96 hover:underline cursor-pointer ">
             Email: {contactData.email}
           </li>
           <p className="text-sm mt-4 sm:mt-10 text-center sm:text-left">

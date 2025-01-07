@@ -81,7 +81,7 @@ const SignIn = () => {
                     Forgot password?
                   </Link>
                 </label>
-                <label className="label">
+                {/* <label className="label">
                   <Link
                     to="/admin-register"
                     className="label-text-alt link link-hover text-[#8E8A1F] text-xl"
@@ -89,7 +89,7 @@ const SignIn = () => {
                     New Chuti Harmony?{" "}
                     <span className=" text-xl">Register</span>
                   </Link>
-                </label>
+                </label> */}
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary text-xl">Login</button>

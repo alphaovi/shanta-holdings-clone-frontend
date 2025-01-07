@@ -7,7 +7,7 @@ import LandMarksDetailsAndPhotos from "../LandMarksDetailsAndPhotos/LandMarksDet
 import Portfolio from "../Portfolio/Portfolio";
 import ProfessionalManagement from "../ProfessionalManagement/ProfessionalManagement";
 import Projects from "../Projects/Projects";
-import ProjectsImageSlider from "../Projects/ProjectsImageSlider/ProjectsImageSlider";
+// import ProjectsImageSlider from "../Projects/ProjectsImageSlider/ProjectsImageSlider";
 import "./Home.css";
 
 const Home = () => {
@@ -28,7 +28,7 @@ const Home = () => {
       <div className="">
         <FeatureProject></FeatureProject>
       </div>
-      <div className="">
+      <div className="lg:mb-20">
         <LandMarks></LandMarks>
       </div>
       <div>

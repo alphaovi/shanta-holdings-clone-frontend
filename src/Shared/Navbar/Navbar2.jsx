@@ -123,60 +123,57 @@ const Navbar2 = () => {
                   className="w-full p-2 border rounded mt-5 md:mt-10"
                 />
               </li>
-              <li className="hover:text-[#8F8933]">
+              <li className="hover:text-[#8F8933] pt-3 px-5">
                 <Link to="/">Home</Link>
               </li>
-              <li className="hover:text-[#8F8933]">
-                <Link to="/our-story">Our Story</Link>
-              </li>
-              <li className="hover:text-[#8F8933]">
-                <Link to={"/our-team"}>Our Team</Link>
-              </li>
-              <li className="hover:text-[#8F8933]">
-                <Link to={"/our-business"}>Our Business</Link>
-              </li>
-              {/* Uncomment if for active About chuti */}
-              {/* <li>
+
+              <li className="px-5">
                 <button
                   onClick={() => showSubMenu("about")}
                   className="flex items-center w-full hover:text-[#8F8933]"
+                  style={{ marginTop: "0px" }}
                 >
                   About Chuti{" "}
                   <MdOutlineKeyboardArrowRight className="ml-3 md:ml-5" />
                 </button>
-              </li> */}
-              <li>
+              </li>
+              <li className="px-5 ">
                 <button
                   onClick={() => showSubMenu("projects")}
                   className="flex items-center w-full hover:text-[#8F8933]"
+                  style={{ marginTop: "0px" }}
                 >
                   Projects{" "}
                   <MdOutlineKeyboardArrowRight className="ml-3 md:ml-5" />
                 </button>
               </li>
-              {/* <li className="mt-5 md:mt-10 hover:text-[#8F8933]">
+              <li className="mt-5 px-5 md:mt-10 hover:text-[#8F8933]">
                 <Link to="/life-at-chuti">Life At Chuti</Link>
-              </li> */}
-              <li className="mt-5 md:mt-10 hover:text-[#8F8933]">
-                <Link to="/contact">Contact</Link>
               </li>
-              {/* <li>
+              <li className="mt-5 px-5 md:mt-10 hover:text-[#8F8933]">
+                <Link to="/careers">Careers</Link>
+              </li>
+              <li className=" px-5 hover:text-[#8F8933]">
+                <Link to="/careers">News & Events</Link>
+              </li>
+              <li className="px-5">
                 <button
                   onClick={() => showSubMenu("contact")}
                   className="flex items-center w-full hover:text-[#8F8933]"
+                  style={{ marginTop: "0px" }}
                 >
                   Contact Us{" "}
                   <MdOutlineKeyboardArrowRight className="ml-3 md:ml-5" />
                 </button>
-              </li> */}
+              </li>
             </ul>
           )}
 
           {/* Submenus */}
           {/* uncomment and it'll active */}
-          {/* {currentMenu === "about" && (
+          {currentMenu === "about" && (
             <ul className="menu-list space-y-3 md:space-y-4 p-4 md:p-6 ml-3 md:ml-5">
-              <li>
+              <li className="px-7">
                 <button
                   onClick={showMainMenu}
                   className="flex items-center space-x-2 hover:text-[#8F8933]"
@@ -184,27 +181,36 @@ const Navbar2 = () => {
                   <FaRegArrowAltCircleLeft /> Back
                 </button>
               </li>
-              <li className="hover:text-[#8F8933]">
+              <h2 className="text-3xl font-bold px-8 text-[#8F8933]">
+                About Chuti
+              </h2>
+              <li className="hover:text-[#8F8933] px-7">
                 <Link to="/our-story">Our Story</Link>
               </li>
-              <li className="hover:text-[#8F8933]">
+              <li className="hover:text-[#8F8933] px-7">
                 <Link to={"/our-team"}>Our Team</Link>
               </li>
-              <li className="hover:text-[#8F8933]">
-                <Link to={"/why-chuti"}>Why Chuti?</Link>
+              <li className="hover:text-[#8F8933] px-7">
+                <Link to={"/why-chuti"}>Why Chuti ?</Link>
               </li>
-              <li className="hover:text-[#8F8933]">
+              <li className="hover:text-[#8F8933] px-7">
                 <Link to={"/our-business"}>Our Business</Link>
               </li>
-              <li className="hover:text-[#8F8933]">
+              <li className="hover:text-[#8F8933] px-7">
                 <Link to={"/our-clients"}>Our Clients</Link>
               </li>
+              <li className="hover:text-[#8F8933] px-7">
+                <Link to={"/ehs"}>EHS</Link>
+              </li>
+              <li className="hover:text-[#8F8933] px-7">
+                <Link to={"/csr"}>CSR</Link>
+              </li>
             </ul>
-          )} */}
+          )}
 
           {currentMenu === "projects" && (
             <ul className="menu-list space-y-3 md:space-y-4 p-4 md:p-6 ml-3 md:ml-5 mt-5 md:mt-10">
-              <li>
+              <li className="px-7">
                 <button
                   onClick={showMainMenu}
                   className="flex items-center space-x-2"
@@ -212,28 +218,45 @@ const Navbar2 = () => {
                   <FaRegArrowAltCircleLeft /> Back
                 </button>
               </li>
-              <li className="hover:text-[#8F8933]">Ongoing Projects</li>
-              <li className="hover:text-[#8F8933]">Upcoming Projects</li>
-              <li className="hover:text-[#8F8933]">Completed Projects</li>
+              <h2 className="text-3xl font-bold px-8 text-[#8F8933]">
+                Projects
+              </h2>
+              <li className="hover:text-[#8F8933] px-7">
+                <Link to={"/"}>Ongoing Projects </Link>
+              </li>
+              <li className="hover:text-[#8F8933] px-7">
+                <Link to={"/"}>Upcoming Projects </Link>
+              </li>
+              <li className="hover:text-[#8F8933] px-7">
+                <Link to={"/"}>Completed Projects </Link>
+              </li>
             </ul>
           )}
 
-          {/* {currentMenu === "contact" && (
+          {currentMenu === "contact" && (
             <ul className="menu-list space-y-3 md:space-y-4 p-4 md:p-6 ml-3 md:ml-5">
               <li>
                 <button
                   onClick={showMainMenu}
-                  className="flex items-center space-x-2"
+                  className="flex items-center space-x-2 px-7"
                 >
                   <FaRegArrowAltCircleLeft /> Back
                 </button>
               </li>
-              <li className="hover:text-[#8F8933]"><Link to={"/contact"}>Contact Info</Link></li>
-              <li className="hover:text-[#8F8933]"><Link to={"/location"}>Location</Link></li>
-              <li className="hover:text-[#8F8933]"><Link to={"/email"}>Email</Link></li>
-              <li className="hover:text-[#8F8933]"><Link to={"/support"}>Support</Link></li>
+              <h2 className="text-3xl font-bold px-8 text-[#8F8933]">
+                Contact Us
+              </h2>
+              <li className="hover:text-[#8F8933] px-7">
+                <Link to={"/contact"}>Contact</Link>
+              </li>
+              <li className="hover:text-[#8F8933] px-7">
+                <Link to={"/location"}>Landowners</Link>
+              </li>
+              <li className="hover:text-[#8F8933] px-7">
+                <Link to={"/email"}>Clients</Link>
+              </li>
             </ul>
-          )} */}
+          )}
 
           <div className="flex gap-5 md:gap-8 ml-3 md:ml-5 mt-5 md:mt-10 justify-center text-3xl md:text-4xl ">
             <CiFacebook className="border-[#978c21] text-white border-2 rounded-full p-1 hover:text-[#8F8933]" />

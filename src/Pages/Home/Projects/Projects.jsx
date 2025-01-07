@@ -23,7 +23,7 @@ const Projects = () => {
     <section className={`mb-20 font-familyProjects`}>
       <div data-aos="fade-left" className="flex justify-end mr-20 mb-8">
         <h1
-          className={`text-8xl font-bold uppercase ${
+          className={`lg:text-8xl font-bold uppercase ${
             darkMode ? "projectWordDesign" : "projectWordDesignForLight"
           }  ${darkMode ? "" : "font-bold"}`}
         >

@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const EditAdminFeatureProject = () => {
   const { projectId } = useParams();
@@ -13,7 +14,7 @@ const EditAdminFeatureProject = () => {
 
   useEffect(() => {
     fetch(
-      `https://shanti-holdings-backend.vercel.app/api/v1/feature-project/feature-project/${projectId}`
+      `https://chutiharmony-server.vercel.app/api/v1/feature-project/feature-project/${projectId}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -64,7 +65,7 @@ const EditAdminFeatureProject = () => {
       // Update the project data
       const updatedProject = { ...project, projectImg: imageUrl };
       const response = await axios.patch(
-        `https://shanti-holdings-backend.vercel.app/api/v1/feature-project/feature-project/${projectId}`,
+        `https://chutiharmony-server.vercel.app/api/v1/feature-project/feature-project/${projectId}`,
         updatedProject
       );
       setProject(response.data);
@@ -84,82 +85,97 @@ const EditAdminFeatureProject = () => {
   }
 
   return (
-    <div className="border border-gray-700 p-5 ">
-      <form onSubmit={handleEditProject}>
-        <h1>Type of Project</h1>
-        <input
-          onChange={(event) =>
-            setProject({ ...project, projectType: event.target.value })
-          }
-          className="border border-black rounded w-60 h-10 p-2 mb-5 mt-3"
-          type="text"
-          placeholder="What type of project?"
-          defaultValue={project.projectType}
-        />
-        <h3>Name of your project</h3>
-        <input
-          onChange={(event) =>
-            setProject({ ...project, projectName: event.target.value })
-          }
-          className="border border-black rounded w-60 h-10 p-2 mb-5 mt-3"
-          type="text"
-          placeholder="Name of your project"
-          defaultValue={project.projectName}
-        />
-        <h3>Address of your project</h3>
-        <input
-          onChange={(event) =>
-            setProject({ ...project, projectAddress: event.target.value })
-          }
-          className="border border-black rounded w-60 h-10 p-2 mb-5 mt-3"
-          type="text"
-          placeholder="Address Bar"
-          defaultValue={project.address}
-        />
-        <h3 className="mb-5">Image of your project</h3>
-        {selectedImage ? (
-          <img className="w-3/4 h-2/4 mb-3" src={selectedImage} alt="Preview" />
-        ) : (
-          <img
-            className="w-3/4 h-2/4 mb-3"
-            src={project.projectImg}
-            alt="Project"
-          />
-        )}
-        <input
-          className="mt-5"
-          type="file"
-          ref={fileInputRef}
-          onChange={handleImageChange}
-        />
-        <h3 className="my-5">Video of your project</h3>
-        <a
-          href={project.projectVideo}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-primary bg-[#a89f20] hover:bg-gray-600 text-white  border-none mb-5"
+    <section>
+      <div>
+        <Link
+          to="/admin/feature-project"
+          className="btn btn-primary mb-5 text-white border-none bg-[#8E8A20] hover:bg-[#b4b02e]"
         >
-          Watch Video
-        </a>
+          {" "}
+          <FaArrowLeftLong /> Back
+        </Link>
+      </div>
+      <div className="border border-gray-700 p-5 ">
+        <form onSubmit={handleEditProject}>
+          <h1>Type of Project</h1>
+          <input
+            onChange={(event) =>
+              setProject({ ...project, projectType: event.target.value })
+            }
+            className="border border-black rounded w-60 h-10 p-2 mb-5 mt-3"
+            type="text"
+            placeholder="What type of project?"
+            defaultValue={project.projectType}
+          />
+          <h3>Name of your project</h3>
+          <input
+            onChange={(event) =>
+              setProject({ ...project, projectName: event.target.value })
+            }
+            className="border border-black rounded w-60 h-10 p-2 mb-5 mt-3"
+            type="text"
+            placeholder="Name of your project"
+            defaultValue={project.projectName}
+          />
+          <h3>Address of your project</h3>
+          <input
+            onChange={(event) =>
+              setProject({ ...project, projectAddress: event.target.value })
+            }
+            className="border border-black rounded w-60 h-10 p-2 mb-5 mt-3"
+            type="text"
+            placeholder="Address Bar"
+            defaultValue={project.address}
+          />
+          <h3 className="mb-5">Image of your project</h3>
+          {selectedImage ? (
+            <img
+              className="w-3/4 h-2/4 mb-3"
+              src={selectedImage}
+              alt="Preview"
+            />
+          ) : (
+            <img
+              className="w-3/4 h-2/4 mb-3"
+              src={project.projectImg}
+              alt="Project"
+            />
+          )}
+          <input
+            className="mt-5"
+            type="file"
+            ref={fileInputRef}
+            onChange={handleImageChange}
+          />
+          <h3 className="my-5">Video of your project</h3>
+          <a
+            href={project.projectVideo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary bg-[#a89f20] hover:bg-gray-600 text-white  border-none mb-5"
+          >
+            Watch Video
+          </a>
 
-        <input
-          onChange={(event) =>
-            setProject({ ...project, projectVideo: event.target.value })
-          }
-          className="border border-black rounded lg:w-96 h-10 p-2 mb-5 mt-3 ml-5 "
-          type="text"
-          placeholder="Video URL"
-          defaultValue={project.projectVideo}
-        />
+          <input
+            onChange={(event) =>
+              setProject({ ...project, projectVideo: event.target.value })
+            }
+            className="border border-black rounded lg:w-96 h-10 p-2 mb-5 mt-3 ml-5 "
+            type="text"
+            placeholder="Video URL"
+            defaultValue={project.projectVideo}
+          />
 
-        <br />
-        <input
-          value={"Save Update"}
-          type="submit"
-          className="btn btn-wide btn-warning"
-        />
-      </form>
-    </div>
+          <br />
+          <input
+            value={"Save Update"}
+            type="submit"
+            className="btn btn-wide btn-warning"
+          />
+        </form>
+      </div>
+    </section>
   );
 };
 

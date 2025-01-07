@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./LetConnect.css";
-import { BsArrowRight } from "react-icons/bs";
+import { GoArrowUpRight } from "react-icons/go";
 import { DarkModeContext } from "../../../Contexts/NightLightContext";
 import axios from "axios";
 
@@ -24,7 +24,7 @@ const LetConnect = () => {
     const fetchedData = async () => {
       try {
         const response = await axios.get(
-          "https://shanti-holdings-backend.vercel.app/api/v1/connect/connect"
+          "https://chutiharmony-server.vercel.app/api/v1/connect/connect"
         );
         const data = response.data.data;
         setConnectData(data);
@@ -56,7 +56,7 @@ const LetConnect = () => {
               </div>
               <div className="flex justify-end">
                 <Link to={""}>
-                  <BsArrowRight className="text-[#6D6729]" />
+                  <GoArrowUpRight  className="text-[#6D6729]" />
                 </Link>
               </div>
             </div>
@@ -79,7 +79,7 @@ const LetConnect = () => {
               </div>
               <div className="flex justify-end">
                 <Link>
-                  <BsArrowRight className="text-[#6D6729]" />
+                  <GoArrowUpRight  className="text-[#6D6729]" />
                 </Link>
               </div>
             </div>
@@ -104,7 +104,9 @@ const LetConnect = () => {
         <img
           className={``}
           style={{ height: "300px", width: "600px" }}
-          src={connectData.image}
+          src={
+            connectData.image
+          }
           alt=""
         />
       </div>

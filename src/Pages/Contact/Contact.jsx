@@ -12,7 +12,7 @@ const Contact = () => {
     const fetchedData = async () => {
       try {
         const response = await axios.get(
-          "https://shanti-holdings-backend.vercel.app/api/v1/connect/connect"
+          "https://chutiharmony-server.vercel.app/api/v1/connect/connect"
         );
         const data = response.data.data;
         setConnectData(data);
@@ -25,13 +25,13 @@ const Contact = () => {
 
   return (
     <section>
-      <div className="flex styleForMainDiv">
+      <div className="lg:flex styleForMainDiv">
         <div className="flex-1">
           <div
             className={`mb-20 font-familyConnect w-20 uppercase
               }`}
           >
-            <h1 className="text-8xl text-center font-bold">Contact Us</h1>
+            <h1 className="lg:text-8xl text-center font-bold">Contact Us</h1>
           </div>
           <div className="font-familyPortfolio">
             <div>
@@ -84,7 +84,7 @@ const Contact = () => {
 
         <div>
           <img
-            className={``}
+            className={`p-5`}
             style={{ height: "475px", width: "650px" }}
             src="https://i.ibb.co.com/6BYbr6w/7.jpg"
             alt=""

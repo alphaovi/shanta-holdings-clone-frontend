@@ -73,7 +73,7 @@ const AdminCreateOurTeam = () => {
       console.log("Payload being sent to backend:", newTeamTwoData);
 
       const response = await axios.post(
-        `https://shanti-holdings-backend.vercel.app/api/v1/team-two/team-two`,
+        `https://chutiharmony-server.vercel.app/api/v1/team-two/team-two`,
         newTeamTwoData
       );
 

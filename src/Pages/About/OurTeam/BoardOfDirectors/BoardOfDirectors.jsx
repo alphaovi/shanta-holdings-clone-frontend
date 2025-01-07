@@ -35,14 +35,14 @@ const BoardOfDirectors = () => {
   return (
     <section>
       <div className="my-20">
-        <h1 className="text-6xl font-bold text-center">Board Of Directors</h1>
+        <h1 className="lg:text-6xl font-bold text-center">Board Of Directors</h1>
       </div>
       <div className="mx-20">
         <div className="lg:flex">
           <div className="flex-1">
             <img src={ourManagementTeamDatas.managingDirectorImage} alt="" />
           </div>
-          <div className="flex-1 p-40">
+          <div className="flex-1 lg:p-40">
             <h3 className="uppercase text-2xl font-bold">
               {ourManagementTeamDatas.managingDirectorName}
             </h3>

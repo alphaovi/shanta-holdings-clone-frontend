@@ -15,7 +15,7 @@ const TeamStandards = () => {
     return () => clearTimeout(timer); // Cleanup timer if the component unmounts
   }, []);
     return (
-        <section className={`  mx-40`}>
+        <section className={`lg:mx-40`}>
             <div className={`${bounce ? "animate-bounce" : ""}`}>
                 <h1 className="uppercase text-center text-8xl font-bold">The team that sets <br /> the standards</h1>
             </div>

@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useRef, useState } from "react";
 import toast from "react-hot-toast";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const CreateAdminFeatureProjects = () => {
   const [project, setProject] = useState({
@@ -63,7 +65,7 @@ const CreateAdminFeatureProjects = () => {
       console.log("Sending data to API:", newProject); // Debugging
 
       const response = await axios.post(
-        "https://shanti-holdings-backend.vercel.app/api/v1/feature-project/create-feature-project",
+        "https://chutiharmony-server.vercel.app/api/v1/feature-project/create-feature-project",
         newProject
       );
 
@@ -90,6 +92,13 @@ const CreateAdminFeatureProjects = () => {
         <h1 className="text-3xl  font-bold text-center mb-10">
           Create Project
         </h1>
+        <Link
+          to="/admin/feature-project"
+          className="btn btn-primary mb-5 text-white border-none bg-[#8E8A20] hover:bg-[#b4b02e]"
+        >
+          {" "}
+          <FaArrowLeftLong /> Back
+        </Link>
       </div>
       <div className="border border-gray-700 p-5">
         <form onSubmit={handleCreateFeatureProject}>

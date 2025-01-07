@@ -16,7 +16,7 @@ const AdminLayout = () => {
               <Link to={"/admin"}>Dashboard</Link>
             </li>
             <li>
-              <Link to={"/admin/about-us"}>About Us</Link>
+              <Link to={"/admin/about-us"}>About Us / Portfolio</Link>
             </li>
             <li>
               <Link to={"/admin/feature-project"}>Feature Projects</Link>

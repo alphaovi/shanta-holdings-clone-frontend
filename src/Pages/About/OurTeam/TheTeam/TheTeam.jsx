@@ -23,7 +23,7 @@ const TheTeam = () => {
       <div>
         <img className="lg:w-[1920px]" src={ourManagementTeamDatas.fullTeamImage} alt="" />
       </div>
-      <div className="flex text-xl bg-[#5C5151] ">
+      <div className="lg:flex text-xl bg-[#5C5151] ">
         <p className="flex-1 mx-10 p-20">
           {ourManagementTeamDatas.fullTeamDescriptionOne}
         </p>

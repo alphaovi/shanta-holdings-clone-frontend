@@ -47,7 +47,7 @@ const AdminOurTeam = () => {
     const fetchedData = async () => {
       try {
         const response = await axios.get(
-          "https://shanti-holdings-backend.vercel.app/api/v1/team-member/team-member"
+          "https://chutiharmony-server.vercel.app/api/v1/team-member/team-member"
         );
         const loadedData = response.data.data;
         setTeamData(loadedData);
@@ -113,7 +113,7 @@ const AdminOurTeam = () => {
 
     try {
       const response = await axios.patch(
-        "https://shanti-holdings-backend.vercel.app/api/v1/team-member/team-member",
+        "https://chutiharmony-server.vercel.app/api/v1/team-member/team-member",
         teamData
       );
 
@@ -131,7 +131,7 @@ const AdminOurTeam = () => {
   const handleDeleteTeamMember = async (teamTwoId) => {
     try {
       await axios.delete(
-        `https://shanti-holdings-backend.vercel.app/api/v1/team-two/team-two/${teamTwoId}`
+        `https://chutiharmony-server.vercel.app/api/v1/team-two/team-two/${teamTwoId}`
       );
       // Remove the deleted project from the state
       setOurTeamDatas((prevTeamTwoMembers) =>
@@ -148,7 +148,7 @@ const AdminOurTeam = () => {
   const handleDeleteSeniorTeamMember = async (seniorTeamId) => {
     try {
       const response = await axios.delete(
-        `https://shanti-holdings-backend.vercel.app/api/v1/senior-team/senior-team/${seniorTeamId}`
+        `https://chutiharmony-server.vercel.app/api/v1/senior-team/senior-team/${seniorTeamId}`
       );
 
       if (response.status === 200) {

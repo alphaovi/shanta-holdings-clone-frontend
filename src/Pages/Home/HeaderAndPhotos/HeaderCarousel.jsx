@@ -4,9 +4,9 @@ import Slider from "react-slick";
 import sliderImage1 from "../../../assets/images/chuti-harmony/header-slider/1.jpg"
 import sliderImage2 from "../../../assets/images/chuti-harmony/header-slider/2.jpg"
 import sliderImage3 from "../../../assets/images/chuti-harmony/header-slider/3.jpg"
-import sliderImage4 from "../../../assets/images/chuti-harmony/header-slider/4.jpg"
-import sliderImage5 from "../../../assets/images/chuti-harmony/header-slider/5.jpg"
-import sliderImage6 from "../../../assets/images/chuti-harmony/header-slider/6.jpg"
+// import sliderImage4 from "../../../assets/images/chuti-harmony/header-slider/4.jpg"
+// import sliderImage5 from "../../../assets/images/chuti-harmony/header-slider/5.jpg"
+// import sliderImage6 from "../../../assets/images/chuti-harmony/header-slider/6.jpg"
 import "./HeaderCarousel.css";
 
 
@@ -39,18 +39,18 @@ const HeaderCarousel = () => {
       id: 3,
       url: sliderImage3,
     },
-    {
-      id: 4,
-      url: sliderImage4,
-    },
-    {
-      id: 5,
-      url: sliderImage5,
-    },
-    {
-      id: 6,
-      url: sliderImage6,
-    },
+    // {
+    //   id: 4,
+    //   url: sliderImage4,
+    // },
+    // {
+    //   id: 5,
+    //   url: sliderImage5,
+    // },
+    // {
+    //   id: 6,
+    //   url: sliderImage6,
+    // },
   ];
   return (
     <div className="scrollable-element " style={{ margin: "0 auto" }}>

@@ -27,11 +27,11 @@ const Values = () => {
     <section className="bg-[#212121]">
       <div>
         <h1 className="lg:text-8xl text-white text-center mb-15 pt-10">
-          <span className="mr-40">V</span>
-          <span className="mr-40">A</span>
-          <span className="mr-40">L</span>
-          <span className="mr-40">U</span>
-          <span className="mr-40">E</span>
+          <span className="lg:mr-40">V</span>
+          <span className="lg:mr-40">A</span>
+          <span className="lg:mr-40">L</span>
+          <span className="lg:mr-40">U</span>
+          <span className="lg:mr-40">E</span>
           <span>S</span>
         </h1>
       </div>
