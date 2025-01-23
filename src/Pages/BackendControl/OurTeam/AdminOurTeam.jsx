@@ -6,6 +6,7 @@ import useTeamData from "../../../Hooks/useTeamData";
 import AdminOurTeamData from "./AdminOurTeamData";
 import useSeniorTeam from "../../../Hooks/useSeniorTeam";
 import AdminGetAndDeleteSeniorTeam from "./AdminGetAndDeleteSeniorTeam";
+import Loading from "../../../Shared/Loading/Loading";
 
 const AdminOurTeam = () => {
   const [teamData, setTeamData] = useState({
@@ -204,10 +205,7 @@ const AdminOurTeam = () => {
             <div className="grid grid-cols-3 gap-4 ">
               {seniorTeamLoading ? (
                 <div>
-                  <span className="loading loading-bars loading-xs"></span>
-                  <span className="loading loading-bars loading-sm"></span>
-                  <span className="loading loading-bars loading-md"></span>
-                  <span className="loading loading-bars loading-lg"></span>
+                  <Loading></Loading>
                 </div>
               ) : seniorTeamError ? (
                 <p className="text-red-500">Error: {seniorTeamError}</p>

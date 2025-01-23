@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import Loading from "../../../../Shared/Loading/Loading";
 
 const AdminConnect = () => {
   const [connectionData, setConnectionData] = useState({
@@ -121,7 +122,7 @@ const AdminConnect = () => {
           <input
             type="text"
             className="border border-gray-300 rounded w-full p-2"
-            value={connectionData.title1}
+            value={isLoading ? <Loading></Loading> : connectionData.title1}
             onChange={(e) => handleInputChange("title1", e.target.value)}
           />
         </div>
@@ -165,7 +166,7 @@ const AdminConnect = () => {
           />
         </div>
         <div>
-          <label>Sales</label>
+          <label>Sales Phone No</label>
           <input
             type="text"
             className="border border-gray-300 rounded w-full p-2"

@@ -21,7 +21,7 @@ const Unleash = () => {
           and even society.
         </p>
       </div>
-      <div className="mt-10 text-white hover:text-[#5F613A]">
+      <div className={`${darkMode ? "text-white bg-black" : "text-black bg-white"} mt-10  hover:text-[#949938]`}>
         <button className="uppercase flex items-center text-xl mx-auto"><LuArrowRightCircle className="mr-2" /> Current Opening</button>
       </div>
     </div>

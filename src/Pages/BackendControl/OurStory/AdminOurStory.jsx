@@ -149,7 +149,7 @@ const AdminOurStory = () => {
           .map((key) => {
             if (key.endsWith("Image")) {
               return (
-                <div key={key}>
+                <div key={key} className="border border-gray-500 px-5 rounded">
                   <label>{key}</label>
                   {imagePreviews[key] ? (
                     <img
@@ -174,11 +174,11 @@ const AdminOurStory = () => {
               );
             } else {
               return (
-                <div key={key}>
+                <div key={key} className="border border-gray-700 px-5 rounded">
                   <label>{key}</label>
                   <textarea
                     type="text"
-                    className="border border-gray-300 rounded w-full p-2 textarea textarea-bordered textarea-lg  max-w-xs"
+                    className="border h-40 border-gray-300 rounded w-full p-2 textarea textarea-bordered textarea-lg  max-w-xs"
                     value={storyData[key]}
                     onChange={(e) => handleInputChange(key, e.target.value)}
                   />

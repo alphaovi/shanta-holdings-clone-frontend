@@ -6,7 +6,8 @@ const LandMarksAnimation = () => {
       <TypeAnimation
         style={{ whiteSpace: "pre-line", height: "195px", display: "block" }}
         sequence={[
-          `Escape to Excellence: Where Nature’s Beauty Meets Unmatched Luxury, Crafting Timeless Memories Amidst Tranquility at Bangladesh’s Premier Resort.`,
+          // `Escape to Excellence: 
+          `Where Nature’s Beauty Meets Unmatched Luxury, Crafting Timeless Memories Amidst Tranquility at Bangladesh’s Premier Resort.`,
           "",
         ]}
         repeat={Infinity}

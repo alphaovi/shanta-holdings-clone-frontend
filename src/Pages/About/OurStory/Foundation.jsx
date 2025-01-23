@@ -2,6 +2,7 @@ import { useState } from "react";
 // import labourPhoto from "../../../assets/images/About/Our-story/Foundation.2e16d0ba.fill-518x648-c0 (1).jpg";
 import { FaRegArrowAltCircleDown } from "react-icons/fa";
 import useOurStoryData from "../../../Hooks/useOurStoryData";
+import Loading from "../../../Shared/Loading/Loading";
 
 const Foundation = () => {
   // load data for our story foundation
@@ -11,10 +12,8 @@ const Foundation = () => {
   if (!ourStory) {
     return (
       <div>
-        <span className="loading loading-bars loading-xs"></span>
-        <span className="loading loading-bars loading-sm"></span>
-        <span className="loading loading-bars loading-md"></span>
-        <span className="loading loading-bars loading-lg"></span>
+        
+        <Loading></Loading>
       </div>
     );
   }

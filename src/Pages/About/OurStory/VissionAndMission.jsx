@@ -1,6 +1,7 @@
 // import missionImage from "../../../assets/images/About/Our-story/mission2.jpg";
 // import visionImage from "../../../assets/images/About/Our-story/vision-image.png";
 import useOurStoryData from "../../../Hooks/useOurStoryData";
+import Loading from "../../../Shared/Loading/Loading";
 
 const VissionAndMission = () => {
   const [ourStory] = useOurStoryData();
@@ -8,10 +9,7 @@ const VissionAndMission = () => {
   if (!ourStory) {
     return (
       <div>
-        <span className="loading loading-bars loading-xs"></span>
-        <span className="loading loading-bars loading-sm"></span>
-        <span className="loading loading-bars loading-md"></span>
-        <span className="loading loading-bars loading-lg"></span>
+       <Loading></Loading>
       </div>
     );
   }

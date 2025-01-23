@@ -42,7 +42,11 @@ const LetConnect = () => {
           className={`mb-20 font-familyConnect w-20 uppercase
           }`}
         >
-          <h2 className={`${darkMode ? "text-white" : "text-[#3C3C3B]"}`}>
+          <h2
+            className={`${
+              darkMode ? "text-white" : "text-[#3c3c3b]"
+            } font-semibold`}
+          >
             Let's Connect
           </h2>
         </div>
@@ -56,7 +60,7 @@ const LetConnect = () => {
               </div>
               <div className="flex justify-end">
                 <Link to={""}>
-                  <GoArrowUpRight  className="text-[#6D6729]" />
+                  <GoArrowUpRight className="text-[#6D6729]" />
                 </Link>
               </div>
             </div>
@@ -79,7 +83,7 @@ const LetConnect = () => {
               </div>
               <div className="flex justify-end">
                 <Link>
-                  <GoArrowUpRight  className="text-[#6D6729]" />
+                  <GoArrowUpRight className="text-[#6D6729]" />
                 </Link>
               </div>
             </div>
@@ -104,9 +108,7 @@ const LetConnect = () => {
         <img
           className={``}
           style={{ height: "300px", width: "600px" }}
-          src={
-            connectData.image
-          }
+          src={connectData.image}
           alt=""
         />
       </div>

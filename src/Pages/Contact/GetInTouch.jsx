@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { DarkModeContext } from "../../Contexts/NightLightContext";
 import axios from "axios";
+import ContactForm from "./ContactForm/ContactForm";
 
 const GetInTouch = () => {
   const { darkMode } = useContext(DarkModeContext);
@@ -34,12 +35,9 @@ const GetInTouch = () => {
         </h1>
       </div>
       <div className="-mt-32">
-        <div className="hero  min-h-screen">
-          <div className="hero-content grid lg:grid-cols-2 gap-20 font-medium mt-32">
-            <div>
-              <img src="https://i.ibb.co.com/yp0H29x/8.jpg" alt="" />
-            </div>
-            <div className="text-center lg:text-left text-3xl">
+        <div className="">
+          <div className="grid lg:grid-cols-2 font-medium mt-32 ">
+            <div className="text-center lg:text-left text-3xl ml-20">
               <div>
                 <h1 className="text-[#a7ad2e]">Hotline</h1>
                 <p
@@ -70,6 +68,19 @@ const GetInTouch = () => {
                   {contactData.email}
                 </p>
               </div>
+              <div className="mt-10">
+                <h1 className="text-[#a7ad2e]">Address</h1>
+                <p
+                  className={`${
+                    darkMode ? "text-white" : "text-[#3c3c3b]"
+                  } mt-5  w-96 hover:underline hover:cursor-pointer`}
+                >
+                  {contactData.address}
+                </p>
+              </div>
+            </div>
+            <div>
+              <ContactForm></ContactForm>
             </div>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl"></div>
           </div>

@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import hospitalPhoto from "../../../../assets/images/About/CSR/Rectangle_5803_2.original.png"
+import { DarkModeContext } from "../../../../Contexts/NightLightContext";
 const CsrFrontPage = () => {
+  const {darkMode} = useContext(DarkModeContext);
   return (
-    <div className="text-white">
+    <div className={`${darkMode ? "text-white" : "text-black"}`}>
       <div>
         <h1 className="text-8xl font-bold text-center">CSR</h1>
       </div>

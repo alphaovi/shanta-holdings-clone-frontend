@@ -1,4 +1,5 @@
 import useOurStoryData from "../../../Hooks/useOurStoryData";
+import Loading from "../../../Shared/Loading/Loading";
 
 const WhoWeAre = () => {
   const [ourStory] = useOurStoryData();
@@ -6,10 +7,7 @@ const WhoWeAre = () => {
   if (!ourStory) {
     return (
       <div>
-        <span className="loading loading-bars loading-xs"></span>
-        <span className="loading loading-bars loading-sm"></span>
-        <span className="loading loading-bars loading-md"></span>
-        <span className="loading loading-bars loading-lg"></span>
+        <Loading></Loading>
       </div>
     );
   }

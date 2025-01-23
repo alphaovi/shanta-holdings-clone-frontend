@@ -1,15 +1,13 @@
 // import frontImage from '../../../assets/images/About/Our-story/Front-imageUntitled_design.2e16d0ba.fill-2560x1440-c0.png'
 import useOurStoryData from "../../../Hooks/useOurStoryData";
+import Loading from "../../../Shared/Loading/Loading";
 const OurStoryPhoto = () => {
   const [ourStory] = useOurStoryData();
 
   if (!ourStory) {
     return (
       <div>
-        <span className="loading loading-bars loading-xs"></span>
-        <span className="loading loading-bars loading-sm"></span>
-        <span className="loading loading-bars loading-md"></span>
-        <span className="loading loading-bars loading-lg"></span>
+        <Loading></Loading>
       </div>
     );
   }

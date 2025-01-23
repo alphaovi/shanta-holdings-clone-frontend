@@ -13,8 +13,7 @@ import Csr from "../Pages/About/CSR/CSR/CSR";
 import LifeAtShanta from "../Pages/LifeAtShanta/LifeAtShanta/LifeAtShanta";
 import Login from "../Layout/Login";
 import SignIn from "../Pages/LoginLogout/SignIn/SignIn";
-import SignUp from "../Pages/LoginLogout/SignUp/SignUp";
-import PrivateRoute from "./PrivateRoutes/PrivateRoute";
+
 import AdminLayout from "../Layout/AdminLayout";
 import Admin from "../Pages/BackendControl/Admin/Admin";
 import AdminPortfolio from "../Pages/BackendControl/Home/Portfolio/AdminPortfolio";
@@ -30,6 +29,19 @@ import AdminOurTeam from "../Pages/BackendControl/OurTeam/AdminOurTeam";
 import AdminCreateOurTeam from "../Pages/BackendControl/OurTeam/AdminCreateOurTeam";
 import AdminCreateSeniorTeam from "../Pages/BackendControl/OurTeam/AdminCreateSeniorTeam";
 import Contact from "../Pages/Contact/Contact";
+
+import AdminMessageBox from "../Pages/BackendControl/Messages/MessageBox/AdminMessageBox";
+import AdminLifeAtChuti from "../Pages/BackendControl/LifeAtChuti/AdminLifeAtChuti";
+import Career from "../Pages/Career/Career/Career";
+
+import ProjectsLayout from "../Layout/ProjectsLayout";
+import OnGoingProjects from "../Pages/AllProjects/OnGoingProjects/OnGoingProjects";
+import SingleProjectFullDetails from "../Pages/AllProjects/SingleProjectFullDetails/SingleProjectFullDetails";
+import AdminNewsEvents from "../Pages/BackendControl/NewsEvents/NewsEvents/AdminNewsEvents";
+import Investment from "../Pages/Investment/Investment/Investment";
+import PrivateRoute from "./PrivateRoutes/PrivateRoute";
+import AdminInvestmentDetails from "../Pages/BackendControl/Investments/AdminInvestmentDetails";
+import ContactForInvestments from "../Pages/Investment/ContactForInvestment/ContactForInvestments";
 
 const router = createBrowserRouter([
   {
@@ -79,6 +91,19 @@ const router = createBrowserRouter([
         path: "/life-at-chuti",
         element: <LifeAtShanta></LifeAtShanta>,
       },
+
+      {
+        path: "/career",
+        element: <Career></Career>,
+      },
+      {
+        path: "/invest",
+        element: <Investment></Investment>,
+      },
+      {
+        path: "/contact-for-investment",
+        element: <ContactForInvestments></ContactForInvestments>,
+      },
       {
         path: "/contact",
         element: <Contact></Contact>,
@@ -101,6 +126,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
+    // element: <PrivateRoute><AdminLayout></AdminLayout></PrivateRoute>,
     element: <AdminLayout></AdminLayout>,
     children: [
       {
@@ -117,43 +143,73 @@ const router = createBrowserRouter([
       },
       {
         path: "/admin/feature-project/:projectId",
-        element: <EditAdminFeatureProject></EditAdminFeatureProject>
+        element: <EditAdminFeatureProject></EditAdminFeatureProject>,
       },
       {
         path: "/admin/create-project",
-        element: <CreateAdminFeatureProjects></CreateAdminFeatureProjects>
+        element: <CreateAdminFeatureProjects></CreateAdminFeatureProjects>,
       },
       {
         path: "/admin/commitment",
-        element: <AdminCommitments></AdminCommitments>
+        element: <AdminCommitments></AdminCommitments>,
       },
       {
         path: "/admin/explore",
-        element: <AdminGetExplore></AdminGetExplore>
+        element: <AdminGetExplore></AdminGetExplore>,
       },
       {
         path: "/admin/create-explore",
-        element: <AdminCreateExplore></AdminCreateExplore>
+        element: <AdminCreateExplore></AdminCreateExplore>,
       },
       {
         path: "/admin/connect",
-        element: <AdminConnect></AdminConnect>
+        element: <AdminConnect></AdminConnect>,
       },
       {
         path: "/admin/our-story",
-        element: <AdminOurStory></AdminOurStory>
+        element: <AdminOurStory></AdminOurStory>,
       },
       {
         path: "/admin/our-team",
-        element: <AdminOurTeam></AdminOurTeam>
+        element: <AdminOurTeam></AdminOurTeam>,
       },
       {
         path: "/admin/create-our-team",
-        element: <AdminCreateOurTeam></AdminCreateOurTeam>
+        element: <AdminCreateOurTeam></AdminCreateOurTeam>,
       },
       {
         path: "/admin/create-our-senior-team",
-        element: <AdminCreateSeniorTeam></AdminCreateSeniorTeam>
+        element: <AdminCreateSeniorTeam></AdminCreateSeniorTeam>,
+      },
+      {
+        path: "/admin/life-at-chuti",
+        element: <AdminLifeAtChuti></AdminLifeAtChuti>,
+      },
+      {
+        path: "/admin/message-box",
+        element: <AdminMessageBox></AdminMessageBox>,
+      },
+      {
+        path: "/admin/news-event",
+        element: <AdminNewsEvents></AdminNewsEvents>,
+      },
+      {
+        path: "/admin/investment",
+        element: <AdminInvestmentDetails></AdminInvestmentDetails>,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <ProjectsLayout></ProjectsLayout>,
+    children: [
+      {
+        path: "/ongoing-projects",
+        element: <OnGoingProjects></OnGoingProjects>,
+      },
+      {
+        path: "/project/:projectId",
+        element: <SingleProjectFullDetails></SingleProjectFullDetails>,
       },
     ],
   },

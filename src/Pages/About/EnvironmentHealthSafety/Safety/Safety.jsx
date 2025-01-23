@@ -1,9 +1,12 @@
 import safetyImage1 from "../../../../assets/images/About/EHS/Rectangle_60.2e16d0ba.fill-395x273-c0 (1).png";
 import safetyImage2 from "../../../../assets/images/About/EHS/EHS_Safety.2e16d0ba.fill-1016x573-c0.png";
+import { useContext } from "react";
+import { DarkModeContext } from "../../../../Contexts/NightLightContext";
 const Safety = () => {
+  const {darkMode} = useContext(DarkModeContext);
   return (
     <section>
-      <div className="grid grid-cols-2 m-20 text-white">
+      <div className={`grid grid-cols-2 m-20 ${darkMode ? "text-white" : "text-black"}`}>
         <div>
           <img src={safetyImage1} alt="" />
         </div>

@@ -1,4 +1,5 @@
 import useTeamCoverAndMD from "../../../../Hooks/useTeamCoverAndMD";
+import Loading from "../../../../Shared/Loading/Loading";
 
 const TheTeam = () => {
   const [ourManagementTeamDatas] = useTeamCoverAndMD();
@@ -7,10 +8,7 @@ const TheTeam = () => {
   if (!ourManagementTeamDatas) {
     return (
       <div>
-        <span className="loading loading-bars loading-xs"></span>
-        <span className="loading loading-bars loading-sm"></span>
-        <span className="loading loading-bars loading-md"></span>
-        <span className="loading loading-bars loading-lg"></span>
+        <Loading></Loading>
       </div>
     );
   }

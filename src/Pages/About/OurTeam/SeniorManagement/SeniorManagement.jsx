@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import useTeamCoverAndMD from "../../../../Hooks/useTeamCoverAndMD";
 import useSeniorTeam from "../../../../Hooks/useSeniorTeam";
+import { DarkModeContext } from "../../../../Contexts/NightLightContext";
+import Loading from "../../../../Shared/Loading/Loading";
 
 const SeniorManagement = () => {
+  const {darkMode} = useContext(DarkModeContext);
   const [ourManagementTeamDatas, error] = useTeamCoverAndMD();
   const [ourSeniorTeams] = useSeniorTeam();
 
@@ -19,10 +22,7 @@ const SeniorManagement = () => {
   if (!ourManagementTeamDatas) {
     return (
       <div>
-        <span className="loading loading-bars loading-xs"></span>
-        <span className="loading loading-bars loading-sm"></span>
-        <span className="loading loading-bars loading-md"></span>
-        <span className="loading loading-bars loading-lg"></span>
+        <Loading></Loading>
       </div>
     );
   }
@@ -35,7 +35,7 @@ const SeniorManagement = () => {
     setSeniorTeamBio(!showSeniorTeamBio);
   };
   return (
-    <section className="bg-[#5C5151]">
+    <section className={`${darkMode ? "bg-[#5C5151]": "bg-[#ECE5DA]"}`}>
       <div className="my-20">
         <h1 className="text-6xl font-bold text-center">
           Senior management Team

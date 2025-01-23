@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
 import doctorImg from "../../../../assets/images/About/CSR/CSR.original.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { DarkModeContext } from "../../../../Contexts/NightLightContext";
 
 const AboutCsr = () => {
+  const {darkMode} = useContext(DarkModeContext);
   const [showMore, setShowMore] = useState(false);
 
   const handleShowMore = () => {
     setShowMore(!showMore);
   };
 
-  const detailsAboutCsr = `As part of its Corporate Social Responsibility (CSR), Shanta Holdings
+  const detailsAboutCsr = `As part of its Corporate Social Responsibility (CSR), Chuti Harmony
         Ltd. is the main founder and primary financier of Ashulia Women and
         Children Hospital (AWCH). It is a fully philanthropic non-profit
         hospital located in Beron, Ashulia right on the Tongi -Ashulia-EPZ
@@ -17,7 +19,7 @@ const AboutCsr = () => {
         development of women and children and the medical needs of the
         underprivileged segment of society. The Hospital runs and operates under
         a trust chaired by renowned national pediatrician Prof. Dr. M Q-K
-        Talukder. Mr. Khondoker Monir Uddin, the Managing Director of Shanta, is
+        Talukder. Mr. Khondoker Monir Uddin, the Managing Director of Chuti harmony, is
         a member of the Board of Trustees who acts as the chief advisor and
         counselor to the trust. This hospital has been in operation since 2004,
         occupying a land area of 3.76 acres with a current built-up area of
@@ -37,7 +39,7 @@ const AboutCsr = () => {
   const sliceDetails = detailsAboutCsr.slice(0, 900);
 
   return (
-    <section className="grid grid-cols-2 gap-6 mx-20 text-white">
+    <section className={`grid grid-cols-2 gap-6 mx-20 ${darkMode ? "text-white" : "text-black"}`}>
       <div className="p-10">
         <img src={doctorImg} alt="" />
       </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 // import valuePhoto from "../../../../assets/images/About/Our-story/Values_OVWVTw0.2e16d0ba.fill-602x401-c0 (1).png";
 import Value from "./Value";
 import useOurStoryData from "../../../../Hooks/useOurStoryData";
+import Loading from "../../../../Shared/Loading/Loading";
 
 const Values = () => {
   const [values, setValues] = useState([]);
@@ -16,10 +17,7 @@ const Values = () => {
   if (!ourStory) {
     return (
       <div>
-        <span className="loading loading-bars loading-xs"></span>
-        <span className="loading loading-bars loading-sm"></span>
-        <span className="loading loading-bars loading-md"></span>
-        <span className="loading loading-bars loading-lg"></span>
+       <Loading></Loading>
       </div>
     );
   }

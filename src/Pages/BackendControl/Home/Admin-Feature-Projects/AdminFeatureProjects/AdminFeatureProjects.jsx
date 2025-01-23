@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import AdminFeatureProject from "../Admin-Feature-Project/AdminFeatureProject";
 import { Link } from "react-router-dom";
+import Loading from "../../../../../Shared/Loading/Loading";
 
 const AdminFeatureProjects = () => {
   const [featureProjects, setFeatureProjects] = useState([]);
@@ -58,10 +59,7 @@ const AdminFeatureProjects = () => {
       <div>
         {isLoading ? (
           <div>
-            <span className="loading loading-bars loading-xs"></span>
-            <span className="loading loading-bars loading-sm"></span>
-            <span className="loading loading-bars loading-md"></span>
-            <span className="loading loading-bars loading-lg"></span>
+           <Loading></Loading>
           </div>
         ) : error ? (
           <p className="text-red-500">Error: {error}</p>

@@ -28,8 +28,7 @@
   user-select: none;
   -webkit-text-stroke: 2px #1b1818;
 
-  background: linear-gradient(to bottom, rgb(58, 47, 47) 50%, #f0f0f0);
+  background: linear-gradient(to bottom, black 50%, white 50%);
   -webkit-background-clip: text;
   background-clip: text;
 }
-

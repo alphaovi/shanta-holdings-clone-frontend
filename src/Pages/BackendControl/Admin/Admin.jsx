@@ -4,23 +4,32 @@ import { AuthContext } from "../../../providers/AuthProvider";
 
 const Admin = () => {
   const { user, logOut } = useContext(AuthContext);
+
   const navigate = useNavigate();
 
   const handleLogout = () => {
     logOut();
-    
   };
 
+  if (!user) {
+    navigate("/login");
+  }
+
   return (
-    <div>
+    <section>
       <div>
         <Outlet />
       </div>
+
       <div>
         <div className="navbar bg-base-100">
           <div className="flex-1">
-            <h1 className="text-xl">Welcome to Chuti Harmony Admin</h1>
-            <h1 className="mx-10">{user?.email || navigate("/login")}</h1>
+            <h1 className="text-xl">
+              {user?.email
+                ? "Welcome to Chuti Harmony Admin"
+                : navigate("/login")}
+            </h1>
+            <h1 className="mx-10"></h1>
           </div>
           <div className="flex-none">
             <div className="dropdown dropdown-end">
@@ -41,14 +50,11 @@ const Admin = () => {
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
               >
                 <li>
-                  <a className="justify-between">
-                    Profile
-                    <span className="badge">New</span>
-                  </a>
+                  <p>Email: {user?.email}</p>
                 </li>
-                <li>
+                {/* <li>
                   <a>Settings</a>
-                </li>
+                </li> */}
                 <li>
                   {/* Removed wrapping <a> around the button */}
                   <button
@@ -63,7 +69,7 @@ const Admin = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

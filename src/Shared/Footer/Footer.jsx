@@ -1,8 +1,13 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { BsArrowUpRight } from "react-icons/bs";
+import { DarkModeContext } from "../../Contexts/NightLightContext";
+
 
 const Footer = () => {
   const [contactData, setContactData] = useState("");
+
+  const {darkMode} = useContext(DarkModeContext);
 
   useEffect(() => {
     const fetchedData = async () => {
@@ -19,18 +24,18 @@ const Footer = () => {
     fetchedData();
   }, []);
   return (
-    <footer className="footer text-base-content p-6 sm:p-10 bg-[#5F613A] font-familyFooter">
+    <footer className={`footer text-base-content p-6 sm:p-10 font-familyFooter ${darkMode ? "bg-[#5F613A]" :"bg-[#F3EBDD]"}`}>
       {/* First section */}
       <nav className="w-full sm:w-1/2 md:w-1/3 lg:w-2/4">
-        <ul className="text-lg sm:text-xl md:text-2xl text-white">
-          <li className="hover:text-[#b6af61] hover:underline cursor-pointer">
-            Hotline: {contactData.hotline}
+        <ul className={`text-lg sm:text-xl md:text-2xl ${darkMode ? "text-white" : "text-[#3c3c3b]"}`}>
+          <li className="hover:text-[#b6af61] hover:underline cursor-pointer text-[1.1rem]">
+            <span className="flex items-center gap-3 hover:gap-5">Hotline: {contactData.hotline} <BsArrowUpRight /></span>
           </li>
-          <li className="hover:text-[#b6af61] hover:underline cursor-pointer">
-            Sales: {contactData.sales}
+          <li className="hover:text-[#b6af61] hover:underline cursor-pointer text-[1.1rem]">
+            <span className="flex items-center gap-3 hover:gap-5">Sales: {contactData.sales} <BsArrowUpRight /></span>
           </li>
-          <li className="hover:text-[#b6af61] lg:w-96 hover:underline cursor-pointer ">
-            Email: {contactData.email}
+          <li className="hover:text-[#b6af61] lg:w-96 hover:underline cursor-pointer text-[1.1rem]">
+            <span className="flex items-center gap-3 hover:gap-5">Email: {contactData.email} <BsArrowUpRight /></span>
           </li>
           <p className="text-sm mt-4 sm:mt-10 text-center sm:text-left">
             Copyright © {new Date().getFullYear()} - All rights reserved by
@@ -40,11 +45,11 @@ const Footer = () => {
       </nav>
 
       {/* Second section */}
-      <nav className="w-full sm:w-1/2 md:w-2/3 lg:w-3/4 mt-6 sm:mt-0 text-white">
-        <h3 className="text-xl sm:text-2xl mb-2 text-center sm:text-left">
+      <nav className={`w-full sm:w-1/2 md:w-2/3 lg:w-3/4 mt-6 sm:mt-0 ${darkMode ? "text-white" : "text-[#3c3c3b]"} -mr-[60rem] justify-items-end`}>
+        <h3 className="text-xl sm:text-2xl text-center sm:text-left text-[1.1rem]">
           Address
         </h3>
-        <p className="hover:text-[#b6af61] hover:underline cursor-pointer text-sm sm:text-xl text-center sm:text-left">
+        <p className="hover:text-[#b6af61] hover:underline cursor-pointer text-[1.1rem] -mt-2 ">
           {contactData.address}
         </p>
         {/* Social Media Icons */}

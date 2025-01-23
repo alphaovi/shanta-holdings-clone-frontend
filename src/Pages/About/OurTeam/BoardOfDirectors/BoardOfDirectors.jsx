@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import useTeamCoverAndMD from "../../../../Hooks/useTeamCoverAndMD";
 import useTeamData from "../../../../Hooks/useTeamData";
+import Loading from "../../../../Shared/Loading/Loading";
 
 const BoardOfDirectors = () => {
   const [ourManagementTeamDatas, error] = useTeamCoverAndMD();
@@ -19,10 +20,7 @@ const BoardOfDirectors = () => {
   if (!ourManagementTeamDatas) {
     return (
       <div>
-        <span className="loading loading-bars loading-xs"></span>
-        <span className="loading loading-bars loading-sm"></span>
-        <span className="loading loading-bars loading-md"></span>
-        <span className="loading loading-bars loading-lg"></span>
+       <Loading></Loading>
       </div>
     );
   }

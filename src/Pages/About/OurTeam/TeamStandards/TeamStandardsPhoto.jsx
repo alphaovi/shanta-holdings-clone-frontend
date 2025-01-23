@@ -1,4 +1,5 @@
 import useTeamCoverAndMD from "../../../../Hooks/useTeamCoverAndMD";
+import Loading from "../../../../Shared/Loading/Loading";
 
 const TeamStandardsPhoto = () => {
   const [ourManagementTeamDatas, , error] = useTeamCoverAndMD();
@@ -11,10 +12,7 @@ const TeamStandardsPhoto = () => {
   // Show a loading message until data is fetched
   if (!ourManagementTeamDatas) {
     return <div>
-    <span className="loading loading-bars loading-xs"></span>
-    <span className="loading loading-bars loading-sm"></span>
-    <span className="loading loading-bars loading-md"></span>
-    <span className="loading loading-bars loading-lg"></span>
+    <Loading></Loading>
   </div>;
   }
 

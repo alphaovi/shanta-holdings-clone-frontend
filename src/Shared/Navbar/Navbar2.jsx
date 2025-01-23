@@ -4,17 +4,14 @@ import { DarkModeContext } from "../../Contexts/NightLightContext";
 import navbarLogoForDark from "../../assets/images/chuti-harmony/chuti-harmony-logo-black.png";
 import navbarLogoForLight from "../../assets/images/chuti-harmony/chuti-harmony-logo.png";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import {
-  FaRegArrowAltCircleLeft,
-  FaToggleOn,
-  FaToggleOff,
-} from "react-icons/fa";
+import { FaToggleOn, FaToggleOff } from "react-icons/fa";
 import { CiMenuBurger } from "react-icons/ci";
 import { CiFacebook } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa";
 import { RiYoutubeLine } from "react-icons/ri";
 import { PiLinkedinLogo } from "react-icons/pi";
 import { FaTiktok } from "react-icons/fa6";
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import "./Navbar2.css";
 
 const Navbar2 = () => {
@@ -28,6 +25,8 @@ const Navbar2 = () => {
   const handleMenuToggle = () => setShowMenu(!showMenu);
   const showMainMenu = () => setCurrentMenu("main");
   const showSubMenu = (menu) => setCurrentMenu(menu);
+
+  const handleCloseMenu = () => setShowMenu(false);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -45,7 +44,7 @@ const Navbar2 = () => {
       <div className="navbar px-5 md:px-20 py-3 md:py-5 flex items-center ">
         {/* Logo */}
         <div className="flex-1">
-          <Link to={"/"} className="text-start block">
+          <Link to={"/"} className="text-start block" onClick={handleCloseMenu}>
             {darkMode ? (
               <img
                 src={navbarLogoForLight}
@@ -148,15 +147,24 @@ const Navbar2 = () => {
                 </button>
               </li>
               <li className="mt-5 px-5 md:mt-10 hover:text-[#8F8933]">
-                <Link to="/life-at-chuti">Life At Chuti</Link>
+                <Link to="/life-at-chuti" onClick={handleCloseMenu}>Life At Chuti</Link>
               </li>
               <li className="mt-5 px-5 md:mt-10 hover:text-[#8F8933]">
-                <Link to="/careers">Careers</Link>
+                <Link to="/career" onClick={handleCloseMenu}>Careers</Link>
               </li>
               <li className=" px-5 hover:text-[#8F8933]">
-                <Link to="/careers">News & Events</Link>
+                <Link to="/news-events" onClick={handleCloseMenu}>News & Events</Link>
               </li>
-              <li className="px-5">
+
+              <li className=" px-5 hover:text-[#8F8933]">
+                <Link to="/invest" onClick={handleCloseMenu}>Investment</Link>
+              </li>
+              
+              <li className=" px-5 hover:text-[#8F8933]">
+                <Link to="/contact" onClick={handleCloseMenu}>Contact</Link>
+              </li>
+              
+              {/* <li className="px-5">
                 <button
                   onClick={() => showSubMenu("contact")}
                   className="flex items-center w-full hover:text-[#8F8933]"
@@ -165,7 +173,7 @@ const Navbar2 = () => {
                   Contact Us{" "}
                   <MdOutlineKeyboardArrowRight className="ml-3 md:ml-5" />
                 </button>
-              </li>
+              </li> */}
             </ul>
           )}
 
@@ -178,32 +186,32 @@ const Navbar2 = () => {
                   onClick={showMainMenu}
                   className="flex items-center space-x-2 hover:text-[#8F8933]"
                 >
-                  <FaRegArrowAltCircleLeft /> Back
+                  <MdOutlineArrowBackIosNew className="mr-2" /> Back
                 </button>
               </li>
               <h2 className="text-3xl font-bold px-8 text-[#8F8933]">
                 About Chuti
               </h2>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to="/our-story">Our Story</Link>
+                <Link to="/our-story" onClick={handleCloseMenu}>Our Story</Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/our-team"}>Our Team</Link>
+                <Link to={"/our-team"} onClick={handleCloseMenu}>Our Team</Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/why-chuti"}>Why Chuti ?</Link>
+                <Link to={"/why-chuti"} onClick={handleCloseMenu}>Why Chuti ?</Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/our-business"}>Our Business</Link>
+                <Link to={"/our-business"} onClick={handleCloseMenu}>Our Business</Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/our-clients"}>Our Clients</Link>
+                <Link to={"/our-clients"} onClick={handleCloseMenu}>Our Clients</Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/ehs"}>EHS</Link>
+                <Link to={"/ehs"} onClick={handleCloseMenu}>EHS</Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/csr"}>CSR</Link>
+                <Link to={"/csr"} onClick={handleCloseMenu}>CSR</Link>
               </li>
             </ul>
           )}
@@ -213,34 +221,34 @@ const Navbar2 = () => {
               <li className="px-7">
                 <button
                   onClick={showMainMenu}
-                  className="flex items-center space-x-2"
+                  className="flex items-center space-x-2 hover:text-[#8F8933]"
                 >
-                  <FaRegArrowAltCircleLeft /> Back
+                  <MdOutlineArrowBackIosNew className="mr-2" /> Back
                 </button>
               </li>
               <h2 className="text-3xl font-bold px-8 text-[#8F8933]">
                 Projects
               </h2>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/"}>Ongoing Projects </Link>
+                <Link to={"/ongoing-projects"} onClick={handleCloseMenu}>Ongoing Projects </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/"}>Upcoming Projects </Link>
+                <Link to={"/upcoming-projects"} onClick={handleCloseMenu}>Upcoming Projects </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/"}>Completed Projects </Link>
+                <Link to={"/completed-projects"} onClick={handleCloseMenu}>Completed Projects </Link>
               </li>
             </ul>
           )}
 
-          {currentMenu === "contact" && (
+          {/* {currentMenu === "contact" && (
             <ul className="menu-list space-y-3 md:space-y-4 p-4 md:p-6 ml-3 md:ml-5">
               <li>
                 <button
                   onClick={showMainMenu}
-                  className="flex items-center space-x-2 px-7"
+                  className="flex items-center space-x-2 px-7 hover:text-[#8F8933]"
                 >
-                  <FaRegArrowAltCircleLeft /> Back
+                  <MdOutlineArrowBackIosNew className="mr-2" /> Back
                 </button>
               </li>
               <h2 className="text-3xl font-bold px-8 text-[#8F8933]">
@@ -256,7 +264,7 @@ const Navbar2 = () => {
                 <Link to={"/email"}>Clients</Link>
               </li>
             </ul>
-          )}
+          )} */}
 
           <div className="flex gap-5 md:gap-8 ml-3 md:ml-5 mt-5 md:mt-10 justify-center text-3xl md:text-4xl ">
             <CiFacebook className="border-[#978c21] text-white border-2 rounded-full p-1 hover:text-[#8F8933]" />

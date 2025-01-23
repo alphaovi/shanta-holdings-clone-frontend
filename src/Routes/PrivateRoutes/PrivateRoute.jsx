@@ -12,9 +12,8 @@ const PrivateRoute = () => {
 
   if (user) {
     navigate("/admin");
-  }
-  else{
-    navigate("/login")
+  } else {
+    navigate("/login");
   }
   return <Navigate to="/admin"></Navigate>;
 };
