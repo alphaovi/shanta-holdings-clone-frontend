@@ -4,14 +4,15 @@ import toast from "react-hot-toast";
 import useInvestmentPhoto from "../../../Hooks/useInvestmentPhoto";
 
 const AdminInvestmentPhoto = () => {
-  const [photos, setPhotos] = useState([]);
-  const [previewUrls, setPreviewUrls] = useState([]);
-  const [message, setMessage] = useState("");
+  const [photos, setPhotos] = useState([]); // Store selected photos
+  const [previewUrls, setPreviewUrls] = useState([]); // Store preview URLs
+  const [photoName, setPhotoName] = useState(""); // Store photo name
+  const [message, setMessage] = useState(""); // Display status messages
 
-  // Get the investment photo from the database using custom hooks
-  const [investmentPhotos, isLoading] = useInvestmentPhoto();
+  // investment photo load from database
+  const [investmentBenefitPhotos, isLoading] = useInvestmentPhoto();
 
-  // Handle file change selection and preview
+  // Handle file selection and generate preview
   const handleFileChange = (event) => {
     const files = Array.from(event.target.files);
     setPhotos(files);
@@ -20,95 +21,160 @@ const AdminInvestmentPhoto = () => {
     setPreviewUrls(previewUrls);
   };
 
-  const handleAddPhotos = async () => {
-    if (photos.length === 0) {
-      setMessage("Please select photos to upload");
-      toast.error("Please select photos to upload");
+  // Handle form submission
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Prevent page reload
+
+    if (!photoName.trim()) {
+      toast.error("Please enter a photo name");
+      setMessage("Photo name is required");
       return;
     }
-  
+
+    if (photos.length === 0) {
+      toast.error("Please select photos to upload");
+      setMessage("Please select photos to upload");
+      return;
+    }
+
     try {
       setMessage("Uploading photos...");
       toast.loading("Uploading photos...");
-  
+
       for (const photo of photos) {
         const formData = new FormData();
         formData.append("image", photo);
-  
-        const imgbbAPIKey = "9f989d9dc9f26cdee1f0e39188190099";
+
+        // Upload to imgbb
         const imgbbResponse = await axios.post(
-          `https://api.imgbb.com/1/upload?key=${imgbbAPIKey}`,
+          `https://api.imgbb.com/1/upload?key=9f989d9dc9f26cdee1f0e39188190099`,
           formData
         );
-  
+
         if (imgbbResponse.data?.data?.url) {
-          const investmentImage = imgbbResponse.data.data.url; // Get the direct URL
-          console.log("Uploading to the database:", investmentImage); // Debug
-          await saveToDatabase(investmentImage); // Save each photo individually
+          const photoUrl = imgbbResponse.data.data.url; // Get photo URL
+          await saveToDatabase(photoUrl); // Save photo URL to the database
         } else {
-          console.error("Invalid imgbb response:", imgbbResponse.data);
-          toast.error("Failed to upload image to imgbb");
+          toast.error("Failed to upload photo to imgbb");
         }
       }
-  
+
       setMessage("Photos uploaded successfully");
       toast.dismiss();
       toast.success("Photos uploaded successfully");
     } catch (error) {
-      console.error("Error during photo upload:", error);
+      console.error("Error uploading photos:", error);
       setMessage("Failed to upload photos. Please try again.");
       toast.error("Failed to upload photos.");
     }
   };
-  
 
-  const saveToDatabase = async (investmentImage) => {
+  // Save photo URL to the server database
+  const saveToDatabase = async (photoUrl) => {
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/v1/investmentPhoto/investmentPhoto",
-        { investmentImage }
+      await axios.post(
+        "http://localhost:5000/api/v1/investment-photo/investment-photo",
+        {
+          name: photoName, // Correctly aligned with backend schema
+          investmentImage: photoUrl,
+        }
       );
-      toast.success("Successfully saved photo to the database");
+      toast.success("Photo saved to the database");
     } catch (error) {
-      console.error("Failed to save to the database:", error);
-      setMessage("Failed to save photo to the database");
+      console.error("Error saving photo to the database:", error);
       toast.error("Failed to save photo to the database");
+    }
+  };
+
+  const handleInvestmentPhotoDelete = async (investmentPhotoId) => {
+    try {
+      await axios.delete(
+        `http://localhost:5000/api/v1/investment-photo/investment-photo/${investmentPhotoId}`
+      );
+      toast.success("Photo deleted successfully");
+
+      // refresh the photo list after deletion
+      const updatedPhotos = investmentBenefitPhotos.fileter(
+        (photo) => photo._id !== investmentPhotoId
+      );
+      setPhotos(updatedPhotos);
+    } catch (error) {
+      console.log(error);
+      if (error) {
+        toast.error("Failed to delete photo. Please try again");
+      }
     }
   };
 
   return (
     <div className="border border-gray-400 p-5 mb-10 rounded">
-      <p className="font-bold mb-5">Photos</p>
+      <p className="font-bold mb-5">Upload Investment Photos</p>
 
-      <div className="grid grid-cols-4 gap-4 my-5">
-        {investmentPhotos.map((investmentPhoto, index) => (
-          <img
-            key={index}
-            src={investmentPhoto.investmentImage}
-            alt="Investment Photo"
-          />
-        ))}
-      </div>
+      <form onSubmit={handleSubmit}>
+        {/* Photo Name Input */}
+        <input
+          type="text"
+          placeholder="Photo Name"
+          value={photoName}
+          onChange={(e) => setPhotoName(e.target.value)}
+          className="mb-5 border border-gray-600 p-2 w-2/6"
+        />
+        <br />
+
+        {/* File Upload Input */}
+        <input
+          type="file"
+          multiple
+          onChange={handleFileChange}
+          className="mb-3"
+        />
+        <br />
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className="btn btn-primary mt-5 text-white bg-[#8E8A20] hover:bg-[#8d8a31] border-none transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+        >
+          Add Photos
+        </button>
+      </form>
 
       {previewUrls.length > 0 && (
         <div>
           <p>Image previews:</p>
           <div className="grid grid-cols-4 gap-4">
             {previewUrls.map((url, index) => (
-              <img key={index} src={url} alt={`Selected ${index}`} className="w-60 h-60 my-5" />
+              <img
+                key={index}
+                src={url}
+                alt={`Selected ${index}`}
+                className="w-60 h-60 my-5"
+              />
             ))}
           </div>
         </div>
       )}
-      <input type="file" multiple onChange={handleFileChange} />
-      <br />
-      <button
-        onClick={handleAddPhotos}
-        className="btn btn-primary mt-5 text-white bg-[#8E8A20] hover:bg-[#8d8a31] border-none transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-      >
-        Add Photos
-      </button>
-      {message && <p className="mt-3 text-red-700">{message}</p>}
+
+      <p className="border-b-4 border-black">Your Photos</p>
+      <div className="grid grid-cols-4 mt-5">
+        {investmentBenefitPhotos.map((investmentBenefitPhoto) => (
+          <div className="" key={investmentBenefitPhoto._id}>
+            <img
+              className="w-40 h-40"
+              src={investmentBenefitPhoto.investmentImage}
+              alt=""
+            />
+            <button
+              onClick={() =>
+                handleInvestmentPhotoDelete(investmentBenefitPhoto._id)
+              }
+              className="btn btn-error text-white mt-2"
+            >
+              Delet Photo
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

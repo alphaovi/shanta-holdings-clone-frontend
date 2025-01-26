@@ -12,7 +12,7 @@ const useInvestmentPhoto = () => {
     const fetchedData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/v1/investmentPhoto/investmentPhoto`
+          `http://localhost:5000/api/v1/investment-photo/investment-photo`
         );
         const data = response.data.data;
         setInvestmentPhotos(data);
@@ -22,7 +22,7 @@ const useInvestmentPhoto = () => {
       }
     };
     fetchedData();
-  }, []);
+  }, [investmentBenefitPhotos]);
   return [investmentBenefitPhotos, isLoading];
 };
 
