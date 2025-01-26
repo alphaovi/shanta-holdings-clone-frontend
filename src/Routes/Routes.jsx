@@ -42,6 +42,8 @@ import Investment from "../Pages/Investment/Investment/Investment";
 import PrivateRoute from "./PrivateRoutes/PrivateRoute";
 import AdminInvestmentDetails from "../Pages/BackendControl/Investments/AdminInvestmentDetails";
 import ContactForInvestments from "../Pages/Investment/ContactForInvestment/ContactForInvestments";
+import AdminAllProjects from "../Pages/BackendControl/AdminAllProjects/AdminAllProjects/AdminAllProjects";
+import AdminCreateProject from "../Pages/BackendControl/AdminAllProjects/AdminCreateProject/AdminCreateProject";
 
 const router = createBrowserRouter([
   {
@@ -182,6 +184,14 @@ const router = createBrowserRouter([
         element: <AdminCreateSeniorTeam></AdminCreateSeniorTeam>,
       },
       {
+        path: "/admin/all-projects",
+        element: <AdminAllProjects></AdminAllProjects>,
+      },
+      {
+        path: "/admin/create-admin-project",
+        element: <AdminCreateProject></AdminCreateProject>,
+      },
+      {
         path: "/admin/life-at-chuti",
         element: <AdminLifeAtChuti></AdminLifeAtChuti>,
       },
@@ -203,6 +213,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <ProjectsLayout></ProjectsLayout>,
     children: [
+      {
+        path: "/projects",
+        element: <OnGoingProjects></OnGoingProjects>,
+      },
       {
         path: "/ongoing-projects",
         element: <OnGoingProjects></OnGoingProjects>,

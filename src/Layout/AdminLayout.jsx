@@ -179,28 +179,13 @@ const AdminLayout = () => {
               </summary>
               <ul className="ml-10">
                 <li>
-                  <summary className="m-1 cursor-pointer flex items-center gap-4">
-                    <span className="flex items-center gap-2">
-                      {" "}
-                      <GrFolder />
-                    </span>{" "}
-                    <Link to={"/admin/our-story"}>Ongoing</Link>
-                  </summary>
-
-                  <summary className="m-1 cursor-pointer flex items-center gap-4">
-                    <span className="flex items-center gap-2">
-                      {" "}
-                      <GrFolder />
-                    </span>{" "}
-                    <Link to={"/admin/our-team"}>Upcoming</Link>
-                  </summary>
-
+                  
                   <summary className="m-1 cursor-pointer flex items-center gap-">
                     <span className="flex items-center gap-2">
                       {" "}
                       <GrFolder />
                     </span>{" "}
-                    <Link to={"/admin/our-team"}>Completed</Link>
+                    <Link to={"/admin/all-projects"}>All Projects</Link>
                   </summary>
                 </li>
               </ul>

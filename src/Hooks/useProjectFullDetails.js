@@ -5,6 +5,8 @@ const useProjectFullDetails = () => {
   const [ongoingProjectFullDetails, setOngoingProjectFullDetails] = useState(
     []
   );
+  const [loading, setLoading] = useState(true);
+  
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -15,6 +17,7 @@ const useProjectFullDetails = () => {
         );
         const data = response.data.data;
         setOngoingProjectFullDetails(data);
+        setLoading(false);
       } catch (error) {
         console.log(error);
         setError(error);
@@ -22,7 +25,7 @@ const useProjectFullDetails = () => {
     };
     fetchedData();
   }, []);
-  return [ongoingProjectFullDetails, error];
+  return [ongoingProjectFullDetails, error, loading];
 };
 
 export default useProjectFullDetails;

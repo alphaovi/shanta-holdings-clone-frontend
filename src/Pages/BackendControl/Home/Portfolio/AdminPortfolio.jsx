@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import Loading from "../../../../Shared/Loading/Loading";
 
 const AdminPortfolio = () => {
   const [portfolioData, setPortfolioData] = useState("");
@@ -48,7 +49,8 @@ const AdminPortfolio = () => {
   }, []);
 
   if (isLoading) {
-    return <p className="text-center text-lg">Loading portfolio....</p>;
+    return <Loading></Loading>
+    // return <p className="text-center text-lg">Loading portfolio....</p>;
   }
 
   if (error) {
