@@ -147,23 +147,33 @@ const Navbar2 = () => {
                 </button>
               </li>
               <li className="mt-5 px-5 md:mt-10 hover:text-[#8F8933]">
-                <Link to="/life-at-chuti" onClick={handleCloseMenu}>Life At Chuti</Link>
+                <Link to="/life-at-chuti" onClick={handleCloseMenu}>
+                  Life At Chuti
+                </Link>
               </li>
               <li className="mt-5 px-5 md:mt-10 hover:text-[#8F8933]">
-                <Link to="/career" onClick={handleCloseMenu}>Careers</Link>
+                <Link to="/career" onClick={handleCloseMenu}>
+                  Careers
+                </Link>
               </li>
               <li className=" px-5 hover:text-[#8F8933]">
-                <Link to="/news-events" onClick={handleCloseMenu}>News & Events</Link>
+                <Link to="/news-events" onClick={handleCloseMenu}>
+                  News & Events
+                </Link>
               </li>
 
               <li className=" px-5 hover:text-[#8F8933]">
-                <Link to="/invest" onClick={handleCloseMenu}>Investment</Link>
+                <Link to="/invest" onClick={handleCloseMenu}>
+                  Investment
+                </Link>
               </li>
-              
+
               <li className=" px-5 hover:text-[#8F8933]">
-                <Link to="/contact" onClick={handleCloseMenu}>Contact</Link>
+                <Link to="/contact" onClick={handleCloseMenu}>
+                  Contact
+                </Link>
               </li>
-              
+
               {/* <li className="px-5">
                 <button
                   onClick={() => showSubMenu("contact")}
@@ -193,25 +203,39 @@ const Navbar2 = () => {
                 About Chuti
               </h2>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to="/our-story" onClick={handleCloseMenu}>Our Story</Link>
+                <Link to="/our-story" onClick={handleCloseMenu}>
+                  Our Story
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/our-team"} onClick={handleCloseMenu}>Our Team</Link>
+                <Link to={"/our-team"} onClick={handleCloseMenu}>
+                  Our Team
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/why-chuti"} onClick={handleCloseMenu}>Why Chuti ?</Link>
+                <Link to={"/why-chuti"} onClick={handleCloseMenu}>
+                  Why Chuti ?
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/our-business"} onClick={handleCloseMenu}>Our Business</Link>
+                <Link to={"/our-business"} onClick={handleCloseMenu}>
+                  Our Business
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/our-clients"} onClick={handleCloseMenu}>Our Clients</Link>
+                <Link to={"/our-clients"} onClick={handleCloseMenu}>
+                  Our Clients
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/ehs"} onClick={handleCloseMenu}>EHS</Link>
+                <Link to={"/ehs"} onClick={handleCloseMenu}>
+                  EHS
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/csr"} onClick={handleCloseMenu}>CSR</Link>
+                <Link to={"/csr"} onClick={handleCloseMenu}>
+                  CSR
+                </Link>
               </li>
             </ul>
           )}
@@ -230,13 +254,27 @@ const Navbar2 = () => {
                 Projects
               </h2>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/ongoing-projects"} onClick={handleCloseMenu}>Ongoing Projects </Link>
+                <Link to={"/all-projects"} onClick={handleCloseMenu}>
+                  All Projects
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/upcoming-projects"} onClick={handleCloseMenu}>Upcoming Projects </Link>
+                <Link to={"/projects/ongoing-projects"} onClick={handleCloseMenu}>
+                  Ongoing Projects{" "}
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/completed-projects"} onClick={handleCloseMenu}>Completed Projects </Link>
+                <Link
+                  to={"/projects/upcoming-projects"}
+                  onClick={handleCloseMenu}
+                >
+                  Upcoming Projects{" "}
+                </Link>
+              </li>
+              <li className="hover:text-[#8F8933] px-7">
+                <Link to={"/completed-projects"} onClick={handleCloseMenu}>
+                  Completed Projects{" "}
+                </Link>
               </li>
             </ul>
           )}

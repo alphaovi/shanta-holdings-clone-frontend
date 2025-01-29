@@ -229,7 +229,7 @@ const AdminOurTeam = () => {
           <form onSubmit={handleTeamUpdate} className="space-y-4">
             <div className="space-y-4 grid lg:grid-cols-2 gap-20 justify-around">
               {/* Team Cover Photo */}
-              <div>
+              <div className="border border-gray-300 rounded p-2">
                 <label className="font-bold text-xl">Cover Image</label>
                 {previewImages.teamCoverPhoto && (
                   <img
@@ -247,7 +247,7 @@ const AdminOurTeam = () => {
               </div>
 
               {/* Managing Director Name */}
-              <div>
+              <div className="border border-gray-300 rounded p-2">
                 <label className="font-bold text-xl">
                   Managing Director Name
                 </label>
@@ -265,12 +265,12 @@ const AdminOurTeam = () => {
               </div>
 
               {/* Managing Director Details */}
-              <div>
+              <div className="border border-gray-300 rounded p-2">
                 <label className="font-bold text-xl">
                   Managing Director Details
                 </label>
                 <textarea
-                  className="textarea textarea-bordered h-40 w-full"
+                  className="textarea textarea-bordered h-40 w-full mt-2"
                   value={teamData.managingDirectorDetails}
                   onChange={(e) =>
                     setTeamData({
@@ -282,7 +282,7 @@ const AdminOurTeam = () => {
               </div>
 
               {/* Managing Director Image */}
-              <div>
+              <div className="border border-gray-300 rounded p-2">
                 <label className="font-bold text-xl">
                   Managing Director Image
                 </label>
@@ -302,7 +302,7 @@ const AdminOurTeam = () => {
               </div>
 
               {/* CEO Name */}
-              <div>
+              <div className="border border-gray-300 rounded p-2">
                 <label className="font-bold text-xl">CEO Name</label>
                 <input
                   type="text"
@@ -318,7 +318,7 @@ const AdminOurTeam = () => {
               </div>
 
               {/* CEO Photo */}
-              <div>
+              <div className="border border-gray-300 rounded p-2">
                 <label className="font-bold text-xl">CEO Photo</label>
                 {previewImages.ceoPhoto && (
                   <img
@@ -336,7 +336,7 @@ const AdminOurTeam = () => {
               </div>
 
               {/* CEO About */}
-              <div>
+              <div className="border border-gray-300 rounded p-2">
                 <label className="font-bold text-xl">CEO About</label>
                 <textarea
                   className="textarea textarea-bordered h-40 w-full"
@@ -351,7 +351,7 @@ const AdminOurTeam = () => {
               </div>
 
               {/* Full Team Image */}
-              <div>
+              <div className="border border-gray-300 rounded p-2">
                 <label className="font-bold text-xl">Full Team Image</label>
                 {previewImages.fullTeamImage && (
                   <img
@@ -369,7 +369,7 @@ const AdminOurTeam = () => {
               </div>
 
               {/* Full Team Description One */}
-              <div>
+              <div className="border border-gray-300 rounded p-2">
                 <label className="font-bold text-xl">
                   Full Team Description One
                 </label>
@@ -386,7 +386,7 @@ const AdminOurTeam = () => {
               </div>
 
               {/* Full Team Description Two */}
-              <div>
+              <div className="border border-gray-300 rounded p-2">
                 <label className="font-bold text-xl">
                   Full Team Description Two
                 </label>

@@ -4,7 +4,7 @@ import useProjectFullDetails from "../../../../Hooks/useProjectFullDetails";
 import Loading from "../../../../Shared/Loading/Loading";
 
 const AdminAllProjects = () => {
-  const [ongoingProjectFullDetails, loading] = useProjectFullDetails();
+  const [ongoingProjectFullDetails, error, loading] = useProjectFullDetails();
 
   return (
     <div className="font-serif">

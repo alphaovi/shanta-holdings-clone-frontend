@@ -8,7 +8,7 @@ const AdminCreateOurTeam = () => {
   const [teamTwoData, setTeamTwoData] = useState({
     name: "",
     designation: "",
-    bio: "", // Updated key to match backend
+    bio: "",
     photo: "",
   });
 
@@ -31,7 +31,7 @@ const AdminCreateOurTeam = () => {
         `https://api.imgbb.com/1/upload?key=9f989d9dc9f26cdee1f0e39188190099`,
         formData
       );
-      toast.success("create project successfully");
+      toast.success("Image uploaded successfully");
       return response.data.data.url;
     } catch (error) {
       console.error("Image upload error:", error);

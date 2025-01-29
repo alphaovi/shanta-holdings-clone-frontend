@@ -26,9 +26,9 @@ const AdminLayout = () => {
 
   return (
     <div className="flex">
-      <div>
+      <div className="overflow-y-auto">
         <div className="h-screen">
-          <ul className="menu text-white min-h-full w-80 p-4 bg-[#8E8A20] ">
+          <ul className="menu text-white min-h-full w-80 p-4 bg-[#8E8A20]">
             <div className="text-center mb-20">
               <Link to="/">
                 <p>Chuti Harmony</p>

@@ -1,18 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-
 const useInvestmentPhoto = () => {
   const [investmentBenefitPhotos, setInvestmentPhotos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-
 
   useEffect(() => {
     const fetchedData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/v1/investment-photo/investment-photo`
+          `https://chutiharmony-server.vercel.app/api/v1/investment-photo/investment-photo`
         );
         const data = response.data.data;
         setInvestmentPhotos(data);

@@ -37,7 +37,7 @@ const Portfolio = () => {
       delay={1}
       speed={1}
     >
-      <div>
+      <div data-aos="zoom-in">
         {/* For larger devices */}
         <div className="hidden lg:block ml-96 px-36 mt-20">
           <p

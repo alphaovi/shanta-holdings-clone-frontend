@@ -6,25 +6,27 @@ const useProjectFullDetails = () => {
     []
   );
   const [loading, setLoading] = useState(true);
-  
+
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchedData = async () => {
+      setError(null);
       try {
         const response = await axios.get(
           "https://chutiharmony-server.vercel.app/api/v1/project-details/project-details"
         );
         const data = response.data.data;
         setOngoingProjectFullDetails(data);
-        setLoading(false);
       } catch (error) {
         console.log(error);
         setError(error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchedData();
-  }, []);
+  }, [ongoingProjectFullDetails]);
   return [ongoingProjectFullDetails, error, loading];
 };
 

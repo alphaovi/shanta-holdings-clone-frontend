@@ -97,7 +97,7 @@ const LetConnect = () => {
       </div>
 
       <div
-        data-aos="fade-left"
+        data-aos="zoom-in-left"
         className="w-full h-1/2 flex-1"
         style={{
           padding: "50px",

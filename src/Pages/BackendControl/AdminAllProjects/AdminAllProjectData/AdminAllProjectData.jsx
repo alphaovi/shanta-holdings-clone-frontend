@@ -1,5 +1,10 @@
+import axios from "axios";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
+
 const AdminAllProjectData = ({ projectFullDetail, index }) => {
   const {
+    _id,
     projectName,
     projectCoverPhoto,
     status,
@@ -18,11 +23,46 @@ const AdminAllProjectData = ({ projectFullDetail, index }) => {
     rajukApprovalNo,
   } = projectFullDetail;
 
+  const handleDeleteSingleProject = async (id) => {
+    try {
+      const result = await Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      });
+
+      if (result.isConfirmed) {
+        // Make the API call to delete the project
+        const response = await axios.delete(
+          `https://chutiharmony-server.vercel.app/api/v1/project-details/project-details/${id}`
+        );
+
+        if (response.status === 200) {
+          Swal.fire({
+            title: "Deleted!",
+            text: "The project has been deleted successfully.",
+            icon: "success",
+          });
+          toast.success("Project Deleted Successfully");
+        } else {
+          toast.error("Something went wrong");
+        }
+      }
+    } catch (error) {
+      console.error("Error deleting project:", error);
+      toast.error("Failed to delete project. Please try again.");
+    }
+  };
+
   return (
     <div>
-        <div>
-            <h1 className="text-xl mb-2 font-bold">Project : {index+1}</h1>
-        </div>
+      <div>
+        <h1 className="text-xl mb-2 font-bold">Project : {index + 1}</h1>
+      </div>
       <div className="border broder-black rounded p-2">
         <p>Project Name: {projectName}</p>
         <p>Status: {status}</p>
@@ -42,7 +82,12 @@ const AdminAllProjectData = ({ projectFullDetail, index }) => {
         <img className="w-60 h-60 mt-5" src={projectCoverPhoto} alt="" />
         <div className="flex gap-20 p-2">
           <button className="btn btn-warning">Edit</button>
-          <button className="btn btn-error">Delete</button>
+          <button
+            onClick={() => handleDeleteSingleProject(_id)}
+            className="btn btn-error"
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>

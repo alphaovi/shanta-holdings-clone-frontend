@@ -31,7 +31,7 @@ import AdminCreateSeniorTeam from "../Pages/BackendControl/OurTeam/AdminCreateSe
 import Contact from "../Pages/Contact/Contact";
 
 import AdminMessageBox from "../Pages/BackendControl/Messages/MessageBox/AdminMessageBox";
-import AdminLifeAtChuti from "../Pages/BackendControl/LifeAtChuti/AdminLifeAtChuti";
+
 import Career from "../Pages/Career/Career/Career";
 
 import ProjectsLayout from "../Layout/ProjectsLayout";
@@ -44,6 +44,10 @@ import AdminInvestmentDetails from "../Pages/BackendControl/Investments/AdminInv
 import ContactForInvestments from "../Pages/Investment/ContactForInvestment/ContactForInvestments";
 import AdminAllProjects from "../Pages/BackendControl/AdminAllProjects/AdminAllProjects/AdminAllProjects";
 import AdminCreateProject from "../Pages/BackendControl/AdminAllProjects/AdminCreateProject/AdminCreateProject";
+import AdminLifeAtChuti2 from "../Pages/BackendControl/LifeAtChuti/AdminLifeAtChuti2";
+import UpComingProjects from "../Pages/AllProjects/UpComingProjects/UpComingProjects";
+import AllProjects from "../Pages/AllProjects/AllProjects/AllProjects";
+import CompletedProjects from "../Pages/AllProjects/CompletedProjects/CompletedProjects";
 
 const router = createBrowserRouter([
   {
@@ -193,7 +197,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/admin/life-at-chuti",
-        element: <AdminLifeAtChuti></AdminLifeAtChuti>,
+        
+        element: <AdminLifeAtChuti2></AdminLifeAtChuti2>,
       },
       {
         path: "/admin/message-box",
@@ -215,11 +220,23 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/projects",
+        element: <AllProjects></AllProjects>,
+      },
+      {
+        path: "/all-projects",
+        element: <AllProjects></AllProjects>,
+      },
+      {
+        path: "/projects/ongoing-projects",
         element: <OnGoingProjects></OnGoingProjects>,
       },
       {
-        path: "/ongoing-projects",
-        element: <OnGoingProjects></OnGoingProjects>,
+        path: "/projects/upcoming-projects",
+        element: <UpComingProjects></UpComingProjects>,
+      },
+      {
+        path: "/projects/completed-projects",
+        element: <CompletedProjects></CompletedProjects>,
       },
       {
         path: "/project/:projectId",

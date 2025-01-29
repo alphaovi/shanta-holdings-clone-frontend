@@ -11,7 +11,7 @@ const AdminOurTeamData = ({ ourTeamData, onDelete }) => {
   };
 
   return (
-    <div className="border border-lime-400 my-5 p-5">
+    <div className="border border-gray-300 rounded my-5 p-5">
       <h1 className="text-2xl">Name: {name}</h1>
       <h3 className="text-xl mt-5">Designation: {designation}</h3>
       <p className="text-xl mt-5">Bio: {bio}</p>

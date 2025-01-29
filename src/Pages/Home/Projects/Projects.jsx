@@ -10,14 +10,14 @@ import { DarkModeContext } from "../../../Contexts/NightLightContext";
 const Projects = () => {
   const { darkMode } = useContext(DarkModeContext);
 
-  useEffect(() => {
-    AOS.init({
-      duration: 3000, // Animation duration in ms
-      once: false, // Repeats animation
-      mirror: false, // Disable reverse animation
-      offset: 0,
-    });
-  }, []);
+  // useEffect(() => {
+  //   AOS.init({
+  //     duration: 3000, // Animation duration in ms
+  //     once: false, // Repeats animation
+  //     mirror: false, // Disable reverse animation
+  //     offset: 0,
+  //   });
+  // }, []);
 
   return (
     <section className={`mb-20 font-familyProjects`}>

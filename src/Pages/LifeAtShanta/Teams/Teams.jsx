@@ -17,7 +17,7 @@ const Teams = () => {
   };
 
   return (
-    <div className="slider-container mx-40 my-20 opacity-75">
+    <div className="slider-container mx-48 my-20 opacity-75">
       <Slider {...settings}>
         <div>
           <img src={teamMember1} />

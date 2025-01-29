@@ -7,7 +7,14 @@ import useProjectFullDetails from "../../../Hooks/useProjectFullDetails";
 
 const OnGoingProjects = () => {
   const [hoveredDropdown, setHoveredDropdown] = useState(null); // Track which dropdown is hovered
+  const [selectedStatus, setSelectedStatus] = useState("Ongoing"); // Default to "Ongoing"
   const [ongoingProjectFullDetails, error] = useProjectFullDetails();
+
+  // Filter projects based on selected status
+  const filteredProjects = ongoingProjectFullDetails.filter(
+    (project) => project.status === selectedStatus
+  );
+
   return (
     <section className="bg-[#FFFAF4]">
       <div className="">
@@ -20,19 +27,13 @@ const OnGoingProjects = () => {
           Exclusive properties in prime location
         </h1>
       </div>
-      <div className="absolute bg-[#827466] p-4 w-[72rem] mt-5 left-1/2 transform -translate-x-1/2 grid grid-cols-4 gap-4">
-        {/* All Locations Dropdown */}
+      <div className="absolute bg-[#827466] p-4 w-[72rem] mt-5 left-1/2 transform -translate-x-1/2 grid grid-cols-3 gap-4 z-10">
+        {/* Project Type Dropdown */}
         <div className="dropdown dropdown-hover">
-          <div
-            tabIndex={0}
-            role="button"
-            className="m-1 text-[#fff] text-xl"
-            onMouseEnter={() => setHoveredDropdown("locations")}
-            onMouseLeave={() => setHoveredDropdown(null)}
-          >
+          <div tabIndex={0} role="button" className="m-1 text-white text-xl ">
             <span className="flex items-center gap-2">
-              All Locations
-              {hoveredDropdown === "locations" ? (
+              Project Type
+              {hoveredDropdown === "status" ? (
                 <MdOutlineKeyboardArrowUp className="mt-2" />
               ) : (
                 <MdOutlineKeyboardArrowDown className="mt-2" />
@@ -41,22 +42,13 @@ const OnGoingProjects = () => {
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content menu overflow-auto text-xl z-[1] w-52 h-60 p-2 shadow border-none bg-[#827466] text-white"
+            className="dropdown-content menu overflow-auto text-xl z-[1] w-52 h-28 p-2 shadow border-none bg-[#827466] text-white "
           >
             <li>
-              <a>Banani</a>
+              <a>Residential</a>
             </li>
             <li>
-              <a>Gulsan</a>
-            </li>
-            <li>
-              <a>Baridhara</a>
-            </li>
-            <li>
-              <a>Tejgoan</a>
-            </li>
-            <li>
-              <a>Mirpur</a>
+              <a>Commercial</a>
             </li>
           </ul>
         </div>
@@ -81,41 +73,16 @@ const OnGoingProjects = () => {
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content menu overflow-auto text-xl z-[1] w-52 h-42 p-2 shadow border-none bg-[#827466] text-white"
+            className="dropdown-content menu overflow-auto text-xl z-[1] w-52 h-42 p-2 shadow border-none bg-[#827466] text-white absolute"
           >
             <li>
-              <a>Ongoing</a>
+              <a onClick={() => setSelectedStatus("Ongoing")}>Ongoing</a>
             </li>
             <li>
-              <a>Upcoming</a>
+              <a onClick={() => setSelectedStatus("Upcoming")}>Upcoming</a>
             </li>
             <li>
-              <a>Completed</a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Project Type Dropdown */}
-        <div className="dropdown dropdown-hover">
-          <div tabIndex={0} role="button" className="m-1 text-white text-xl">
-            <span className="flex items-center gap-2">
-              Project Type
-              {hoveredDropdown === "status" ? (
-                <MdOutlineKeyboardArrowUp className="mt-2" />
-              ) : (
-                <MdOutlineKeyboardArrowDown className="mt-2" />
-              )}
-            </span>
-          </div>
-          <ul
-            tabIndex={0}
-            className="dropdown-content menu overflow-auto text-xl z-[1] w-52 h-28 p-2 shadow border-none bg-[#827466] text-white"
-          >
-            <li>
-              <a>Residential</a>
-            </li>
-            <li>
-              <a>Commercial</a>
+              <a onClick={() => setSelectedStatus("Completed")}>Completed</a>
             </li>
           </ul>
         </div>
@@ -130,9 +97,9 @@ const OnGoingProjects = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 justify-items-center mx-32  mt-40 mb-20 bg-[#FFFAF4]">
+      <div className="grid grid-cols-2 justify-items-center mx-32 mt-40 mb-20 bg-[#FFFAF4] relative z-0">
         {error && <p className="text-red-500 text-center">{error.message}</p>}
-        {ongoingProjectFullDetails.map((ongoingProjectFullDetail) => (
+        {filteredProjects.map((ongoingProjectFullDetail) => (
           <OnGoingProject
             key={ongoingProjectFullDetail._id}
             ongoingProjectFullDetail={ongoingProjectFullDetail}

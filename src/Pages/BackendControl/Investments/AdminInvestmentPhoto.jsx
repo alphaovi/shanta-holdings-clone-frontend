@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import useInvestmentPhoto from "../../../Hooks/useInvestmentPhoto";
+import Swal from "sweetalert2";
 
 const AdminInvestmentPhoto = () => {
   const [photos, setPhotos] = useState([]); // Store selected photos
@@ -73,7 +74,7 @@ const AdminInvestmentPhoto = () => {
   const saveToDatabase = async (photoUrl) => {
     try {
       await axios.post(
-        "http://localhost:5000/api/v1/investment-photo/investment-photo",
+        "https://chutiharmony-server.vercel.app/api/v1/investment-photo/investment-photo",
         {
           name: photoName, // Correctly aligned with backend schema
           investmentImage: photoUrl,
@@ -88,21 +89,36 @@ const AdminInvestmentPhoto = () => {
 
   const handleInvestmentPhotoDelete = async (investmentPhotoId) => {
     try {
-      await axios.delete(
-        `http://localhost:5000/api/v1/investment-photo/investment-photo/${investmentPhotoId}`
-      );
-      toast.success("Photo deleted successfully");
+      const result = await Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      });
 
-      // refresh the photo list after deletion
-      const updatedPhotos = investmentBenefitPhotos.fileter(
-        (photo) => photo._id !== investmentPhotoId
-      );
-      setPhotos(updatedPhotos);
-    } catch (error) {
-      console.log(error);
-      if (error) {
-        toast.error("Failed to delete photo. Please try again");
+      if (result.isConfirmed) {
+        // Make the API call to delete the project
+        const response = await axios.delete(
+          `https://chutiharmony-server.vercel.app/api/v1/investment-photo/investment-photo/${investmentPhotoId}`
+        );
+
+        if (response.status === 200) {
+          Swal.fire({
+            title: "Deleted!",
+            text: "The project has been deleted successfully.",
+            icon: "success",
+          });
+          toast.success("Project Deleted Successfully");
+        } else {
+          toast.error("Something went wrong");
+        }
       }
+    } catch (error) {
+      console.error("Error deleting project:", error);
+      toast.error("Failed to delete project. Please try again.");
     }
   };
 
@@ -121,6 +137,22 @@ const AdminInvestmentPhoto = () => {
         />
         <br />
 
+        {previewUrls.length > 0 && (
+          <div>
+            <p>Image previews:</p>
+            <div className="grid grid-cols-4 gap-4">
+              {previewUrls.map((url, index) => (
+                <img
+                  key={index}
+                  src={url}
+                  alt={`Selected ${index}`}
+                  className="w-60 h-60 my-5"
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* File Upload Input */}
         <input
           type="file"
@@ -138,22 +170,6 @@ const AdminInvestmentPhoto = () => {
           Add Photos
         </button>
       </form>
-
-      {previewUrls.length > 0 && (
-        <div>
-          <p>Image previews:</p>
-          <div className="grid grid-cols-4 gap-4">
-            {previewUrls.map((url, index) => (
-              <img
-                key={index}
-                src={url}
-                alt={`Selected ${index}`}
-                className="w-60 h-60 my-5"
-              />
-            ))}
-          </div>
-        </div>
-      )}
 
       <p className="border-b-4 border-black">Your Photos</p>
       <div className="grid grid-cols-4 mt-5">
