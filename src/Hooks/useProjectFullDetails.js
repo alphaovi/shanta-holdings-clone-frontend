@@ -14,7 +14,7 @@ const useProjectFullDetails = () => {
       setError(null);
       try {
         const response = await axios.get(
-          "https://chutiharmony-server.vercel.app/api/v1/project-details/project-details"
+          "https://chuti-harmony-server.vercel.app/api/v1/project-details/project-details"
         );
         const data = response.data.data;
         setOngoingProjectFullDetails(data);

@@ -5,7 +5,7 @@ const OurClientsFootPrint = () => {
 
   const {darkMode} = useContext(DarkModeContext);
   return (
-    <div className={`${darkMode ? "text-white" : "text-black"} my-20  text-center opacity-75`}>
+    <div className={`${darkMode ? "text-white" : "text-black"} my-20  text-center opacity-75 bg-[#FFFAF4]`}>
       <h3 className="uppercase text-3xl">A footprint of renowned names</h3>
       <p className="text-xl mx-40 mt-5 px-20">
         We pride ourselves in creating spaces where leading corporates choose to

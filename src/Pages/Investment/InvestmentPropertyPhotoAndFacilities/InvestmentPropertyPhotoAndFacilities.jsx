@@ -9,7 +9,7 @@ const InvestmentPropertyPhotoAndFacilities = () => {
   useEffect(() => {
     const fetchedData = async () => {
       const response = await axios.get(
-        `https://chutiharmony-server.vercel.app/api/v1/investment/investment`
+        `https://chuti-harmony-server.vercel.app/api/v1/investment/investment`
       );
       if (response.data && response.data.data) {
         setInvestmentBenefits(response.data.data);

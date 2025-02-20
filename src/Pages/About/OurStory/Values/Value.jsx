@@ -11,15 +11,14 @@ const Value = ({ value }) => {
   return (
     <div>
       <div className="my-4">
-        <h3 className="text-2xl flex mb-4 ">{title}</h3>
+        <h3 className="lg:text-2xl flex mb-4 ">{title}</h3>
         <button
           className=" float-right mr-10 -mt-10 "
           onClick={handleShowDetails}
         >
-          
           {showDetails ? <SlMinus /> : <SlPlus />}
         </button>
-        {showDetails ? <p className="text-xl ">{detail}</p> : ""}
+        {showDetails ? <p className="lg:text-xl ">{detail}</p> : ""}
       </div>
       <div className="border border-gray-400 w-full"></div>
     </div>

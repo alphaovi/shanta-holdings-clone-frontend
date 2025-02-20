@@ -1,26 +1,53 @@
-import safetyImage1 from "../../../../assets/images/About/EHS/Rectangle_60.2e16d0ba.fill-395x273-c0 (1).png";
-import safetyImage2 from "../../../../assets/images/About/EHS/EHS_Safety.2e16d0ba.fill-1016x573-c0.png";
+import safetyImage1 from "../../../../assets/images/About/EHS/1/imageye___-_about-ccollage-1.jpeg";
 import { useContext } from "react";
 import { DarkModeContext } from "../../../../Contexts/NightLightContext";
+
 const Safety = () => {
-  const {darkMode} = useContext(DarkModeContext);
+  const { darkMode } = useContext(DarkModeContext);
   return (
     <section>
-      <div className={`grid grid-cols-2 m-20 ${darkMode ? "text-white" : "text-black"}`}>
+      <div
+        className={`grid grid-cols-2 m-20 ${
+          darkMode ? "text-white" : "text-black"
+        }`}
+      >
         <div>
-          <img src={safetyImage1} alt="" />
+          <img className="w-[28rem]" src={safetyImage1} alt="" />
         </div>
         <div>
-          <h1 className="text-3xl font-semibold mb-10">Safety</h1>
-          <li className="mb-5">Zero Tolerance Safety Policy</li>
-          <li className="mb-5">Risk Assessment & Mitigation</li>
-          <li className="mb-5">Crisis Response</li>
-          <li className="mb-5">Safety Excellence Recognition</li>
-          <li className="mb-5">Effective Security Management</li>
+          <h1 className="text-3xl font-semibold mb-10">Resort Details</h1>
+          <li className="mb-5">
+            Resort Location: Sukundi, Amtoli, Joydebpur, Gazipur, Bangladesh,
+            Post code: 1700
+          </li>
+          <li className="mb-5">
+            <a
+              href="https://www.facebook.com/chutiresort"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              www.facebook.com/chutiresort
+            </a>
+          </li>
+          <li className="mb-5">
+            <a
+              href="https://www.instagram.com/chutiresortgazipur"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              www.instagram.com/chutiresortgazipur
+            </a>
+          </li>
+          <li className="mb-5">
+            <a
+              href="https://www.chutiresort.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              www.chutiresort.com
+            </a>
+          </li>
         </div>
-      </div>
-      <div className="mx-40 mb-28">
-        <img src={safetyImage2} alt="" />
       </div>
     </section>
   );

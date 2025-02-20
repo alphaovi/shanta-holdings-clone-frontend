@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import ourClicentsCoverPhoto from "../../../../assets/images/About/Our-Clients/15970554951xOvJ.2e16d0ba.fill-1280x720-c0.jpg";
+import ourClicentsCoverPhoto from "../../../../assets/images/About/Our-Clients/banner-1.jpg";
 import { DarkModeContext } from "../../../../Contexts/NightLightContext";
 
 const OurClientsTitleAndPhoto = () => {

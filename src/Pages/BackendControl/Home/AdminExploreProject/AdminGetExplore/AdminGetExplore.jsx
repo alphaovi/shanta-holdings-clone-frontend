@@ -13,7 +13,7 @@ const AdminGetExplore = () => {
     try {
       setIsLoading(true);
       const response = await axios.get(
-        "https://chutiharmony-server.vercel.app/api/v1/explore-project/explore-project"
+        "https://chuti-harmony-server.vercel.app/api/v1/explore-project/explore-project"
       );
       console.log(response.data);
       setProjects(response.data.data); // Adjust if API response structure differs
@@ -28,7 +28,7 @@ const AdminGetExplore = () => {
   const deleteProject = async (projectId) => {
     try {
       await axios.delete(
-        `https://chutiharmony-server.vercel.app/api/v1/explore-project/explore-project/${projectId}`
+        `https://chuti-harmony-server.vercel.app/api/v1/explore-project/explore-project/${projectId}`
       );
       toast.success("Project deleted successfully!");
       setProjects((prev) =>

@@ -86,7 +86,7 @@ const router = createBrowserRouter([
         element: <OurClients></OurClients>,
       },
       {
-        path: "/ehs",
+        path: "/facilities",
         element: <EnvironmentHealthSafety></EnvironmentHealthSafety>,
       },
       {

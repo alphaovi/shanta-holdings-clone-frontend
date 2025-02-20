@@ -73,7 +73,7 @@ const AdminCreateSeniorTeam = () => {
       console.log("Payload being sent to backend:", newTeamTwoData);
 
       const response = await axios.post(
-        `https://chutiharmony-server.vercel.app/api/v1/senior-team/senior-team`,
+        `https://chuti-harmony-server.vercel.app/api/v1/senior-team/senior-team`,
         newTeamTwoData
       );
 

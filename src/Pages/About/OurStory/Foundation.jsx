@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 // import labourPhoto from "../../../assets/images/About/Our-story/Foundation.2e16d0ba.fill-518x648-c0 (1).jpg";
 import { FaRegArrowAltCircleDown } from "react-icons/fa";
 import useOurStoryData from "../../../Hooks/useOurStoryData";
 import Loading from "../../../Shared/Loading/Loading";
+import { DarkModeContext } from "../../../Contexts/NightLightContext";
 
 const Foundation = () => {
+  const { darkMode } = useContext(DarkModeContext);
   // load data for our story foundation
   const [ourStory] = useOurStoryData();
   const [showMore, setShowMore] = useState(false);
@@ -12,7 +14,6 @@ const Foundation = () => {
   if (!ourStory) {
     return (
       <div>
-        
         <Loading></Loading>
       </div>
     );
@@ -23,9 +24,17 @@ const Foundation = () => {
   };
 
   return (
-    <section className="text-white bg-[#5C5151] ">
+    <section
+      className={`${
+        darkMode ? "bg-[#5C5151] text-white" : "bg-[#ECE5DA] text-black"
+      } `}
+    >
       <div>
-        <h1 className="text-6xl font-normal ml-20 text-white p-10 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300">
+        <h1
+          className={`${
+            darkMode ? "text-white" : "text-black"
+          } lg:text-6xl text-3xl font-normal ml-20 p-10 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300`}
+        >
           Foundation
         </h1>
       </div>
@@ -38,7 +47,7 @@ const Foundation = () => {
             alt="Foundation"
           />
         </div>
-        <div className="mt-40 ">
+        <div className="">
           <h3 className="text-2xl font-bold mb-5">
             {ourStory.foundationTitle}
           </h3>
@@ -64,7 +73,9 @@ const Foundation = () => {
             </div>
           )}
           <button
-            className="btn btn-outline my-10 text-white hover:oranger-400 hover:bg-[#5C5151] hover:text-white underline border-x-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300"
+            className={`${
+              darkMode ? "text-white" : "text-black"
+            } btn btn-outline my-10  hover:oranger-400 hover:bg-[#5C5151] hover:text-white underline border-x-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300`}
             onClick={handleShowMore}
           >
             <span>Read More </span>

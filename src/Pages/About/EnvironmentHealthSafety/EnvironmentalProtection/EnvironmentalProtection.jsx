@@ -1,31 +1,41 @@
-import environmentalProtectionImage1 from "../../../../assets/images/About/EHS/EHS_Leed.2e16d0ba.fill-311x233-c0 (1).png";
-import environmentalProtectionImage2 from "../../../../assets/images/About/EHS/3.2e16d0ba.fill-311x233-c0 (1).jpg";
-import environmentalProtectionImage3 from "../../../../assets/images/About/EHS/1.2e16d0ba.fill-311x233-c0.jpg";
-import environmentalProtectionImage4 from "../../../../assets/images/About/EHS/APU00349-HDR-min.2e16d0ba.fill-311x233-c0.jpg";
+import environmentalProtectionImage1 from "../../../../assets/images/About/EHS/1/banne5r-1.jpg";
+import environmentalProtectionImage2 from "../../../../assets/images/About/EHS/1/banner-102.jpg";
+import environmentalProtectionImage3 from "../../../../assets/images/About/EHS/1/banner-2.jpg";
+import environmentalProtectionImage4 from "../../../../assets/images/About/EHS/1/bhawal-cottage-thumb.jpg";
 import { useContext } from "react";
 import { DarkModeContext } from "../../../../Contexts/NightLightContext";
 
-
 const EnvironmentalProtection = () => {
-
-  const {darkMode} = useContext(DarkModeContext);
+  const { darkMode } = useContext(DarkModeContext);
   return (
-    <section className={`${darkMode ? 'text-white' : "text-black"} flex  p-20 `}>
+    <section
+      className={`${darkMode ? "text-white" : "text-black"} flex  p-20 `}
+    >
       <div className="grid grid-cols-2 gap-4 mr-40">
-        <img src={environmentalProtectionImage1} alt="" />
-        <img src={environmentalProtectionImage2} alt="" />
-        <img src={environmentalProtectionImage3} alt="" />
-        <img src={environmentalProtectionImage4} alt="" />
+        <img className="w-96" src={environmentalProtectionImage1} alt="" />
+        <img className="w-96" src={environmentalProtectionImage2} alt="" />
+        <img className="w-96" src={environmentalProtectionImage3} alt="" />
+        <img className="w-96" src={environmentalProtectionImage4} alt="" />
       </div>
       <div className={`${darkMode ? "text-white" : "text-black"}`}>
-        <h1 className="text-6xl mb-10">Environmental Protection</h1>        
-            <li className="mt-5">Sustainable Construction Practices</li>
-            <li className="mt-5">Holistic Environment Impact Analysis</li>
-            <li className="mt-5">Green certification Commitment</li>
-            <li className="mt-5">Cutting-Edge Energy Efficiency</li>
-            <li className="mt-5">Usage Of World-Class Materials</li>
-            <li className="mt-5">State-Of-The-Art Construction Technology</li>
-        
+        <h1 className="text-4xl mb-10">
+          Available Facilities in Chuti Resort Gazipur
+        </h1>
+        <li className="mt-5">
+          Night Stay, Swimming, Corporate Dayout, Corporate Dinner, Corporate
+          Workshop,{" "}
+        </li>
+        <li className="mt-5">
+          Family Dayout, Student Dayout, Couple Night Stay, Candlelight Dinner,
+          Destination Wedding,{" "}
+        </li>
+        <li className="mt-5">
+          Horse Riding, Boating, Kayaking, Birthday Celebration, Walking track,
+          Tent Living, DJ Party,31st Night celebration
+        </li>
+        <li className="mt-5">
+          Pohela Boishakh Celebration, Fishing, and many more.
+        </li>
       </div>
     </section>
   );

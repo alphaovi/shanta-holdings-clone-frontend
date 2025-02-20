@@ -73,7 +73,7 @@ const AdminFeatureProject = ({ featureProject, index, onDelete }) => {
           <button
             type="button"
             onClick={handleDeleteProject}
-            className="btn btn-error ml-5"
+            className="btn btn-error ml-2 mt-5"
           >
             Delete
           </button>

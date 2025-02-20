@@ -14,7 +14,7 @@ const EditAdminFeatureProject = () => {
 
   useEffect(() => {
     fetch(
-      `https://chutiharmony-server.vercel.app/api/v1/feature-project/feature-project/${projectId}`
+      `https://chuti-harmony-server.vercel.app/api/v1/feature-project/feature-project/${projectId}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -65,7 +65,7 @@ const EditAdminFeatureProject = () => {
       // Update the project data
       const updatedProject = { ...project, projectImg: imageUrl };
       const response = await axios.patch(
-        `https://chutiharmony-server.vercel.app/api/v1/feature-project/feature-project/${projectId}`,
+        `https://chuti-harmony-server.vercel.app/api/v1/feature-project/feature-project/${projectId}`,
         updatedProject
       );
       setProject(response.data);
@@ -80,12 +80,12 @@ const EditAdminFeatureProject = () => {
     return (
       <div>
         <p>.....Loading</p>
-      </div>
+    </div>
     );
   }
 
   return (
-    <section>
+    <section className="lg:w-[800px] -mt-10">
       <div>
         <Link
           to="/admin/feature-project"

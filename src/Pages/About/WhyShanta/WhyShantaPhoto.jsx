@@ -1,4 +1,4 @@
-import whyShantaPhoto from "../../../assets/images/About/why-shanta/Whyn_Shanta_Bann.2e16d0ba.fill-2560x1440-c0.format-avif.jpg";
+import whyShantaPhoto from "../../../assets/images/chuti-harmony/header-slider/2.jpg";
 
 const WhyShantaPhoto = () => {
   return (

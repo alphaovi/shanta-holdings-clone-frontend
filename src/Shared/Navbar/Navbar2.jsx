@@ -228,8 +228,8 @@ const Navbar2 = () => {
                 </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/ehs"} onClick={handleCloseMenu}>
-                  EHS
+                <Link to={"/facilities"} onClick={handleCloseMenu}>
+                  Facilities
                 </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">

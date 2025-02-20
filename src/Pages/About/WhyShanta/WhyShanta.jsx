@@ -8,6 +8,7 @@ const WhyShanta = () => {
             <WhyShantaPhoto></WhyShantaPhoto>
             <WhyChooseShanta></WhyChooseShanta>
             <FirstOfShanta></FirstOfShanta>
+            
         </div>
     );
 };

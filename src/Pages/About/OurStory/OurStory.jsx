@@ -13,7 +13,7 @@ const OurStory = () => {
   return (
     <section className={`${darkMode ? "bg-black text-white" : "bg-white text-black"}`}>
       <div >
-        <h1 className="text-8xl font-bold text-center  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+        <h1 className="lg:text-8xl text-4xl text-center  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 uppercase">
         <AnimatedTextUptoDown text="Our Story" animationType="sequence" />
         </h1>
       </div>

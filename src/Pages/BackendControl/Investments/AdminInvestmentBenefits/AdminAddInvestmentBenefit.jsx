@@ -3,7 +3,6 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 
 const AdminAddInvestmentBenefit = () => {
-
   const [isLoading, setIsLoading] = useState(true);
   // handle add benefit
   const handleBenefits = () => {
@@ -21,7 +20,7 @@ const AdminAddInvestmentBenefit = () => {
         }
         try {
           const response = await axios.post(
-            "https://chutiharmony-server.vercel.app/api/v1/investment/investment",
+            "https://chuti-harmony-server.vercel.app/api/v1/investment/investment",
             { benefits: inputText }
           );
 

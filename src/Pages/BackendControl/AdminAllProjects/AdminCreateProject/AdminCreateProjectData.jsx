@@ -95,7 +95,7 @@ const AdminCreateProjectData = () => {
 
       // Send the payload to the backend
       const response = await axios.post(
-        `https://chutiharmony-server.vercel.app/api/v1/project-details/project-details`,
+        `https://chuti-harmony-server.vercel.app/api/v1/project-details/project-details`,
         newAdminCreateProjectData
       );
 
@@ -189,7 +189,7 @@ const AdminCreateProjectData = () => {
           />
         </div>
         <div className="flex gap-2 mt-5 items-center">
-          <p className="w-32">Architect Name: </p>
+          <p className="w-32">Facebook: </p>
           <input
             className="border border-gray-500 p-2 w-96 rounded"
             onChange={(event) =>
@@ -204,7 +204,7 @@ const AdminCreateProjectData = () => {
           />
         </div>
         <div className="flex gap-2 mt-5 items-center">
-          <p className="w-32">Land Area: </p>
+          <p className="w-32">Head Office: </p>
           <input
             className="border border-gray-500 p-2 w-96 rounded"
             onChange={(event) =>
@@ -219,7 +219,7 @@ const AdminCreateProjectData = () => {
           />
         </div>
         <div className="flex gap-2 mt-5 items-center">
-          <p className="w-32">Facing: </p>
+          <p className="w-32">Corporate Office: </p>
           <input
             className="border border-gray-500 p-2 w-96 rounded"
             onChange={(event) =>
@@ -233,7 +233,7 @@ const AdminCreateProjectData = () => {
           />
         </div>
         <div className="flex gap-2 mt-5 items-center">
-          <p className="w-32">Front Road: </p>
+          <p className="w-32">website: </p>
           <input
             className="border border-gray-500 p-2 w-96 rounded"
             onChange={(event) =>

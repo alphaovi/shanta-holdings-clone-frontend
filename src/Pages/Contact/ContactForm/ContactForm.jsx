@@ -20,7 +20,7 @@ const ContactForm = () => {
     const fetchedData = async () => {
       try {
         const response = await axios.get(
-          "https://chutiharmony-server.vercel.app/api/v1/message-category/message-category"
+          "https://chuti-harmony-server.vercel.app/api/v1/message-category/message-category"
         );
         const data = response.data.data;
         setCategories(data);
@@ -51,7 +51,7 @@ const ContactForm = () => {
     try {
       // post the data to backend
       const response = await axios.post(
-        "https://chutiharmony-server.vercel.app/api/v1/message/message",
+        "https://chuti-harmony-server.vercel.app/api/v1/message/message",
         formData
       );
       console.log("Form submitted successfully", response.data);

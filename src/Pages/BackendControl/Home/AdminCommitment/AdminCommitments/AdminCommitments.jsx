@@ -33,7 +33,7 @@ const AdminCommitments = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://chutiharmony-server.vercel.app/api/v1/withness/withness"
+          "https://chuti-harmony-server.vercel.app/api/v1/withness/withness"
         );
         const data = response.data.data;
         setAchievements(data);
@@ -99,7 +99,7 @@ const AdminCommitments = () => {
       };
 
       const response = await axios.patch(
-        "https://chutiharmony-server.vercel.app/api/v1/withness/withness",
+        "https://chuti-harmony-server.vercel.app/api/v1/withness/withness",
         updatedProject
       );
 

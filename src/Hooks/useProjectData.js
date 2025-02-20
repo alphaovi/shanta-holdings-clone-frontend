@@ -8,7 +8,7 @@ const useProjectData = () => {
     const fetchProjects = async () => {
       try {
         const response = await fetch(
-          `https://chutiharmony-server.vercel.app/api/v1/feature-project/feature-project`
+          `https://chuti-harmony-server.vercel.app/api/v1/feature-project/feature-project`
         );
         const data = await response.json();
 

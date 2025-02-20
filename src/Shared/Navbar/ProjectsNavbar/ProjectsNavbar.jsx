@@ -160,6 +160,9 @@ const ProjectsNavbar = () => {
                 <Link to="/careers" onClick={handleShowMenu}>News & Events</Link>
               </li>
               <li className=" px-5 hover:text-[#8F8933]">
+                <Link to="/invest" onClick={handleShowMenu}>Investment</Link>
+              </li>
+              <li className=" px-5 hover:text-[#8F8933]">
                 <Link to="/contact" onClick={handleShowMenu}>Contact</Link>
               </li>
               {/* <li className="px-5">

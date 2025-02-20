@@ -65,7 +65,7 @@ const CreateAdminFeatureProjects = () => {
       console.log("Sending data to API:", newProject); // Debugging
 
       const response = await axios.post(
-        "https://chutiharmony-server.vercel.app/api/v1/feature-project/create-feature-project",
+        "https://chuti-harmony-server.vercel.app/api/v1/feature-project/create-feature-project",
         newProject
       );
 

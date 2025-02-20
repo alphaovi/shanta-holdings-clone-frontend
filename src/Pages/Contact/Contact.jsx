@@ -12,7 +12,7 @@ const Contact = () => {
     const fetchedData = async () => {
       try {
         const response = await axios.get(
-          "https://chutiharmony-server.vercel.app/api/v1/connect/connect"
+          "https://chuti-harmony-server.vercel.app/api/v1/connect/connect"
         );
         const data = response.data.data;
         setConnectData(data);

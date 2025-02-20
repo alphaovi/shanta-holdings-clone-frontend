@@ -19,7 +19,7 @@ const SingleProjectDetails = () => {
       <div className="">
         <div className="flex flex-cols-2 gap-40 border-b border-gray-400">
           <div className="mt-8 mb-8 w-48">
-            <h3 className=" font-bold uppercase">Architect:</h3>
+            <h3 className=" font-bold uppercase">Facebook:</h3>
             <p className="">{projectFullDetails.architectName}</p>
           </div>
           <div className="mt-8 mb-8 w-48">
@@ -29,7 +29,7 @@ const SingleProjectDetails = () => {
         </div>
         <div className="flex flex-cols-2 gap-40 border-b border-gray-400">
           <div className="mt-8 mb-8 w-48">
-            <h3 className=" font-bold uppercase">Land Area:</h3>
+            <h3 className=" font-bold uppercase">Head Office:</h3>
             <p className="">{projectFullDetails.landArea}</p>
           </div>
           <div className="mt-8 mb-8 w-48">
@@ -39,7 +39,7 @@ const SingleProjectDetails = () => {
         </div>
         <div className="flex flex-cols-2 gap-40 border-b border-gray-400">
           <div className="mt-8 mb-8 w-48">
-            <h3 className=" font-bold uppercase">Facing:</h3>
+            <h3 className=" font-bold uppercase">Corporate Office:</h3>
             <p className="">{projectFullDetails.facing}</p>
           </div>
           <div className="mt-8 mb-8 w-48">
@@ -49,7 +49,7 @@ const SingleProjectDetails = () => {
         </div>
         <div className="flex flex-cols-2 gap-40 border-b border-gray-400">
           <div className="mt-8 mb-8 w-48">
-            <h3 className=" font-bold uppercase">Front Road:</h3>
+            <h3 className=" font-bold uppercase">Website:</h3>
             <p className="">{projectFullDetails.frontRoad}</p>
           </div>
           <div className="mt-8 mb-8 w-48">

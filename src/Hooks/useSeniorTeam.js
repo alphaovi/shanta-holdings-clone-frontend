@@ -10,7 +10,7 @@ const useSeniorTeam = () => {
     const fetchOurSeniorTeam = async () => {
       try {
         const response = await axios.get(
-          "https://chutiharmony-server.vercel.app/api/v1/senior-team/senior-team"
+          "https://chuti-harmony-server.vercel.app/api/v1/senior-team/senior-team"
         );
 
         // Assuming the API returns data in a format like { data: [...] }

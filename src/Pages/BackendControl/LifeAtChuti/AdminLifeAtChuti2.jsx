@@ -77,7 +77,7 @@ const AdminLifeAtChuti2 = () => {
       };
 
       const response = await axios.patch(
-        `https://chutiharmony-server.vercel.app/api/v1/life-at-chuti/life-at-chuti`,
+        `https://chuti-harmony-server.vercel.app/api/v1/life-at-chuti/life-at-chuti`,
         newChutiData
       );
       if (response.status === 200) {

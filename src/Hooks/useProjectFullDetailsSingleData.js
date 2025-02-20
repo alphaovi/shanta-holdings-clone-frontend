@@ -11,7 +11,7 @@ const useProjectFullDetailsSingleData = () => {
     const fetchedData = async () => {
       try {
         const response = await axios.get(
-          `https://chutiharmony-server.vercel.app/api/v1/project-details/project-details/${projectId}`
+          `https://chuti-harmony-server.vercel.app/api/v1/project-details/project-details/${projectId}`
         );
         const data = response.data.data;
         setProjectFullDetails(data);

@@ -14,7 +14,7 @@ const MessageCategories = () => {
   const fetchedData = async () => {
     try {
       const response = await axios.get(
-        "https://chutiharmony-server.vercel.app/api/v1/message-category/message-category"
+        "https://chuti-harmony-server.vercel.app/api/v1/message-category/message-category"
       );
       if (response.data.data) {
         setCategories(response.data.data);
@@ -36,7 +36,7 @@ const MessageCategories = () => {
 
     try {
       const response = await axios.post(
-        "https://chutiharmony-server.vercel.app/api/v1/message-category/message-category",
+        "https://chuti-harmony-server.vercel.app/api/v1/message-category/message-category",
         formData
       );
       console.log("Form Submitted successfully");
@@ -54,7 +54,7 @@ const MessageCategories = () => {
     if (window.confirm("Are you sure you want to delete this category?")) {
       try {
         const response = await axios.delete(
-          `https://chutiharmony-server.vercel.app/api/v1/message-category/message-category/${categoryId}`
+          `https://chuti-harmony-server.vercel.app/api/v1/message-category/message-category/${categoryId}`
         );
         if (response.data) {
           toast.success("Category deleted Successfully");

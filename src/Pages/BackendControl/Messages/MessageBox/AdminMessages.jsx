@@ -14,7 +14,7 @@ const AdminMessages = () => {
   const fetchedMessage = async () => {
     try {
       const response = await axios.get(
-        "https://chutiharmony-server.vercel.app/api/v1/message/message"
+        "https://chuti-harmony-server.vercel.app/api/v1/message/message"
       );
       if (response.data.data) {
         setAdminMessages(response.data.data);
@@ -44,7 +44,7 @@ const AdminMessages = () => {
         ))}
         {isLoading ? (
           <div>
-           <Loading></Loading>
+            <Loading></Loading>
           </div>
         ) : error ? (
           <p className="text-red-500">Error: {error}</p>

@@ -32,7 +32,7 @@ const AdminOurStory = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://chutiharmony-server.vercel.app/api/v1/our-story/our-story"
+          "https://chuti-harmony-server.vercel.app/api/v1/our-story/our-story"
         );
         const data = response.data.data;
         setStoryData(data);
@@ -96,7 +96,7 @@ const AdminOurStory = () => {
       }
 
       const response = await axios.patch(
-        "https://chutiharmony-server.vercel.app/api/v1/our-story/our-story",
+        "https://chuti-harmony-server.vercel.app/api/v1/our-story/our-story",
         updatedData
       );
 

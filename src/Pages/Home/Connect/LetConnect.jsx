@@ -24,7 +24,7 @@ const LetConnect = () => {
     const fetchedData = async () => {
       try {
         const response = await axios.get(
-          "https://chutiharmony-server.vercel.app/api/v1/connect/connect"
+          "https://chuti-harmony-server.vercel.app/api/v1/connect/connect"
         );
         const data = response.data.data;
         setConnectData(data);
@@ -36,7 +36,7 @@ const LetConnect = () => {
   }, []);
 
   return (
-    <section className="flex styleForMainDiv">
+    <section className="lg:flex styleForMainDiv">
       <div className="flex-1">
         <div
           className={`mb-20 font-familyConnect w-20 uppercase
@@ -106,7 +106,6 @@ const LetConnect = () => {
         }}
       >
         <img
-          className={``}
           style={{ height: "300px", width: "600px" }}
           src={connectData.image}
           alt=""

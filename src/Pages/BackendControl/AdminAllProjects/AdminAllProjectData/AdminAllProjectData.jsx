@@ -38,7 +38,7 @@ const AdminAllProjectData = ({ projectFullDetail, index }) => {
       if (result.isConfirmed) {
         // Make the API call to delete the project
         const response = await axios.delete(
-          `https://chutiharmony-server.vercel.app/api/v1/project-details/project-details/${id}`
+          `https://chuti-harmony-server.vercel.app/api/v1/project-details/project-details/${id}`
         );
 
         if (response.status === 200) {
@@ -67,10 +67,10 @@ const AdminAllProjectData = ({ projectFullDetail, index }) => {
         <p>Project Name: {projectName}</p>
         <p>Status: {status}</p>
         <p>Address: {address}</p>
-        <p>Architect name: {architectName}</p>
-        <p>Land area: {landArea}</p>
-        <p>Facing: {facing}</p>
-        <p>Front road: {frontRoad}</p>
+        <p>Facebook: {architectName}</p>
+        <p>Head Office: {landArea}</p>
+        <p>Corporate Office: {facing}</p>
+        <p>Website: {frontRoad}</p>
         <p>Size of units: {sizeOfUnits}</p>
         <p>Number of car parking: {numberOfCarParking}</p>
         <p>Land scaping consultant: {landScapingConsultant}</p>

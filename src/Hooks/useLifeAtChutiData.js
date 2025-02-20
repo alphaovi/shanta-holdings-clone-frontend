@@ -11,7 +11,7 @@ const useWhyChutiData = () => {
     const fetchedData = async () => {
       try {
         const loadedData = await axios.get(
-          `https://chutiharmony-server.vercel.app/api/v1/life-at-chuti/life-at-chuti`
+          `https://chuti-harmony-server.vercel.app/api/v1/life-at-chuti/life-at-chuti`
         );
         if (loadedData.data.data) {
           setWhyChutiData(loadedData.data.data);

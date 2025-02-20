@@ -9,7 +9,7 @@ const useInvestmentPhoto = () => {
     const fetchedData = async () => {
       try {
         const response = await axios.get(
-          `https://chutiharmony-server.vercel.app/api/v1/investment-photo/investment-photo`
+          `https://chuti-harmony-server.vercel.app/api/v1/investment-photo/investment-photo`
         );
         const data = response.data.data;
         setInvestmentPhotos(data);

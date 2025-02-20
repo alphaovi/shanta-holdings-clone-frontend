@@ -5,10 +5,10 @@ import Loading from "../../../../Shared/Loading/Loading";
 
 const AdminInvestmentBenefit = ({ investmentBenefit }) => {
   const { _id, benefits } = investmentBenefit;
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
-  if(isLoading){
-    <Loading></Loading>
+  if (isLoading) {
+    <Loading></Loading>;
   }
   const handleInvestmentBenefit = () => {
     Swal.fire({
@@ -23,7 +23,7 @@ const AdminInvestmentBenefit = ({ investmentBenefit }) => {
       if (result.isConfirmed) {
         try {
           const response = await axios.delete(
-            `https://chutiharmony-server.vercel.app/api/v1/investment/investment/${_id}`
+            `https://chuti-harmony-server.vercel.app/api/v1/investment/investment/${_id}`
           );
           if (response.status === 200) {
             Swal.fire({

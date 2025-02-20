@@ -74,7 +74,7 @@ const AdminInvestmentPhoto = () => {
   const saveToDatabase = async (photoUrl) => {
     try {
       await axios.post(
-        "https://chutiharmony-server.vercel.app/api/v1/investment-photo/investment-photo",
+        "https://chuti-harmony-server.vercel.app/api/v1/investment-photo/investment-photo",
         {
           name: photoName, // Correctly aligned with backend schema
           investmentImage: photoUrl,
@@ -102,7 +102,7 @@ const AdminInvestmentPhoto = () => {
       if (result.isConfirmed) {
         // Make the API call to delete the project
         const response = await axios.delete(
-          `https://chutiharmony-server.vercel.app/api/v1/investment-photo/investment-photo/${investmentPhotoId}`
+          `https://chuti-harmony-server.vercel.app/api/v1/investment-photo/investment-photo/${investmentPhotoId}`
         );
 
         if (response.status === 200) {

@@ -10,7 +10,7 @@ const LandMarksDetailsAndPhotos = () => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    fetch("https://chutiharmony-server.vercel.app/api/v1/withness/withness")
+    fetch("https://chuti-harmony-server.vercel.app/api/v1/withness/withness")
       .then((res) => res.json())
       .then((data) => {
         setCommitment(data.data);

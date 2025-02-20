@@ -36,44 +36,36 @@ const FirstOfShantaAnimation = () => {
       >
         <SwiperSlide>
           <div>
-            <p className="text-xl uppercase">
-              134 keys international standard hotel project
-            </p>
+            <p className="text-xl uppercase">Chuti Resort Purbachal</p>
+
             <img src="https://i.ibb.co.com/CtJk01C/Amari-3-2e16d0ba-fill-481x600-c0-1.jpg" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div>
-            <p className="text-xl uppercase">
-              First far complaint building with a parking free ground floor
-            </p>
+            <p className="text-xl uppercase">Chuti Resort Gazipur</p>
             <img src="https://i.ibb.co.com/CPPzcjL/Chandralok-7-dtkkdkd-2e16d0ba-fill-481x600-c0-1.jpg" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div>
-            <p className="text-xl uppercase">
-              An iconic 1.6 million sft, 40- storied commercial development
-            </p>
+            <p className="text-xl uppercase">Chuti Harmony</p>
             <img src="https://i.ibb.co.com/0GRWY81/Dhaka-Tower-3-original.jpg" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div>
-            <p className="text-xl uppercase">
-              First building with a fully unitized double-glazed curtain
-              wall-system
-            </p>
+            <p className="text-xl uppercase">Saltanat Tea Resort</p>
             <img src="https://i.ibb.co.com/hygn6Qb/Dhaka-Tower-5-original.jpg" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div>
-            <p className="text-xl uppercase">The first 40 storied skyscrapper of the country</p>
+            <p className="text-xl uppercase">Chuti Aronnobash Resort</p>
             <img src="https://i.ibb.co.com/BVfbLcf/digonto-4-original.jpg" />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <div>
             <p className="text-xl uppercase">
               First true condominium with 150 units
@@ -83,13 +75,17 @@ const FirstOfShantaAnimation = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div>
-            <p className="text-xl uppercase">An iconic 1.6 million sft, 40 storied commercial development</p>
+            <p className="text-xl uppercase">
+              An iconic 1.6 million sft, 40 storied commercial development
+            </p>
             <img src="https://i.ibb.co.com/HVyRfs0/DT-WS-2e16d0ba-fill-481x600-c0.jpg" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div>
-            <p className="text-xl uppercase">First 25-storied twin towers of the country</p>
+            <p className="text-xl uppercase">
+              First 25-storied twin towers of the country
+            </p>
             <img src="https://i.ibb.co.com/WybW94F/Forum-WS-2e16d0ba-fill-481x600-c0-2.jpg" />
           </div>
         </SwiperSlide>
@@ -100,7 +96,7 @@ const FirstOfShantaAnimation = () => {
             </p>
             <img src="https://i.ibb.co.com/Fmbqxtz/Glasshouse-WS-2e16d0ba-fill-481x600-c0-1.jpg" />
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </>
   );

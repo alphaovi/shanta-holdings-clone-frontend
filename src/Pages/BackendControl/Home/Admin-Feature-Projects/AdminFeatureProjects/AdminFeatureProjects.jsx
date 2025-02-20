@@ -13,7 +13,7 @@ const AdminFeatureProjects = () => {
   const fetchFeatureProjects = async () => {
     try {
       const response = await axios.get(
-        "https://chutiharmony-server.vercel.app/api/v1/feature-project/feature-project"
+        "https://chuti-harmony-server.vercel.app/api/v1/feature-project/feature-project"
       );
       if (response.data.data) {
         setFeatureProjects(response.data.data);
@@ -34,7 +34,7 @@ const AdminFeatureProjects = () => {
   const handleDeleteProject = async (projectId) => {
     try {
       await axios.delete(
-        `https://chutiharmony-server.vercel.app/api/v1/feature-project/feature-project/${projectId}`
+        `https://chuti-harmony-server.vercel.app/api/v1/feature-project/feature-project/${projectId}`
       );
       // Remove the deleted project from the state
       setFeatureProjects((prevProjects) =>
@@ -47,7 +47,7 @@ const AdminFeatureProjects = () => {
   };
 
   return (
-    <section>
+    <section className="w-[780px]">
       <div>
         <Link
           className="btn btn-secondary bg-[#a59d2e] hover:bg-gray-600 border-none mb-10 text-white"
@@ -59,7 +59,7 @@ const AdminFeatureProjects = () => {
       <div>
         {isLoading ? (
           <div>
-           <Loading></Loading>
+            <Loading></Loading>
           </div>
         ) : error ? (
           <p className="text-red-500">Error: {error}</p>

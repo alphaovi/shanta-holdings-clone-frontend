@@ -1,33 +1,53 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-
 
 const OurBusinessDetail = ({ businessDetail }) => {
-  const { name, img, services } = businessDetail;
+  const { name, photo, titleOne, titleTwo, titleThree, titleFour } =
+    businessDetail || {};
   const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div
-      className="relative"
+      className="relative shadow-lg rounded-lg overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="mb-10">
-        <img src={img} alt="" />
-      </div>
-      <div className="-mt-[136px] opacity-75 absolute bg-black w-[400px] h-24">
-        <h3 className="mt-5 text-white text-center font-bold">{name}</h3>
+      <div className="mb-4">
+        <div>
+          <img
+            src={photo || "https://via.placeholder.com/400"}
+            alt={name || "Business"}
+            className="w-full h-[250px] object-cover"
+          />
+        </div>
+        {!isHovered && (
+          <div className="-mt-[90px] opacity-75 absolute bg-black w-full h-24 flex items-center justify-center ">
+            <h3 className="text-white font-bold text-center">{name}</h3>
+          </div>
+        )}
       </div>
       {isHovered && (
-        <div className="absolute top-0 left-0 w-full h-full bg-gray-800 bg-opacity-90 flex flex-col justify-center items-center transition-all duration-300">
-          <h1 className="text-white text-2xl font-bold">{name}</h1>
-          <div className="text-white underline ">
-            {services.map((service, i) => (<p className="hover:text-[#8F8933] m-5 font-bold" key={i}><Link to={"/"}>{service}</Link></p>))}
+        <div className="text-white underline mt-10">
+          <div className="relative">
+            <p className="">{titleOne}</p>
+            <div className="-mt-[260px] opacity-75 absolute bg-black w-full justify-center">
+              <h3 className="text-white font-bold text-center hover:text-[#8F8933] mt-5  cursor-pointer">
+                {titleOne}
+              </h3>
+              <h3 className="text-white font-bold text-center hover:text-[#8F8933] mt-5  cursor-pointer">
+                {titleTwo}
+              </h3>
+              <h3 className="text-white font-bold text-center hover:text-[#8F8933] mt-5  cursor-pointer">
+                {titleThree}
+              </h3>
+              <h3 className="text-white font-bold text-center hover:text-[#8F8933] mt-5  cursor-pointer">
+                {titleFour}
+              </h3>
+            </div>
           </div>
         </div>
       )}
     </div>
   );
 };
-
 
 export default OurBusinessDetail;

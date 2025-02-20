@@ -12,7 +12,7 @@ const Message = ({ adminMessage, messageCount }) => {
     if (isConfirmed) {
       try {
         const response = await axios.delete(
-          `https://chutiharmony-server.vercel.app/api/v1/message/message/${_id}`
+          `https://chuti-harmony-server.vercel.app/api/v1/message/message/${_id}`
         );
         if (response.status === 200) {
           toast.success("Remove message from Database");

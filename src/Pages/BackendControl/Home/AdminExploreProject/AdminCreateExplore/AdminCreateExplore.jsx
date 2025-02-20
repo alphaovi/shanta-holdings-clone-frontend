@@ -18,7 +18,7 @@ const AdminCreateExplore = () => {
 
     try {
       const response = await axios.post(
-        "https://chutiharmony-server.vercel.app/api/v1/explore-project/explore-project",
+        "https://chuti-harmony-server.vercel.app/api/v1/explore-project/explore-project",
         project
       );
 

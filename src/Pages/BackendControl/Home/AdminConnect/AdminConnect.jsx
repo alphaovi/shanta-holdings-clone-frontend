@@ -25,7 +25,7 @@ const AdminConnect = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://chutiharmony-server.vercel.app/api/v1/connect/connect"
+          "https://chuti-harmony-server.vercel.app/api/v1/connect/connect"
         );
         const data = response.data.data; // Adjust based on your API's response structure
         setConnectionData(data);
@@ -80,7 +80,7 @@ const AdminConnect = () => {
       };
 
       const response = await axios.patch(
-        "https://chutiharmony-server.vercel.app/api/v1/connect/connect",
+        "https://chuti-harmony-server.vercel.app/api/v1/connect/connect",
         updatedData
       );
 

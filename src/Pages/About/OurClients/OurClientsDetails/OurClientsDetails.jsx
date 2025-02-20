@@ -1,24 +1,19 @@
-import { useEffect, useState } from "react";
-import OurClientsDetail from "./OurClientsDetail";
+import clients1 from "../../../../assets/images/chuti-harmony/clients/1.jpg";
+import clients2 from "../../../../assets/images/chuti-harmony/clients/2.jpg";
+import clients3 from "../../../../assets/images/chuti-harmony/clients/3.jpg";
+import clients4 from "../../../../assets/images/chuti-harmony/clients/4.jpg";
+import clients5 from "../../../../assets/images/chuti-harmony/clients/5.jpg";
+import clients6 from "../../../../assets/images/chuti-harmony/clients/6.jpg";
 
 const OurClientsDetails = () => {
-  const [clientsDetails, setClientsDetails] = useState([]);
-
-  useEffect(() => {
-    fetch("clientsData.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setClientsDetails(data);
-      });
-  }, []);
   return (
-    <div className="grid grid-cols-4 gap-2 m-5 opacity-100 ">
-      {clientsDetails.map((clientDetail) => (
-        <OurClientsDetail
-          key={clientDetail.id}
-          clientDetail={clientDetail}
-        ></OurClientsDetail>
-      ))}
+    <div className="">
+      <img className="px-40" src={clients1} alt="" />
+      <img className="px-40" src={clients2} alt="" />
+      <img className="px-40" src={clients3} alt="" />
+      <img className="px-40" src={clients4} alt="" />
+      <img className="px-40" src={clients5} alt="" />
+      <img className="px-40" src={clients6} alt="" />
     </div>
   );
 };

@@ -9,7 +9,7 @@ import { Toaster } from "react-hot-toast";
 
 
 createRoot(document.getElementById("root")).render(
-  <div >
+  <div className="scroll-smooth">
     <StrictMode>
       <AuthProvider>
         <NightLightContext>
