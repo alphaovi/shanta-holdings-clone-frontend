@@ -9,7 +9,7 @@ const WhyChooseShanta = () => {
         </h1>
       </div>
       <div>
-        <p className="font-bold px-20 mx-20">
+        <p className="font-bold lg:px-20 lg:mx-20">
           Choosing Chuti Hotel & Hospitality ensures a memorable experience
           where comfort, luxury, and warm hospitality come together, making it
           the perfect choice for any traveler.

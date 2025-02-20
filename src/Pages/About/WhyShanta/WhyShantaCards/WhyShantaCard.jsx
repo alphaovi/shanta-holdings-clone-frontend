@@ -59,7 +59,7 @@ const WhyShantaCard = ({ cardDetail }) => {
       <div className="mb-10">
         <img className="h-60" src={img} alt="" />
       </div>
-      <div className="-mt-[136px] opacity-75 absolute bg-black w-[364px] h-24">
+      <div className="-mt-[136px] opacity-75 absolute bg-black lg:w-[364px] w-[165px] h-24">
         <h3 className="mt-5 text-white text-center font-bold">{name}</h3>
       </div>
       {isHovered && (

@@ -41,7 +41,7 @@ const Navbar2 = () => {
 
   return (
     <div className="navbar-container">
-      <div className="navbar px-5 md:px-20 py-3 md:py-5 flex items-center ">
+      <div className="navbar px-4 md:px-20 py-3 md:py-5 flex items-center justify-between">
         {/* Logo */}
         <div className="flex-1">
           <Link to={"/"} className="text-start block" onClick={handleCloseMenu}>
@@ -49,13 +49,13 @@ const Navbar2 = () => {
               <img
                 src={navbarLogoForLight}
                 alt="Logo"
-                className="h-14 md:h-20"
+                className="h-10 md:h-20"
               />
             ) : (
               <img
                 src={navbarLogoForDark}
                 alt="Logo"
-                className="h-14 md:h-20"
+                className="h-10 md:h-20"
               />
             )}
           </Link>
@@ -65,7 +65,7 @@ const Navbar2 = () => {
         <div className="flex items-center space-x-4">
           <p
             onClick={() => setDarkMode(!darkMode)}
-            className={`cursor-pointer text-lg md:text-2xl ${
+            className={`cursor-pointer text-base md:text-2xl ${
               darkMode ? "text-white" : "text-black"
             }`}
           >
@@ -76,9 +76,9 @@ const Navbar2 = () => {
             onClick={() => setDarkMode(!darkMode)}
           >
             {darkMode ? (
-              <FaToggleOff className="h-6 w-6 md:h-7 md:w-7 text-[#8F8933]" />
+              <FaToggleOff className="h-5 w-5 md:h-7 md:w-7 text-[#8F8933]" />
             ) : (
-              <FaToggleOn className="h-6 w-6 md:h-7 md:w-7 text-[#8F8933]" />
+              <FaToggleOn className="h-5 w-5 md:h-7 md:w-7 text-[#8F8933]" />
             )}
           </div>
         </div>
@@ -86,11 +86,11 @@ const Navbar2 = () => {
         {/* Menu Button */}
         {!showMenu && (
           <div
-            className="menu-icon ml-5 md:ml-10 text-lg md:text-2xl cursor-pointer"
+            className="menu-icon ml-4 md:ml-10 text-base md:text-2xl cursor-pointer flex items-center"
             onClick={handleMenuToggle}
           >
-            <p>Menu</p>
-            <CiMenuBurger className="cursor-pointer text-3xl md:text-4xl ml-2 md:ml-4" />
+            <p className="hidden md:block">Menu</p>
+            <CiMenuBurger className="cursor-pointer text-2xl md:text-4xl ml-2 md:ml-4" />
           </div>
         )}
       </div>
@@ -173,22 +173,10 @@ const Navbar2 = () => {
                   Contact
                 </Link>
               </li>
-
-              {/* <li className="px-5">
-                <button
-                  onClick={() => showSubMenu("contact")}
-                  className="flex items-center w-full hover:text-[#8F8933]"
-                  style={{ marginTop: "0px" }}
-                >
-                  Contact Us{" "}
-                  <MdOutlineKeyboardArrowRight className="ml-3 md:ml-5" />
-                </button>
-              </li> */}
             </ul>
           )}
 
           {/* Submenus */}
-          {/* uncomment and it'll active */}
           {currentMenu === "about" && (
             <ul className="menu-list space-y-3 md:space-y-4 p-4 md:p-6 ml-3 md:ml-5">
               <li className="px-7">
@@ -199,7 +187,7 @@ const Navbar2 = () => {
                   <MdOutlineArrowBackIosNew className="mr-2" /> Back
                 </button>
               </li>
-              <h2 className="text-3xl font-bold px-8 text-[#8F8933]">
+              <h2 className="text-2xl md:text-3xl font-bold px-8 text-[#8F8933]">
                 About Chuti
               </h2>
               <li className="hover:text-[#8F8933] px-7">
@@ -250,7 +238,7 @@ const Navbar2 = () => {
                   <MdOutlineArrowBackIosNew className="mr-2" /> Back
                 </button>
               </li>
-              <h2 className="text-3xl font-bold px-8 text-[#8F8933]">
+              <h2 className="text-2xl md:text-3xl font-bold px-8 text-[#8F8933]">
                 Projects
               </h2>
               <li className="hover:text-[#8F8933] px-7">
@@ -279,32 +267,8 @@ const Navbar2 = () => {
             </ul>
           )}
 
-          {/* {currentMenu === "contact" && (
-            <ul className="menu-list space-y-3 md:space-y-4 p-4 md:p-6 ml-3 md:ml-5">
-              <li>
-                <button
-                  onClick={showMainMenu}
-                  className="flex items-center space-x-2 px-7 hover:text-[#8F8933]"
-                >
-                  <MdOutlineArrowBackIosNew className="mr-2" /> Back
-                </button>
-              </li>
-              <h2 className="text-3xl font-bold px-8 text-[#8F8933]">
-                Contact Us
-              </h2>
-              <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/contact"}>Contact</Link>
-              </li>
-              <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/location"}>Landowners</Link>
-              </li>
-              <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/email"}>Clients</Link>
-              </li>
-            </ul>
-          )} */}
-
-          <div className="flex gap-5 md:gap-8 ml-3 md:ml-5 mt-5 md:mt-10 justify-center text-3xl md:text-4xl ">
+          {/* Social Icons */}
+          <div className="flex gap-5 md:gap-8 ml-3 md:ml-5 mt-5 md:mt-10 justify-center text-2xl md:text-4xl ">
             <CiFacebook className="border-[#978c21] text-white border-2 rounded-full p-1 hover:text-[#8F8933]" />
             <FaInstagram className="border-[#978c21] text-white border-2 rounded-full p-1 hover:text-[#8F8933]" />
             <RiYoutubeLine className="border-[#978c21] text-white border-2 rounded-full p-1 hover:text-[#8F8933]" />

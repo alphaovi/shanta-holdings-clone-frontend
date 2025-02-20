@@ -1,61 +1,45 @@
+/* Navbar2.css */
 .navbar-container {
   position: relative;
 }
 
 .menu-container {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 520px;
-  background-color: #dfdfdf; /* Adjust based on theme */
-  transform: translateX(100%);
-  transition: transform 0.5s ease-in-out;
-  z-index: 1000;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-  font-size: 20px;
-}
-
-
-.menu-container.translate-x-0 {
-  transform: translateX(0);
+  overflow-y: auto;
 }
 
 .menu-list {
-  list-style-type: none;
-}
-
-.menu-icon {
-  position: relative;
-  z-index: 1001;
-}
-
-.menu-content ul {
+  list-style: none;
   padding: 0;
 }
 
-.menu-content button {
+.menu-list li {
+  margin-bottom: 10px;
+}
+
+.menu-list li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-list li button {
   background: none;
   border: none;
-  text-align: left;
-  width: 100%;
-  font-size: 20px;
+  color: inherit;
   cursor: pointer;
-  margin-top: 30px;
+  padding: 0;
 }
 
-.menu-content button:focus {
-  outline: none;
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px;
+  }
 
-.close-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #333;
-}
+  .menu-container {
+    width: 250px;
+  }
 
-.navbar-menuItemsDesign {
-  font-family: "Avenir", sans-serif;
-  font-size: 20px;
+  .menu-list {
+    padding: 10px;
+  }
 }
