@@ -9,16 +9,16 @@ const ChutiAronnobash = () => {
   const { darkMode } = useContext(DarkModeContext);
   return (
     <section
-      className={`${darkMode ? "text-white" : "text-black"} flex  p-20 `}
+      className={`${darkMode ? "text-white" : "text-black"} lg:flex  lg:p-20 `}
     >
-      <div className="grid grid-cols-2 gap-4 mr-40">
-        <img className="w-96" src={environmentalProtectionImage1} alt="" />
-        <img className="w-96" src={environmentalProtectionImage2} alt="" />
-        <img className="w-96" src={environmentalProtectionImage3} alt="" />
-        <img className="w-96" src={environmentalProtectionImage4} alt="" />
+      <div className="lg:grid grid-cols-2 gap-4 lg:mr-40">
+        <img className="lg:mt-0 mt-5 w-96" src={environmentalProtectionImage1} alt="" />
+        <img className="lg:mt-0 mt-5 w-96" src={environmentalProtectionImage2} alt="" />
+        <img className="lg:mt-0 mt-5 w-96" src={environmentalProtectionImage3} alt="" />
+        <img className="lg:mt-0 mt-5 w-96" src={environmentalProtectionImage4} alt="" />
       </div>
-      <div className={`${darkMode ? "text-white" : "text-black"}`}>
-        <h1 className="text-4xl mb-10">
+      <div className={`${darkMode ? "text-white" : "text-black"} lg:ml-0 ml-5`}>
+        <h1 className="text-4xl mb-10 ">
           Available Facilities in Chuti Aronnobash
         </h1>
         <li className="mt-5">Night Stay</li>

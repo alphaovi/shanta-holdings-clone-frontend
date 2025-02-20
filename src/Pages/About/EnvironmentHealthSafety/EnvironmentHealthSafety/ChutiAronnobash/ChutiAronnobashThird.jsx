@@ -7,7 +7,7 @@ const ChutiAronnobashThird = () => {
   return (
     <section>
       <div
-        className={`grid grid-cols-2 m-20 ${
+        className={`lg:grid grid-cols-2 lg:m-20 m-5 ${
           darkMode ? "text-white" : "text-black"
         }`}
       >
@@ -26,7 +26,7 @@ const ChutiAronnobashThird = () => {
           </li>
           <li className="mb-5">
             <a href="https://www.youtube.com/@Aronnobashresortbd" target="_blank" rel="noopener noreferrer">
-              https://www.youtube.com/@Aronnobashresortbd
+              www.youtube.com/@Aronnobashresortbd
             </a>
           </li>
           <li className="mb-5">

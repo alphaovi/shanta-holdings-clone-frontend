@@ -9,16 +9,16 @@ const EnvironmentalProtection = () => {
   const { darkMode } = useContext(DarkModeContext);
   return (
     <section
-      className={`${darkMode ? "text-white" : "text-black"} flex  p-20 `}
+      className={`${darkMode ? "text-white" : "text-black"} lg:flex  lg:p-20 p-5`}
     >
-      <div className="grid grid-cols-2 gap-4 mr-40">
-        <img className="w-96" src={environmentalProtectionImage1} alt="" />
-        <img className="w-96" src={environmentalProtectionImage2} alt="" />
-        <img className="w-96" src={environmentalProtectionImage3} alt="" />
-        <img className="w-96" src={environmentalProtectionImage4} alt="" />
+      <div className="lg:grid grid-cols-2 gap-4 lg:mr-40 mr-5">
+        <img className="lg:w-96 lg:mt-0 mt-2" src={environmentalProtectionImage1} alt="" />
+        <img className="lg:w-96 lg:mt-0 mt-2" src={environmentalProtectionImage2} alt="" />
+        <img className="lg:w-96 lg:mt-0 mt-2" src={environmentalProtectionImage3} alt="" />
+        <img className="lg:w-96 lg:mt-0 mt-2" src={environmentalProtectionImage4} alt="" />
       </div>
       <div className={`${darkMode ? "text-white" : "text-black"}`}>
-        <h1 className="text-4xl mb-10">
+        <h1 className="lg:text-4xl mb-10">
           Available Facilities in Chuti Resort Gazipur
         </h1>
         <li className="mt-5">

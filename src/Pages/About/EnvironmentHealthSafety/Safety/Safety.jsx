@@ -7,7 +7,7 @@ const Safety = () => {
   return (
     <section>
       <div
-        className={`grid grid-cols-2 m-20 ${
+        className={`lg:grid grid-cols-2 lg:m-20 m-5 ${
           darkMode ? "text-white" : "text-black"
         }`}
       >

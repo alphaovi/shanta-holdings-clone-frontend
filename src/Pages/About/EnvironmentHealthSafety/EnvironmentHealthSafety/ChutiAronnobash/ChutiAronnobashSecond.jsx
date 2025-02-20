@@ -8,10 +8,10 @@ const ChutiAronnobashSecond = () => {
     <section
       className={`${
         darkMode ? "text-white" : "text-black"
-      } grid grid-cols-2   p-24`}
+      } lg:grid grid-cols-2  lg:p-24 p-5`}
     >
       <div>
-        <h1 className="text-5xl uppercase mb-10">Capacity</h1>
+        <h1 className="lg:text-5xl text-3xl uppercase mb-10">Capacity</h1>
         <li className="mb-5">09 Rooms</li>
         <li className="mb-5"> 2 Workshop Venue</li>
         <li className="mb-5">

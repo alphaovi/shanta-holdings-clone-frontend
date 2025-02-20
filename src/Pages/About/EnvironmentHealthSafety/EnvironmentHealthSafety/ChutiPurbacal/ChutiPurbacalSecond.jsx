@@ -8,7 +8,7 @@ const ChutiPurbacalSecond = () => {
     <section
       className={`${
         darkMode ? "text-white" : "text-black"
-      } grid grid-cols-2   p-24`}
+      } lg:grid grid-cols-2 lg:p-24 p-5`}
     >
       <div>
         <h1 className="text-5xl uppercase mb-10">Capacity</h1>
