@@ -11,7 +11,7 @@ const OurBusinessTitleAndPhoto = () => {
   return (
     <section>
       <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-20">
-        <h1 className={`${darkMode ? "text-white" : "text-black"} text-8xl text-center`}>
+        <h1 className={`${darkMode ? "text-white" : "text-black"} lg:text-8xl text-center`}>
           OUR BUSINESS
         </h1>
       </div>
