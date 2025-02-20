@@ -26,7 +26,7 @@ const VissionAndMission = () => {
 
   return (
     <section className=" bg-[#5C5151] text-white">
-      <div className="lg:grid grid-cols-2 lg:mx-20 lg:p-20 ">
+      <div className="lg:grid grid-cols-2 lg:mx-20 mx-5 lg:p-20 p-5">
         <div className="transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300">
           <h1 className="lg:text-6xl text-3xl">
             <span className="mr-10">V</span>
@@ -44,7 +44,7 @@ const VissionAndMission = () => {
           />
         </div>
         <div
-          className="transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300 lg:mt-0 mt-40 lg:ml-10"
+          className="transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300 lg:mt-0 mt-40 lg:ml-10 ml-2"
           data-aos="fade-up"
           data-aos-anchor-placement="top-center"
         >
@@ -57,7 +57,7 @@ const VissionAndMission = () => {
             <span className="mr-10">O</span>
             <span>N</span>
           </h1>
-          <p className="lg:text-xl lg:mr-10 my-10">{ourStory.missionTitle}</p>
+          <p className="lg:text-xl lg:mr-10 mr-2 my-10">{ourStory.missionTitle}</p>
           <img
             className="w-full lg:h-[450px] "
             src={ourStory.misssionImage}
