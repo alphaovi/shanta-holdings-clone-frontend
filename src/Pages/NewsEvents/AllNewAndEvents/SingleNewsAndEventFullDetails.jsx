@@ -25,44 +25,68 @@ const SingleNewsAndEventFullDetails = () => {
     <section
       className={`${
         darkMode ? "bg-black text-white" : "bg-[#FFFAF4] text-black"
-      } px-40 font-serif`}
+      } px-4 sm:px-6 lg:px-40 font-serif`}
     >
       <div>
-        <h1 className="text-gray-500">News & Event</h1>
-        <h1 className="text-4xl uppercase">{singleNewsEventDetail.title}</h1>
-        <p className="my-5">{singleNewsEventDetail.date}</p>
+        <h1 className="text-gray-500 text-sm sm:text-base">News & Event</h1>
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl uppercase mt-2">
+          {singleNewsEventDetail.title}
+        </h1>
+        <p className="my-3 sm:my-5 text-sm sm:text-base">
+          {singleNewsEventDetail.date}
+        </p>
         <div className="border border-gray-500 mb-5"></div>
         <img
           src={singleNewsEventDetail.coverphoto}
           alt="Cover"
           className="w-full h-auto"
         />
-        <Link to={singleNewsEventDetail.newsEventSourceLink}><p className="my-5 text-xl">
-          Source:{" "}
-          <span className="text-[#8F8933] tracking-wide">
-            {" "}
-            {singleNewsEventDetail.source}
-          </span>
-        </p></Link>
-        <p className="text-xl">
+        <Link to={singleNewsEventDetail.newsEventSourceLink}>
+          <p className="my-3 sm:my-5 text-base sm:text-xl">
+            Source:{" "}
+            <span className="text-[#8F8933] tracking-wide">
+              {singleNewsEventDetail.source}
+            </span>
+          </p>
+        </Link>
+        <p className="text-base sm:text-xl">
           Date: <span className="ml-2">{singleNewsEventDetail.date}</span>
         </p>
-        <p className="mt-5 text-lg">{singleNewsEventDetail.description1}</p>
-        <p className="mt-5 text-lg">{singleNewsEventDetail.description2}</p>
-        <p className="mt-5 text-lg">{singleNewsEventDetail.description3}</p>
-        <p className="mt-5 text-lg">{singleNewsEventDetail.description4}</p>
-        <p className="mt-5 text-lg">{singleNewsEventDetail.description5}</p>
-        <p className="mt-5 text-lg">{singleNewsEventDetail.description6}</p>
-        <p className="mt-5 text-lg">{singleNewsEventDetail.description7}</p>
-        <p className="mt-5 text-lg">{singleNewsEventDetail.description8}</p>
+
+        {/* Render descriptions */}
+        {[
+          singleNewsEventDetail.description1,
+          singleNewsEventDetail.description2,
+          singleNewsEventDetail.description3,
+          singleNewsEventDetail.description4,
+          singleNewsEventDetail.description5,
+          singleNewsEventDetail.description6,
+          singleNewsEventDetail.description7,
+          singleNewsEventDetail.description8,
+        ].map(
+          (description, index) =>
+            description && (
+              <p key={index} className="mt-3 sm:mt-5 text-sm sm:text-lg">
+                {description}
+              </p>
+            )
+        )}
 
         {/* Swiper for Photos */}
-        <div className="mt-10">
-          <h2 className="text-2xl font-bold mb-5">Photos</h2>
+        <div className="mt-8 sm:mt-10">
+          <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-5">Photos</h2>
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={10}
-            slidesPerView={3}
+            slidesPerView={1} // Default for small screens
+            breakpoints={{
+              640: {
+                slidesPerView: 2, // 2 slides for screens ≥ 640px
+              },
+              1024: {
+                slidesPerView: 3, // 3 slides for screens ≥ 1024px
+              },
+            }}
             navigation
             autoplay={{
               delay: 2500, // Autoplay delay in milliseconds
@@ -76,7 +100,7 @@ const SingleNewsAndEventFullDetails = () => {
                 <img
                   src={photo}
                   alt={`Photo ${index + 1}`}
-                  className="w-full h-64 object-cover rounded-lg shadow-lg"
+                  className="w-full h-48 sm:h-64 object-cover rounded-lg shadow-lg"
                 />
               </SwiperSlide>
             ))}
