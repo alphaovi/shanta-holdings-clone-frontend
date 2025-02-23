@@ -14,7 +14,7 @@ const LifeAtShantaCover = () => {
       }`}
     >
       <div>
-        <h1 className="cssanimation leHangAndDropLeft text-8xl text-center relative -mb-10 uppercase">
+        <h1 className="cssanimation leHangAndDropLeft lg:text-8xl text-center relative lg:-mb-10 uppercase">
           <AnimatedTextUptoDown text="Life At" animationType="sequence" />
           <br />
           <AnimatedTextUptoDown text="Chuti Harmony" animationType="random" />

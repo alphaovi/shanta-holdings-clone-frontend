@@ -19,30 +19,30 @@ const OnGoingProjects = () => {
     <section className="bg-[#FFFAF4]">
       <div className="">
         <img
-          className="w-full h-96 -mt-32"
+          className="w-full h-48 md:h-64 lg:h-96 -mt-16 md:-mt-24 lg:-mt-32"
           src={projectPageBackground}
-          alt=""
+          alt="Project Cover"
         />
-        <h1 className="text-8xl uppercase text-center text-white -mt-60">
+        <h1 className="text-4xl md:text-6xl lg:text-8xl uppercase text-center text-white -mt-20 md:-mt-40 lg:-mt-60">
           Exclusive properties in prime location
         </h1>
       </div>
-      <div className="absolute bg-[#827466] p-4 w-[72rem] mt-5 left-1/2 transform -translate-x-1/2 grid grid-cols-3 gap-4 z-10">
+      <div className="absolute bg-[#827466] p-4 w-full md:w-[72rem] mt-5 left-1/2 transform -translate-x-1/2 grid grid-cols-1 md:grid-cols-3 gap-4 z-10">
         {/* Project Type Dropdown */}
         <div className="dropdown dropdown-hover">
-          <div tabIndex={0} role="button" className="m-1 text-white text-xl ">
+          <div tabIndex={0} role="button" className="m-1 text-white text-lg md:text-xl">
             <span className="flex items-center gap-2">
               Project Type
               {hoveredDropdown === "status" ? (
-                <MdOutlineKeyboardArrowUp className="mt-2" />
+                <MdOutlineKeyboardArrowUp className="mt-1 md:mt-2" />
               ) : (
-                <MdOutlineKeyboardArrowDown className="mt-2" />
+                <MdOutlineKeyboardArrowDown className="mt-1 md:mt-2" />
               )}
             </span>
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content menu overflow-auto text-xl z-[1] w-52 h-28 p-2 shadow border-none bg-[#827466] text-white "
+            className="dropdown-content menu overflow-auto text-lg md:text-xl z-[1] w-52 h-28 p-2 shadow border-none bg-[#827466] text-white"
           >
             <li>
               <a>Residential</a>
@@ -58,22 +58,22 @@ const OnGoingProjects = () => {
           <div
             tabIndex={0}
             role="button"
-            className="m-1 text-white text-xl"
+            className="m-1 text-white text-lg md:text-xl"
             onMouseEnter={() => setHoveredDropdown("status")}
             onMouseLeave={() => setHoveredDropdown(null)}
           >
             <span className="flex items-center gap-2">
               Status
               {hoveredDropdown === "status" ? (
-                <MdOutlineKeyboardArrowUp className="mt-2" />
+                <MdOutlineKeyboardArrowUp className="mt-1 md:mt-2" />
               ) : (
-                <MdOutlineKeyboardArrowDown className="mt-2" />
+                <MdOutlineKeyboardArrowDown className="mt-1 md:mt-2" />
               )}
             </span>
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content menu overflow-auto text-xl z-[1] w-52 h-42 p-2 shadow border-none bg-[#827466] text-white absolute"
+            className="dropdown-content menu overflow-auto text-lg md:text-xl z-[1] w-52 h-42 p-2 shadow border-none bg-[#827466] text-white absolute"
           >
             <li>
               <a onClick={() => setSelectedStatus("Ongoing")}>Ongoing</a>
@@ -91,13 +91,13 @@ const OnGoingProjects = () => {
         <div className="form-control">
           <input
             type="text"
-            placeholder="Search Projets"
-            className="input input-bordered w-24 md:w-auto rounded-none bg-[#827466] text-[#fff]"
+            placeholder="Search Projects"
+            className="input input-bordered w-full md:w-auto rounded-none bg-[#827466] text-[#fff]"
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-2 justify-items-center mx-32 mt-40 mb-20 bg-[#FFFAF4] relative z-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center mx-4 md:mx-32 lg:mt-40 mt-72 mb-20 bg-[#FFFAF4] relative z-0">
         {error && <p className="text-red-500 text-center">{error.message}</p>}
         {filteredProjects.map((ongoingProjectFullDetail) => (
           <OnGoingProject

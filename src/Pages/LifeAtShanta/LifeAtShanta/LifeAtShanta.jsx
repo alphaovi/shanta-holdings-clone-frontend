@@ -8,7 +8,7 @@ const LifeAtShanta = () => {
     <div className="bg-[#FFFAF4]">
       <LifeAtShantaCover></LifeAtShantaCover>
       <Unleash></Unleash>
-      <Teams></Teams>
+      {/* <Teams></Teams> */}
     </div>
   );
 };

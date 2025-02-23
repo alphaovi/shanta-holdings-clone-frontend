@@ -24,14 +24,11 @@ const Contact = () => {
   }, []);
 
   return (
-    <section>
+    <section className="p-4 lg:p-8">
       <div className="lg:flex styleForMainDiv">
         <div className="flex-1">
-          <div
-            className={`mb-20 font-familyConnect w-20 uppercase
-              }`}
-          >
-            <h1 className="lg:text-8xl text-center font-bold">Contact Us</h1>
+          <div className="mb-10 lg:mb-20 font-familyConnect w-full lg:w-20 uppercase">
+            <h1 className="text-4xl lg:text-8xl text-center font-bold">Contact Us</h1>
           </div>
           <div className="font-familyPortfolio">
             <div>
@@ -39,7 +36,7 @@ const Contact = () => {
                 <div>
                   <Link
                     to={"/clients"}
-                    className="text-[#978C21] text-2xl mt-2"
+                    className="text-[#978C21] text-xl lg:text-2xl mt-2"
                   >
                     {connectData.title1}
                   </Link>
@@ -51,7 +48,7 @@ const Contact = () => {
                 </div>
               </div>
               <div>
-                <p className="text-xl font-thin mb-4 w-[75%]">
+                <p className="text-base lg:text-xl font-thin mb-4 w-full lg:w-[75%]">
                   {connectData.description1}
                 </p>
               </div>
@@ -62,7 +59,7 @@ const Contact = () => {
                 <div>
                   <Link
                     to={"/landowners"}
-                    className="text-[#978C21] text-2xl mt-2"
+                    className="text-[#978C21] text-xl lg:text-2xl mt-2"
                   >
                     {connectData.title2}
                   </Link>
@@ -74,7 +71,7 @@ const Contact = () => {
                 </div>
               </div>
               <div>
-                <p className="text-xl font-thin mb-4 w-[75%]">
+                <p className="text-base lg:text-xl font-thin mb-4 w-full lg:w-[75%]">
                   {connectData.description2}
                 </p>
               </div>
@@ -82,10 +79,9 @@ const Contact = () => {
           </div>
         </div>
 
-        <div>
+        <div className="mt-10 lg:mt-0">
           <img
-            className={`p-5`}
-            style={{ height: "475px", width: "650px" }}
+            className="p-5 w-full h-auto lg:h-[475px] lg:w-[650px]"
             src="https://i.ibb.co.com/6BYbr6w/7.jpg"
             alt=""
           />

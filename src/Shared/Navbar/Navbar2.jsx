@@ -40,7 +40,7 @@ const Navbar2 = () => {
   }, []);
 
   return (
-    <div className="navbar-container">
+    <div className={`navbar-container ${darkMode ?   "bg-black" : "bg-[#FFFAF4]"}`}>
       <div className="navbar px-4 md:px-20 py-3 md:py-5 flex items-center justify-between">
         {/* Logo */}
         <div className="flex-1">
@@ -247,7 +247,10 @@ const Navbar2 = () => {
                 </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/projects/ongoing-projects"} onClick={handleCloseMenu}>
+                <Link
+                  to={"/projects/ongoing-projects"}
+                  onClick={handleCloseMenu}
+                >
                   Ongoing Projects{" "}
                 </Link>
               </li>
@@ -269,11 +272,16 @@ const Navbar2 = () => {
 
           {/* Social Icons */}
           <div className="flex gap-5 md:gap-8 ml-3 md:ml-5 mt-5 md:mt-10 justify-center text-2xl md:text-4xl ">
-            <CiFacebook className="border-[#978c21] text-white border-2 rounded-full p-1 hover:text-[#8F8933]" />
-            <FaInstagram className="border-[#978c21] text-white border-2 rounded-full p-1 hover:text-[#8F8933]" />
-            <RiYoutubeLine className="border-[#978c21] text-white border-2 rounded-full p-1 hover:text-[#8F8933]" />
-            <PiLinkedinLogo className="border-[#978c21] text-white border-2 rounded-full p-1 hover:text-[#8F8933]" />
-            <FaTiktok className="border-[#978c21] text-white border-2 rounded-full p-1 hover:text-[#8F8933]" />
+            <Link to="https://www.facebook.com/chutiharmony">
+              <CiFacebook className="border-[#978c21] text-white  rounded-full p-[3px] w-10 h-8 hover:text-[#8F8933] hover:cursor-pointer" />
+            </Link>
+            <Link to="https://www.instagram.com/chutiharmony">
+              <FaInstagram className="border-[#978c21] text-white  rounded-full p-[3px] w-10 h-8 hover:text-[#8F8933] hover:cursor-pointer" />
+            </Link>
+            <Link to="https://www.youtube.com/channel/UC6R5RKFnO8xbaM_aJp3jmJA">
+              <RiYoutubeLine className="border-[#978c21] text-white  rounded-full p-[3px] w-10 h-8 hover:text-[#8F8933] hover:cursor-pointer" />
+            </Link>
+            {/* <PiLinkedinLogo className="border-[#978c21] text-white  rounded-full p-[3px] w-10 h-8 hover:text-[#8F8933] hover:cursor-pointer" /> */}
           </div>
         </div>
       </div>

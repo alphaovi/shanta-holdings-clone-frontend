@@ -48,6 +48,8 @@ import AdminLifeAtChuti2 from "../Pages/BackendControl/LifeAtChuti/AdminLifeAtCh
 import UpComingProjects from "../Pages/AllProjects/UpComingProjects/UpComingProjects";
 import AllProjects from "../Pages/AllProjects/AllProjects/AllProjects";
 import CompletedProjects from "../Pages/AllProjects/CompletedProjects/CompletedProjects";
+import NewsEvents from "../Pages/NewsEvents/NewsEvents/NewsEvents";
+import SingleNewsAndEventFullDetails from "../Pages/NewsEvents/AllNewAndEvents/SingleNewsAndEventFullDetails";
 
 const router = createBrowserRouter([
   {
@@ -113,6 +115,14 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/news-events",
+        element: <NewsEvents></NewsEvents>,
+      },
+      {
+        path: "/news-events/:newsId",
+        element: <SingleNewsAndEventFullDetails></SingleNewsAndEventFullDetails>,
       },
     ],
   },
@@ -197,7 +207,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/admin/life-at-chuti",
-        
+
         element: <AdminLifeAtChuti2></AdminLifeAtChuti2>,
       },
       {

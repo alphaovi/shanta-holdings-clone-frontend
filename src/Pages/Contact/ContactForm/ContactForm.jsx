@@ -80,7 +80,7 @@ const ContactForm = () => {
           </p>
           <input
             type="text"
-            className="w-[35rem] h-10 rounded px-2"
+            className="w-full lg:w-[35rem] h-10 rounded px-2"
             value={firstName}
             onChange={(event) => setFirstName(event.target.value)}
           />
@@ -95,7 +95,7 @@ const ContactForm = () => {
           </p>
           <input
             type="text"
-            className="w-[35rem] h-10 rounded px-2"
+            className="w-full lg:w-[35rem] h-10 rounded px-2"
             value={lastName}
             onChange={(event) => setLastName(event.target.value)}
           />
@@ -110,7 +110,7 @@ const ContactForm = () => {
           </p>
           <input
             type="text"
-            className="w-[35rem] h-10 rounded px-2"
+            className="w-full lg:w-[35rem] h-10 rounded px-2"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
@@ -125,7 +125,7 @@ const ContactForm = () => {
           </p>
           <input
             type="text"
-            className="w-[35rem] h-10 rounded px-2"
+            className="w-full lg:w-[35rem] h-10 rounded px-2"
             value={phoneNumber}
             onChange={(event) => setPhoneNumber(event.target.value)}
           />
@@ -139,7 +139,7 @@ const ContactForm = () => {
             What Kind of invesment are you interested in?
           </p>
           <select
-            className="select select-primary border-[#A7AD2E]   w-[35rem]"
+            className="select select-primary border-[#A7AD2E] w-full lg:w-[35rem]"
             value={category}
             onChange={(event) => setCategory(event.target.value)}
           >
@@ -161,7 +161,7 @@ const ContactForm = () => {
           </p>
           <textarea
             type="text"
-            className="w-[35rem] h-[10rem] rounded p-2"
+            className="w-full lg:w-[35rem] h-[10rem] rounded p-2"
             value={message}
             onChange={(event) => setMessage(event.target.value)}
           />

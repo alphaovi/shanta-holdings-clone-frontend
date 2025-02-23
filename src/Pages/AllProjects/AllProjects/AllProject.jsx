@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../OnGoingProjects/OnGoingProject/OnGoingProject.css"; // Include the CSS styles below
+import "../OnGoingProjects/OnGoingProject/OnGoingProject.css"; 
 
 const AllProject = ({ project }) => {
   const { _id, projectName, projectCoverPhoto, address } = project;
@@ -17,13 +17,13 @@ const AllProject = ({ project }) => {
   };
 
   const handleRedirect = () => {
-    navigate(`/project/${_id}`); // Replace with your route
+    navigate(`/project/${_id}`); 
   };
 
   return (
     <section>
       <div
-        className="project-card w-[377px] h-[458px] p-5 relative overflow-hidden"
+        className="project-card w-[377px] h-[458px] lg:mt-0 mt-20 p-5 relative overflow-hidden"
         style={{ border: "none" }}
         onClick={handleRedirect}
         onMouseMove={handleMouseMove}
@@ -41,7 +41,7 @@ const AllProject = ({ project }) => {
         >
           View Details
         </div>
-        <h1 className="text-2xl font-bold text-[#8E8A1F]">{projectName}</h1>
+        <h1 className="text-2xl font-bold text-[#8E8A1F] mb-2">{projectName}</h1>
         <h3 className="font-serif">{address}</h3>
       </div>
     </section>

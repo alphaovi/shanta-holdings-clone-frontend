@@ -19,7 +19,7 @@ const InvestmentPropertyPhotoAndFacilities = () => {
   }, [investmentBenefits]);
   return (
     <section>
-      <div className="grid grid-cols-2 gap-4 p-12 my-10">
+      <div className="lg:grid grid-cols-2 gap-4 p-12 my-10">
         <div>
           <img src="https://i.ibb.co.com/yp0H29x/8.jpg" alt="" />
         </div>

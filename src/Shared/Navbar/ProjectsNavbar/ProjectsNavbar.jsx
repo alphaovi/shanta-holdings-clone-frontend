@@ -12,13 +12,12 @@ import { RiYoutubeLine } from "react-icons/ri";
 import { PiLinkedinLogo } from "react-icons/pi";
 import { FaTiktok } from "react-icons/fa6";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
-import "../Navbar2.css"
+import "../Navbar2.css";
 
 // import projectPageBackground from "../../../assets/images/projects/project-cover.jpg";
 import { DarkModeContext } from "../../../Contexts/NightLightContext";
 
 const ProjectsNavbar = () => {
-  
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
   const [currentMenu, setCurrentMenu] = useState("main");
@@ -29,7 +28,7 @@ const ProjectsNavbar = () => {
   const showMainMenu = () => setCurrentMenu("main");
   const showSubMenu = (menu) => setCurrentMenu(menu);
 
-  const handleShowMenu = () => setShowMenu(false)
+  const handleShowMenu = () => setShowMenu(false);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -43,8 +42,8 @@ const ProjectsNavbar = () => {
   }, []);
 
   return (
-    <div className="navbar-container bg-none">
-      <div className="navbar px-5 md:px-20 py-3 md:py-5 flex items-center ">
+    <div className="navbar-container ">
+      <div className="navbar px-5 md:px-20 py-1 md:py-5 flex items-center ">
         {/* Logo */}
         <div className="flex-1">
           <Link to={"/"} className="text-start block">
@@ -97,7 +96,6 @@ const ProjectsNavbar = () => {
           </div>
         )}
       </div>
-      
 
       {/* Backdrop */}
       {showMenu && (
@@ -127,7 +125,9 @@ const ProjectsNavbar = () => {
                 />
               </li>
               <li className="hover:text-[#8F8933] pt-3 px-5">
-                <Link to="/" onClick={handleShowMenu}>Home</Link>
+                <Link to="/" onClick={handleShowMenu}>
+                  Home
+                </Link>
               </li>
 
               <li className="px-5">
@@ -151,19 +151,29 @@ const ProjectsNavbar = () => {
                 </button>
               </li>
               <li className="mt-5 px-5 md:mt-10 hover:text-[#8F8933]">
-                <Link to="/life-at-chuti" onClick={handleShowMenu}>Life At Chuti</Link>
+                <Link to="/life-at-chuti" onClick={handleShowMenu}>
+                  Life At Chuti
+                </Link>
               </li>
               <li className="mt-5 px-5 md:mt-10 hover:text-[#8F8933]">
-                <Link to="/career" onClick={handleShowMenu}>Careers</Link>
+                <Link to="/career" onClick={handleShowMenu}>
+                  Careers
+                </Link>
               </li>
               <li className=" px-5 hover:text-[#8F8933]">
-                <Link to="/careers" onClick={handleShowMenu}>News & Events</Link>
+                <Link to="/careers" onClick={handleShowMenu}>
+                  News & Events
+                </Link>
               </li>
               <li className=" px-5 hover:text-[#8F8933]">
-                <Link to="/invest" onClick={handleShowMenu}>Investment</Link>
+                <Link to="/invest" onClick={handleShowMenu}>
+                  Investment
+                </Link>
               </li>
               <li className=" px-5 hover:text-[#8F8933]">
-                <Link to="/contact" onClick={handleShowMenu}>Contact</Link>
+                <Link to="/contact" onClick={handleShowMenu}>
+                  Contact
+                </Link>
               </li>
               {/* <li className="px-5">
                 <button
@@ -197,22 +207,34 @@ const ProjectsNavbar = () => {
                 <Link to="/our-story">Our Story</Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/our-team"} onClick={handleShowMenu}>Our Team</Link>
+                <Link to={"/our-team"} onClick={handleShowMenu}>
+                  Our Team
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/why-chuti"} onClick={handleShowMenu}>Why Chuti ?</Link>
+                <Link to={"/why-chuti"} onClick={handleShowMenu}>
+                  Why Chuti ?
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/our-business"} onClick={handleShowMenu}>Our Business</Link>
+                <Link to={"/our-business"} onClick={handleShowMenu}>
+                  Our Business
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/our-clients"} onClick={handleShowMenu}>Our Clients</Link>
+                <Link to={"/our-clients"} onClick={handleShowMenu}>
+                  Our Clients
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/ehs"} onClick={handleShowMenu}>EHS</Link>
+                <Link to={"/facilities"} onClick={handleShowMenu}>
+                  Facilities
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/csr"} onClick={handleShowMenu}>CSR</Link>
+                <Link to={"/csr"} onClick={handleShowMenu}>
+                  CSR
+                </Link>
               </li>
             </ul>
           )}
@@ -231,16 +253,33 @@ const ProjectsNavbar = () => {
                 Projects
               </h2>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/projects"} onClick={handleShowMenu}>All Projects</Link>
+                <Link to={"/projects"} onClick={handleShowMenu}>
+                  All Projects
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/projects/ongoing-projects"} onClick={handleShowMenu}>Ongoing Projects </Link>
+                <Link
+                  to={"/projects/ongoing-projects"}
+                  onClick={handleShowMenu}
+                >
+                  Ongoing Projects{" "}
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/projects/upcoming-projects"} onClick={handleShowMenu}>Upcoming Projects </Link>
+                <Link
+                  to={"/projects/upcoming-projects"}
+                  onClick={handleShowMenu}
+                >
+                  Upcoming Projects{" "}
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/projects/completed-projects"} onClick={handleShowMenu}>Completed Projects </Link>
+                <Link
+                  to={"/projects/completed-projects"}
+                  onClick={handleShowMenu}
+                >
+                  Completed Projects{" "}
+                </Link>
               </li>
             </ul>
           )}
@@ -259,23 +298,34 @@ const ProjectsNavbar = () => {
                 Contact Us
               </h2>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/contact"} onClick={handleShowMenu}>Contact</Link>
+                <Link to={"/contact"} onClick={handleShowMenu}>
+                  Contact
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/location"} onClick={handleShowMenu}>Landowners</Link>
+                <Link to={"/location"} onClick={handleShowMenu}>
+                  Landowners
+                </Link>
               </li>
               <li className="hover:text-[#8F8933] px-7">
-                <Link to={"/email"} onClick={handleShowMenu}>Clients</Link>
+                <Link to={"/email"} onClick={handleShowMenu}>
+                  Clients
+                </Link>
               </li>
             </ul>
           )}
 
-          <div className="flex gap-5 md:gap-8 ml-3 md:ml-5 mt-5 md:mt-10 justify-center text-3xl md:text-4xl ">
-            <CiFacebook className="border-[#978c21] text-white border-2 rounded-full p-1 hover:text-[#8F8933]" />
-            <FaInstagram className="border-[#978c21] text-white border-2 rounded-full p-1 hover:text-[#8F8933]" />
-            <RiYoutubeLine className="border-[#978c21] text-white border-2 rounded-full p-1 hover:text-[#8F8933]" />
-            <PiLinkedinLogo className="border-[#978c21] text-white border-2 rounded-full p-1 hover:text-[#8F8933]" />
-            <FaTiktok className="border-[#978c21] text-white border-2 rounded-full p-1 hover:text-[#8F8933]" />
+          <div className="flex gap-5 md:gap-8 ml-3 md:ml-5 mt-5 md:mt-10 justify-center text-2xl md:text-4xl ">
+            <Link to="https://www.facebook.com/chutiharmony">
+              <CiFacebook className="border-[#978c21] text-white  rounded-full p-[3px] w-10 h-8 hover:text-[#8F8933] hover:cursor-pointer" />
+            </Link>
+            <Link to="https://www.instagram.com/chutiharmony">
+              <FaInstagram className="border-[#978c21] text-white  rounded-full p-[3px] w-10 h-8 hover:text-[#8F8933] hover:cursor-pointer" />
+            </Link>
+            <Link to="https://www.youtube.com/channel/UC6R5RKFnO8xbaM_aJp3jmJA">
+              <RiYoutubeLine className="border-[#978c21] text-white  rounded-full p-[3px] w-10 h-8 hover:text-[#8F8933] hover:cursor-pointer" />
+            </Link>
+            {/* <PiLinkedinLogo className="border-[#978c21] text-white  rounded-full p-[3px] w-10 h-8 hover:text-[#8F8933] hover:cursor-pointer" /> */}
           </div>
         </div>
       </div>
