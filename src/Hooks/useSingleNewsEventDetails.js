@@ -12,7 +12,7 @@ const useSingleNewsEventDetails = () => {
     const fetchedData = async () => {
       try {
         const loadedData = await axios.get(
-          `http://localhost:5000/api/v1/news-events/news-event/${newsId}`
+          `https://chuti-harmony-server.vercel.app/api/v1/news-events/news-event/${newsId}`
         );
         const data = loadedData.data.data;
         console.log(data);

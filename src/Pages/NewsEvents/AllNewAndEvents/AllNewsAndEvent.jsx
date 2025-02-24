@@ -14,13 +14,17 @@ const AllNewsAndEvent = ({ allNewsAndEvent }) => {
       className="relative cursor-pointer"
       onClick={handleRedirectToFullDetails}
     >
-      <div>
-        <img className="mt-5" src={coverphoto} alt="" />
+      <div className="relative">
+        <img
+          className="mt-5 w-full h-auto object-cover"
+          src={coverphoto}
+          alt={title}
+        />
         <h1
           className="day_outline mt-5"
           style={{
             color: "transparent",
-            fontSize: "101px",
+            fontSize: "clamp(40px, 8vw, 101px)", // Responsive font size
             fontWeight: 500,
             WebkitTextStroke: "1px #fff",
             display: "inline-block",
@@ -38,14 +42,13 @@ const AllNewsAndEvent = ({ allNewsAndEvent }) => {
 
       <div className="bg-[#FFFAF4]">
         <div className="flex justify-end mt-5">
-          {" "}
-          <h1 className="border border-gray-600 text-small rounded-full px-2 ">
+          <h1 className="border border-gray-600 text-xs sm:text-sm rounded-full px-2 py-1 sm:px-3 sm:py-2">
             {newsOrEvent}
           </h1>
         </div>
 
-        <div className="bg-[#FFFAF4] mb-20 p-2">
-          <h1 className="text-2xl mt-4">{title}</h1>
+        <div className="bg-[#FFFAF4] mb-10 sm:mb-20 p-2 sm:p-4">
+          <h1 className="text-lg sm:text-2xl mt-2 sm:mt-4">{title}</h1>
         </div>
       </div>
     </div>

@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const AllNews = () => {
   return (
-    <section className="p-20 bg-[#FFFAF4] -mt-20">
-      <div className="flex gap-20">
+    <section className="lg:p-20 lg:ml-0 ml-5 bg-[#FFFAF4] lg:-mt-20">
+      <div className="lg:flex gap-20">
         <Link to="/all">
           <h1 className="hover:bg-gray-500 hover:text-white border border-gray-500 h-10 w-10 flex items-center justify-center rounded-full transition-all duration-300">
             All
