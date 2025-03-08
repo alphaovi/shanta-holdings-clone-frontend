@@ -71,8 +71,8 @@ const LandMarksDetailsAndPhotos = () => {
               end={commitment.activeYearsInputOne}
             />
           )}
-          <h1>commitment.activeYearsInputTwo</h1>
-          <p>commitment.activeYearsInputThree</p>
+          {/* <h1>{commitment.activeYearsInputTwo}</h1> */}
+          {/* <p>{commitment.activeYearsInputThree}</p> */}
         </div>
         <div className="mt-20 font-familyPortfolio w-72">
           {/* <p className="text-[#8E8A1F]">
@@ -90,9 +90,9 @@ const LandMarksDetailsAndPhotos = () => {
         </div>
       </div>
       <div className="block">
-        <img src={commitment.image} alt="" />
+        <img className="w-[450px] p-5" src={commitment.image} alt="" />
       </div>
-      <div>
+      <div className="lg:ml-20">
         <div className="mb-20 font-familyPortfolio w-72">
           {inView && (
             <CountUp

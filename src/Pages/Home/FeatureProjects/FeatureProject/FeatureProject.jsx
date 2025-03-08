@@ -46,7 +46,11 @@ const FeatureProject = () => {
               <img
                 src={featureProject.projectImg}
                 alt={`Slide ${featureProject.id}`}
-                style={{ height: "600px", width: "1400px" }}
+                style={{
+                   height: "600px", 
+                   width: "1400px" ,
+                   filter: "brightness(0.5)"
+                  }}
               />
             </div>
           ))}

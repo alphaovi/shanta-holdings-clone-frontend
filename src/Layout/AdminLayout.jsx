@@ -25,7 +25,7 @@ const AdminLayout = () => {
   }
 
   return (
-    <div className="flex">
+    <div className="flex mr-62">
       <div className="overflow-y-auto">
         <div className="h-screen">
           <ul className="menu text-white min-h-full w-80 p-4 bg-[#8E8A20]">
@@ -287,7 +287,7 @@ const AdminLayout = () => {
           </ul>
         </div>
       </div>
-      <div className="p-20">
+      <div className="px-10 py-20">
         <Outlet></Outlet>
       </div>
     </div>

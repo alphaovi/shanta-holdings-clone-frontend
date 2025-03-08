@@ -10,7 +10,7 @@ const FeatureProjectSlide = () => {
   const settings2 = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,

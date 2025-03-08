@@ -96,7 +96,7 @@ const router = createBrowserRouter([
         element: <Csr></Csr>,
       },
       {
-        path: "/life-at-chuti",
+        path: "/gallery",
         element: <LifeAtShanta></LifeAtShanta>,
       },
 

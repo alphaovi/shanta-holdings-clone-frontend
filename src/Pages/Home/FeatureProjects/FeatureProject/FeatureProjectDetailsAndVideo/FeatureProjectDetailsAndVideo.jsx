@@ -4,6 +4,7 @@ import { useContext, useEffect, useRef } from "react";
 import FeatureProjectSlide from "./FeatureProjectRightVideo";
 import { DarkModeContext } from "../../../../../Contexts/NightLightContext";
 import { FiArrowRightCircle } from "react-icons/fi";
+import "./FeatureProjectDetailsAndVideos.css";
 
 const FeatureProjectDetailsAndVideo = () => {
   const { darkMode } = useContext(DarkModeContext);
@@ -14,7 +15,7 @@ const FeatureProjectDetailsAndVideo = () => {
   const settings2 = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -41,24 +42,30 @@ const FeatureProjectDetailsAndVideo = () => {
   return (
     <section className="px-4 sm:px-8 lg:px-16">
       <div
-        className={`ml-8 lg:ml-36 mt-8 sm:mt-12 lg:-mt-[480px] uppercase text-white`}
+        className={`ml-8 lg:ml-36 mt-8 sm:mt-12 lg:-mt-[480px] uppercase ${
+          darkMode ? "text-white" : "text-black"
+        }`}
       >
-        <h1 className="text-lg sm:text-xl mb-2 text-white">
+        <h1
+          className={`text-lg sm:text-xl mb-2 ${
+            darkMode ? "text-white" : "text-white"
+          }`}
+        >
           Feature Projects
         </h1>
         <Slider {...settings2}>
           {featureProjects.map((featureProject) => (
             <div
               key={featureProject._id}
-              className={`${darkMode ? "" : "opacity-75"}`}
+              className={`${darkMode ? "" : ""}`}
             >
-              <h1 className="text-base sm:text-lg lg:text-[18.5px]">
+              <h1 className={`text-base sm:text-lg lg:text-2xl text-white brightness-125`}>
                 {featureProject.projectType}
               </h1>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl mt-4">
+              <h1 className={`text-2xl sm:text-3xl lg:text-4xl mt-4 text-white brightness-125`}>
                 {featureProject.projectName}
               </h1>
-              <p className="text-base sm:text-lg lg:text-xl mt-6">
+              <p className={`text-base sm:text-lg lg:text-xl mt-6 text-white brightness-125`}>
                 {featureProject.address}
               </p>
               <div>
@@ -66,7 +73,7 @@ const FeatureProjectDetailsAndVideo = () => {
                   onClick={() => console.log("HI")}
                   className={`${
                     darkMode ? "text-white" : "text-white "
-                  } btn btn-outline mt-8 sm:mt-12 lg:mt-16 featureProject-font text-sm sm:text-lg lg:text-xl border-none bg-none`}
+                  } btn btn-outline hover:bg-none mt-8 sm:mt-12 lg:mt-16 featureProject-font text-sm sm:text-lg lg:text-xl border-none bg-none`}
                 >
                   <FiArrowRightCircle className="inline-block mr-2" />
                   View Project

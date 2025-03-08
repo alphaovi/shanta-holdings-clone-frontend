@@ -93,12 +93,19 @@ const ExploreVideos = () => {
                   containerClassName="youtube-container" // Add container class if needed
                 />
                 <h1
-                  className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-50 ${
+                  className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center absolute bottom-8 left-1/2 transform -translate-x-1/2  ${
                     darkMode ? "exploreWordDesign" : "exploreWordDesignForLight"
                   }`}
                 >
                   {video.name}
                 </h1>
+                {/* <h1
+                  className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center absolute bottom-8 left-1/2 transform -translate-x-1/2  ${
+                    darkMode ? "exploreWordDesign" : "exploreWordDesignForLight"
+                  }`}
+                >
+                  {video.name}
+                </h1> */}
                 <button
                   onClick={toggleMute}
                   className="absolute bottom-4 right-4  text-white px-4 py-2 rounded"

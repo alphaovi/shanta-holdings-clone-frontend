@@ -124,7 +124,7 @@ const AdminCommitments = () => {
           <h3 className="mb-5">Image of your project</h3>
           {selectedImage && (
             <img
-              className="w-3/4 h-2/4 mb-3"
+              className="w-[200px] h-2/4 mb-3"
               src={selectedImage}
               alt="Preview"
             />
@@ -135,6 +135,8 @@ const AdminCommitments = () => {
             ref={fileInputRef}
             onChange={handleImageChange}
           />
+
+          <p className="my-5 font-bold">Photo Size Must Be: 512 (px) x  </p>
 
           {/* Render Each Input Field */}
           <h3>Total Area Input One</h3>

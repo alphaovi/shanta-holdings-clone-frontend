@@ -3,10 +3,11 @@ import { DarkModeContext } from "../../../Contexts/NightLightContext";
 import useLifeAtChutiData from "../../../Hooks/useLifeAtChutiData";
 import Loading from "../../../Shared/Loading/Loading";
 import AnimatedTextUptoDown from "../../../Shared/AnimatedText/AnimatedTextUptoDown";
+import LifeAtShantaCoverPhoto from "./LifeAtShantaCoverPhoto";
 
 const LifeAtShantaCover = () => {
   const { darkMode } = useContext(DarkModeContext);
-  const [whyChutiData, error, loading] = useLifeAtChutiData();
+  const [whyChutiDatas, error, loading] = useLifeAtChutiData();
   return (
     <section
       className={`${
@@ -14,17 +15,24 @@ const LifeAtShantaCover = () => {
       }`}
     >
       <div>
-        <h1 className="cssanimation leHangAndDropLeft lg:text-8xl text-center relative lg:-mb-10 uppercase">
-          <AnimatedTextUptoDown text="Life At" animationType="sequence" />
+        <h1 className="cssanimation leHangAndDropLeft lg:text-8xl text-center relative lg:-mb-10 uppercase text-stroke-white">
+          <AnimatedTextUptoDown text="Gallery" animationType="sequence" />
           <br />
-          <AnimatedTextUptoDown text="Chuti Harmony" animationType="random" />
+          {/* <AnimatedTextUptoDown text="Chuti Harmony" animationType="random" /> */}
         </h1>
       </div>
       <div>
         {loading ? (
           <Loading></Loading>
         ) : (
-          <img src={whyChutiData.coverPhoto} alt="" />
+          <div className="grid grid-cols-3 gap-5 px-5 mt-10">
+            {whyChutiDatas.map((whyChutiData) => (
+              <LifeAtShantaCoverPhoto
+                key={whyChutiData._id}
+                whyChutiData={whyChutiData}
+              ></LifeAtShantaCoverPhoto>
+            ))}
+          </div>
         )}
       </div>
     </section>

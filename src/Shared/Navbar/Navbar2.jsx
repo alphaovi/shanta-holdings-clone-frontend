@@ -20,6 +20,7 @@ const Navbar2 = () => {
 
   const [currentMenu, setCurrentMenu] = useState("main");
   const [showMenu, setShowMenu] = useState(false);
+  
   const menuRef = useRef(null);
 
   const handleMenuToggle = () => setShowMenu(!showMenu);
@@ -40,7 +41,7 @@ const Navbar2 = () => {
   }, []);
 
   return (
-    <div className={`navbar-container ${darkMode ?   "bg-black" : "bg-[#FFFAF4]"}`}>
+    <div className={`navbar-container ${darkMode ?   "bg-black" : "bg-[#FFFAF4]"} `}>
       <div className="navbar px-4 md:px-20 py-3 md:py-5 flex items-center justify-between">
         {/* Logo */}
         <div className="flex-1">
@@ -136,7 +137,7 @@ const Navbar2 = () => {
                   <MdOutlineKeyboardArrowRight className="ml-3 md:ml-5" />
                 </button>
               </li>
-              <li className="px-5 ">
+              {/* <li className="px-5 ">
                 <button
                   onClick={() => showSubMenu("projects")}
                   className="flex items-center w-full hover:text-[#8F8933]"
@@ -145,10 +146,10 @@ const Navbar2 = () => {
                   Projects{" "}
                   <MdOutlineKeyboardArrowRight className="ml-3 md:ml-5" />
                 </button>
-              </li>
+              </li> */}
               <li className="mt-5 px-5 md:mt-10 hover:text-[#8F8933]">
-                <Link to="/life-at-chuti" onClick={handleCloseMenu}>
-                  Life At Chuti
+                <Link to="/gallery" onClick={handleCloseMenu}>
+                  Gallery
                 </Link>
               </li>
               <li className="mt-5 px-5 md:mt-10 hover:text-[#8F8933]">
@@ -182,7 +183,7 @@ const Navbar2 = () => {
               <li className="px-7">
                 <button
                   onClick={showMainMenu}
-                  className="flex items-center space-x-2 hover:text-[#8F8933]"
+                  className="flex items-center space-x-2 hover:text-[#8F8933] mt-5"
                 >
                   <MdOutlineArrowBackIosNew className="mr-2" /> Back
                 </button>
@@ -195,11 +196,11 @@ const Navbar2 = () => {
                   Our Story
                 </Link>
               </li>
-              <li className="hover:text-[#8F8933] px-7">
+              {/* <li className="hover:text-[#8F8933] px-7">
                 <Link to={"/our-team"} onClick={handleCloseMenu}>
                   Our Team
                 </Link>
-              </li>
+              </li> */}
               <li className="hover:text-[#8F8933] px-7">
                 <Link to={"/why-chuti"} onClick={handleCloseMenu}>
                   Why Chuti ?
@@ -220,11 +221,11 @@ const Navbar2 = () => {
                   Facilities
                 </Link>
               </li>
-              <li className="hover:text-[#8F8933] px-7">
+              {/* <li className="hover:text-[#8F8933] px-7">
                 <Link to={"/csr"} onClick={handleCloseMenu}>
                   CSR
                 </Link>
-              </li>
+              </li> */}
             </ul>
           )}
 
@@ -233,7 +234,7 @@ const Navbar2 = () => {
               <li className="px-7">
                 <button
                   onClick={showMainMenu}
-                  className="flex items-center space-x-2 hover:text-[#8F8933]"
+                  className="flex items-center space-x-2 hover:text-[#8F8933] mt-5"
                 >
                   <MdOutlineArrowBackIosNew className="mr-2" /> Back
                 </button>
