@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import useProjectFullDetailsSingleData from "../../../Hooks/useProjectFullDetailsSingleData";
 import GetInTouch from "../../Contact/GetInTouch";
 import SingleProjectDetails from "./SingleProjectDetail/SingleProjectDetails";
@@ -5,6 +6,10 @@ import SingleProjetFullDetailsCover from "./SingleProjectFullDetailsCover/Single
 
 const SingleProjectFullDetails = () => {
   const [projectFullDetails] = useProjectFullDetailsSingleData();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>

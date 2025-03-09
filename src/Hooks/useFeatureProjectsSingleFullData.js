@@ -13,7 +13,7 @@ const useFeatureProjectsSingleFullData = () => {
     const fetchedData = async () => {
       try {
         const response = await axios.get(
-          `https://chuti-harmony-server.vercel.app/api/v1/feature-project/feature-project/${featureProjectId}`
+          `https://chuti-harmony-server.vercel.app/api/v1/project-details/project-details/${featureProjectId}`
         );
         if (response.data) {
           setFeatureProjectSingleFullDetails(response.data.data);

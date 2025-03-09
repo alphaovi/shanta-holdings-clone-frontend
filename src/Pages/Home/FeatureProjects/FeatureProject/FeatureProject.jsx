@@ -44,7 +44,7 @@ const FeatureProject = () => {
           {featureProjects.map((featureProject) => (
             <div key={featureProject._id} className="">
               <img
-                src={featureProject.projectImg}
+                src={featureProject.projectCoverPhoto}
                 alt={`Slide ${featureProject.id}`}
                 style={{
                    height: "600px", 

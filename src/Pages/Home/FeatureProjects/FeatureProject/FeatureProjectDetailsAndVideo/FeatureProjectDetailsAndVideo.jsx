@@ -40,13 +40,13 @@ const FeatureProjectDetailsAndVideo = () => {
     handleVideoPlayer();
   }, []);
 
-  // navigate 
+  // navigate
   const navigate = useNavigate();
 
   // handle view project button
   const handleViewProject = (_id) => {
-navigate(`/feature-project/${_id}`)
-  }
+    navigate(`/project/${_id}`);
+  };
 
   return (
     <section className="px-4 sm:px-8 lg:px-16">
@@ -64,17 +64,20 @@ navigate(`/feature-project/${_id}`)
         </h1>
         <Slider {...settings2}>
           {featureProjects.map((featureProject) => (
-            <div
-              key={featureProject._id}
-              className={`${darkMode ? "" : ""}`}
-            >
-              <h1 className={`text-base sm:text-lg lg:text-2xl text-white brightness-125`}>
+            <div key={featureProject._id} className={`${darkMode ? "" : ""}`}>
+              <h1
+                className={`text-base sm:text-lg lg:text-2xl text-white brightness-125`}
+              >
                 {featureProject.projectType}
               </h1>
-              <h1 className={`text-2xl sm:text-3xl lg:text-4xl mt-4 text-white brightness-125`}>
+              <h1
+                className={`text-2xl sm:text-3xl lg:text-4xl mt-4 text-white brightness-125`}
+              >
                 {featureProject.projectName}
               </h1>
-              <p className={`text-base sm:text-lg lg:text-xl mt-6 text-white brightness-125`}>
+              <p
+                className={`text-base sm:text-lg lg:text-xl mt-6 text-white brightness-125`}
+              >
                 {featureProject.address}
               </p>
               <div>
