@@ -76,7 +76,7 @@ const AdminLifeAtChuti2 = () => {
         descriptionAboutChutiTeam: updatedDescriptionChutiTeam,
       };
 
-      const response = await axios.patch(
+      const response = await axios.post(
         `https://chuti-harmony-server.vercel.app/api/v1/life-at-chuti/life-at-chuti`,
         newChutiData
       );
@@ -93,20 +93,20 @@ const AdminLifeAtChuti2 = () => {
   return (
     <div className="font-serif">
       <div>
-        <p className="text-3xl font-bold">Life At Chuti</p>
+        <p className="text-3xl font-bold">Gallery</p>
       </div>
       <div className="border border-gray-300 p-5 mt-5">
         <form onSubmit={handleUpdateDataIntoDB}>
           <div className="grid grid-cols-2 gap-4 items-center">
             <div className="border-r-2 border-gray-500">
               <p className="text-xl font-bold">
-                Description About Life At Chuti Harmony:
+                Write Your Photo Title Here:
               </p>
               {loading ? (
                 <Loading></Loading>
               ) : (
                 <textarea
-                  className="mt-5 border border-gray-300 w-96 h-72 p-5"
+                  className="mt-5 border border-gray-300 w-96 p-5 mr-2"
                   name="updatedWhyChutiDescription"
                   onChange={(event) =>
                     setLifeAtChutiData({
@@ -121,7 +121,7 @@ const AdminLifeAtChuti2 = () => {
               <input
                 className="mt-5 btn btn-outline hover:bg-[#8E8A20] hover:border-none"
                 type="submit"
-                value="Update Life At Chuti"
+                value="Add Photo to Chuti Gallery"
               />
             </div>
             <div>

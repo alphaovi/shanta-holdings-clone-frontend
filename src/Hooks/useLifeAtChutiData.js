@@ -11,11 +11,11 @@ const useWhyChutiData = () => {
     const fetchedData = async () => {
       try {
         const loadedData = await axios.get(
-          `http://localhost:5000/api/v1/life-at-chuti/life-at-chuti`
+          `https://chuti-harmony-server.vercel.app/api/v1/life-at-chuti/life-at-chuti`
         );
         if (loadedData.data.data) {
           setWhyChutiDatas(loadedData.data.data);
-          console.log(loadedData.data.data)
+          console.log(loadedData.data.data);
         } else {
           toast.error("Unexpected data error");
         }

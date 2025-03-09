@@ -5,6 +5,7 @@ import FeatureProjectSlide from "./FeatureProjectRightVideo";
 import { DarkModeContext } from "../../../../../Contexts/NightLightContext";
 import { FiArrowRightCircle } from "react-icons/fi";
 import "./FeatureProjectDetailsAndVideos.css";
+import { useNavigate } from "react-router-dom";
 
 const FeatureProjectDetailsAndVideo = () => {
   const { darkMode } = useContext(DarkModeContext);
@@ -39,6 +40,14 @@ const FeatureProjectDetailsAndVideo = () => {
     handleVideoPlayer();
   }, []);
 
+  // navigate 
+  const navigate = useNavigate();
+
+  // handle view project button
+  const handleViewProject = (_id) => {
+navigate(`/feature-project/${_id}`)
+  }
+
   return (
     <section className="px-4 sm:px-8 lg:px-16">
       <div
@@ -70,7 +79,7 @@ const FeatureProjectDetailsAndVideo = () => {
               </p>
               <div>
                 <button
-                  onClick={() => console.log("HI")}
+                  onClick={() => handleViewProject(featureProject._id)}
                   className={`${
                     darkMode ? "text-white" : "text-white "
                   } btn btn-outline hover:bg-none mt-8 sm:mt-12 lg:mt-16 featureProject-font text-sm sm:text-lg lg:text-xl border-none bg-none`}

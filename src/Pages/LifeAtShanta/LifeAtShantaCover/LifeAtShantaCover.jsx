@@ -15,7 +15,7 @@ const LifeAtShantaCover = () => {
       }`}
     >
       <div>
-        <h1 className="cssanimation leHangAndDropLeft lg:text-8xl text-center relative lg:-mb-10 uppercase text-stroke-white">
+        <h1 className="cssanimation leHangAndDropLeft lg:text-8xl md:text:6xl sm:text-4xl text-center relative lg:-mb-10 uppercase text-stroke-white">
           <AnimatedTextUptoDown text="Gallery" animationType="sequence" />
           <br />
           {/* <AnimatedTextUptoDown text="Chuti Harmony" animationType="random" /> */}
@@ -25,7 +25,7 @@ const LifeAtShantaCover = () => {
         {loading ? (
           <Loading></Loading>
         ) : (
-          <div className="grid grid-cols-3 gap-5 px-5 mt-10">
+          <div className="lg:grid grid-cols-3 gap-5 px-5 mt-10">
             {whyChutiDatas.map((whyChutiData) => (
               <LifeAtShantaCoverPhoto
                 key={whyChutiData._id}

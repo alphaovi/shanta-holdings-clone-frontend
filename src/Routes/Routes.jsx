@@ -50,6 +50,7 @@ import AllProjects from "../Pages/AllProjects/AllProjects/AllProjects";
 import CompletedProjects from "../Pages/AllProjects/CompletedProjects/CompletedProjects";
 import NewsEvents from "../Pages/NewsEvents/NewsEvents/NewsEvents";
 import SingleNewsAndEventFullDetails from "../Pages/NewsEvents/AllNewAndEvents/SingleNewsAndEventFullDetails";
+import FeatureProjectSingleDetailsAndVideo from "../Pages/Home/FeatureProjects/FeatureProject/FeatureProjectDetailsAndVideo/FeatureProjectSingleDetailsAndVideo";
 
 const router = createBrowserRouter([
   {
@@ -124,6 +125,10 @@ const router = createBrowserRouter([
         path: "/news-events/:newsId",
         element: <SingleNewsAndEventFullDetails></SingleNewsAndEventFullDetails>,
       },
+      {
+        path: "/feature-project/:featureProjectId",
+        element: <FeatureProjectSingleDetailsAndVideo></FeatureProjectSingleDetailsAndVideo>
+      }
     ],
   },
   {

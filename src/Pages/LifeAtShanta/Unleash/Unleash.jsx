@@ -36,7 +36,7 @@ const Unleash = () => {
       >
         <Link to="/career">
           <button className="btn btn-outline hover:text-[#949938] hover:bg-white uppercase flex items-center text-xl mx-auto transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <LuArrowRightCircle className="mr-2" /> Current Opening
+            <LuArrowRightCircle className="mr-2 " /> Current Opening
           </button>
         </Link>
       </div>

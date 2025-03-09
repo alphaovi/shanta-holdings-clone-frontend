@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import InvestmentPropertySlider from "./InvestmentPropertySlider";
 
 const InvestmentPropertyPhotoAndFacilities = () => {
   const [investmentBenefits, setInvestmentBenefits] = useState([]);
@@ -21,7 +22,7 @@ const InvestmentPropertyPhotoAndFacilities = () => {
     <section>
       <div className="lg:grid grid-cols-2 gap-4 p-12 my-10">
         <div>
-          <img src="https://i.ibb.co.com/yp0H29x/8.jpg" alt="" />
+          <InvestmentPropertySlider></InvestmentPropertySlider>
         </div>
         <div className="bg-[#8F8933] border-2 rounded px-5 py-4">
           <div className="text-white">
