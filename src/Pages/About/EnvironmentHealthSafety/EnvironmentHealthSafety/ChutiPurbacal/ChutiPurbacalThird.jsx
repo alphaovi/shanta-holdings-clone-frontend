@@ -7,20 +7,20 @@ const ChutiPurbacalThird = () => {
   return (
     <section>
       <div
-        className={`lg:grid grid-cols-2 lg:m-20 m-5 ${
+        className={`lg:grid grid-cols-2 lg:mx-20 m-5 ${
           darkMode ? "text-white" : "text-black"
         }`}
       >
         <div>
-          <img className="w-[28rem]" src={safetyImage1} alt="" />
+          <img  loading="lazy" className="w-[28rem]" src={safetyImage1} alt="" />
         </div>
         <div>
-          <h1 className="text-3xl font-semibold mb-10">Resort Details</h1>
-          <li className="mb-5">
+          <h1 className="text-3xl font-semibold mb-5">Resort Details</h1>
+          <li className="mb-1">
             Resort Location: Galan, Rathura, Purbachal New Town, Gazipur 1720,
             Gazipur, Dhaka Division, Bangladesh
           </li>
-          <li className="mb-5">
+          <li className="mb-1">
             <a
               href="instagram.com/chutiresortpurbachal"
               target="_blank"
@@ -29,7 +29,7 @@ const ChutiPurbacalThird = () => {
               instagram.com/chutiresortpurbachal
             </a>
           </li>
-          <li className="mb-5">
+          <li className="mb-1">
             <a
               href="www.youtube.com/@ChutiResortPurbachal"
               target="_blank"
@@ -38,7 +38,7 @@ const ChutiPurbacalThird = () => {
               YouTube: www.youtube.com/@ChutiResortPurbachal
             </a>
           </li>
-          <li className="mb-5">
+          <li className="mb-1">
             <a
               href="www.chutiresortpurbachal.com"
               target="_blank"

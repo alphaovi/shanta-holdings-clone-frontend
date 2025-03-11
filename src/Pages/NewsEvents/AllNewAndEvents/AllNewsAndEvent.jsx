@@ -16,6 +16,7 @@ const AllNewsAndEvent = ({ allNewsAndEvent }) => {
     >
       <div className="relative">
         <img
+          loading="lazy"
           className="mt-5 w-full h-auto object-cover"
           src={coverphoto}
           alt={title}

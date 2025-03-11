@@ -25,7 +25,7 @@ const SingleNewsAndEventFullDetails = () => {
     <section
       className={`${
         darkMode ? "bg-black text-white" : "bg-[#FFFAF4] text-black"
-      } px-4 sm:px-6 lg:px-40 font-serif`}
+      } px-4 sm:px-6 lg:px-40 font-sans`}
     >
       <div>
         <h1 className="text-gray-500 text-sm sm:text-base">News & Event</h1>
@@ -37,6 +37,7 @@ const SingleNewsAndEventFullDetails = () => {
         </p>
         <div className="border border-gray-500 mb-5"></div>
         <img
+          loading="lazy"
           src={singleNewsEventDetail.coverphoto}
           alt="Cover"
           className="w-full h-auto"
@@ -98,6 +99,7 @@ const SingleNewsAndEventFullDetails = () => {
             {singleNewsEventDetail.photos.map((photo, index) => (
               <SwiperSlide key={index}>
                 <img
+                  loading="lazy"
                   src={photo}
                   alt={`Photo ${index + 1}`}
                   className="w-full h-48 sm:h-64 object-cover rounded-lg shadow-lg"

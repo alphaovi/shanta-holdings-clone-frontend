@@ -11,30 +11,33 @@ const OurBusinessTitleAndPhoto = () => {
   return (
     <section>
       <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-20">
-        <h1 className={`${darkMode ? "text-white" : "text-black"} lg:text-8xl text-center`}>
+        <h1
+          className={`${
+            darkMode ? "text-white" : "text-black"
+          } lg:text-8xl text-center`}
+        >
           OUR BUSINESS
         </h1>
       </div>
 
-      <div className="grid grid-cols-3  p-10">
+      {/* <div className="grid grid-cols-3 gap-5 p-20">
         {isLoading ? (
           <Loading />
         ) : error ? (
-          <p className="text-red-500 text-center">{error.message || "Something went wrong"}</p>
+          <p className="text-red-500 text-center">
+            {error.message || "Something went wrong"}
+          </p>
+        ) : ourBusinessPhotos.length > 0 ? (
+          ourBusinessPhotos.map((ourBusinessPhoto) => (
+            <OurBusinessSinglePhoto
+              key={ourBusinessPhoto._id}
+              ourBusinessPhoto={ourBusinessPhoto}
+            />
+          ))
         ) : (
-          ourBusinessPhotos.length > 0 ? (
-            ourBusinessPhotos.map((ourBusinessPhoto) => (
-              <OurBusinessSinglePhoto
-                key={ourBusinessPhoto._id}
-                ourBusinessPhoto={ourBusinessPhoto}
-              />
-            ))
-          ) : (
-            <p className="text-center">No business photos found.</p>
-          )
+          <p className="text-center">No business photos found.</p>
         )}
-      </div>
-      
+      </div> */}
     </section>
   );
 };

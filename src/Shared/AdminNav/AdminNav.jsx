@@ -20,12 +20,14 @@ const AdminNav = () => {
           <Link to={"/"} className="text-start block">
             {darkMode ? (
               <img
+               loading="lazy"
                 src={navbarLogoForLight}
                 alt="Logo"
                 className="h-14 md:h-20"
               />
             ) : (
               <img
+               loading="lazy"
                 src={navbarLogoForDark}
                 alt="Logo"
                 className="h-14 md:h-20"

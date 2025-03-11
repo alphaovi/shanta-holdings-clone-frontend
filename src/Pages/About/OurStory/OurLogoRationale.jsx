@@ -23,7 +23,7 @@ const OurLogoRationale = () => {
       }`}
     >
       <div className="">
-        <img className="w-full h-auto p-20" src={ourLogo} alt="Our Logo" />
+        <img  loading="lazy" className="w-full h-auto p-20" src={ourLogo} alt="Our Logo" />
       </div>
       <div className="flex-1 p-20  text-xl -mt-18">
         <h1 className={`${darkMode ? "text-white" : "text-black"} uppercase text-5xl`}>

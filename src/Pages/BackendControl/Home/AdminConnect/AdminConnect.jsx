@@ -197,6 +197,7 @@ const AdminConnect = () => {
           <label>Image</label>
           {selectedImage && (
             <img
+             loading="lazy"
               src={selectedImage}
               alt="Preview"
               className="w-40 h-40 object-cover mb-4"

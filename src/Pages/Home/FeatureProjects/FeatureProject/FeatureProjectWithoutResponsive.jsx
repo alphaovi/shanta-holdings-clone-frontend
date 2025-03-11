@@ -32,6 +32,7 @@ const FeatureProjectWithoutResponsive = () => {
           {featureProjects.map((featureProject) => (
             <div key={featureProject.id} className="">
               <img
+               loading="lazy"
                 src={featureProject.projectImg}
                 alt={`Slide ${featureProject.id}`}
                 style={{ height: "600px", width: "1400px" }}

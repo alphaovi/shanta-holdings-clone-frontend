@@ -106,7 +106,8 @@ const LetConnect = () => {
         }}
       >
         <img
-          className="lg:h-[300px] lg:w-[600px] "
+         
+          className="lg:h-[300px] lg:w-[600px]  "
           // style={{ height: "300px", width: "600px" }}
           src={connectData.image}
           alt=""

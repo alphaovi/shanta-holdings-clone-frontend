@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../OnGoingProjects/OnGoingProject/OnGoingProject.css"; 
+import "../OnGoingProjects/OnGoingProject/OnGoingProject.css";
 
 const AllProject = ({ project }) => {
   const { _id, projectName, projectCoverPhoto, address } = project;
@@ -17,7 +17,7 @@ const AllProject = ({ project }) => {
   };
 
   const handleRedirect = () => {
-    navigate(`/project/${_id}`); 
+    navigate(`/project/${_id}`);
   };
 
   return (
@@ -29,6 +29,7 @@ const AllProject = ({ project }) => {
         onMouseMove={handleMouseMove}
       >
         <img
+          loading="lazy"
           className="project-image w-[367px] h-[367px] mb-2"
           src={projectCoverPhoto}
           alt=""
@@ -41,8 +42,10 @@ const AllProject = ({ project }) => {
         >
           View Details
         </div>
-        <h1 className="text-2xl font-bold text-[#8E8A1F] mb-2">{projectName}</h1>
-        <h3 className="font-serif">{address}</h3>
+        <h1 className="text-2xl font-bold text-[#8E8A1F] mb-2">
+          {projectName}
+        </h1>
+        <h3 className="font-sans">{address}</h3>
       </div>
     </section>
   );

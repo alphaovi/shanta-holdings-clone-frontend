@@ -10,7 +10,7 @@ const AdminInvestmentDetails = () => {
   }
   return (
     <div>
-      <h1 className="text-4xl uppercase text-center font-serif text-[#8E8A20] mb-10">
+      <h1 className="text-4xl uppercase text-center font-sans text-[#8E8A20] mb-10">
         Ownership/investment benefits
       </h1>
       <AdminInvestmentPhoto></AdminInvestmentPhoto>

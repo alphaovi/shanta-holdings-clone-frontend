@@ -143,6 +143,7 @@ const AdminInvestmentPhoto = () => {
             <div className="grid grid-cols-4 gap-4">
               {previewUrls.map((url, index) => (
                 <img
+                 loading="lazy"
                   key={index}
                   src={url}
                   alt={`Selected ${index}`}
@@ -176,6 +177,7 @@ const AdminInvestmentPhoto = () => {
         {investmentBenefitPhotos.map((investmentBenefitPhoto) => (
           <div className="" key={investmentBenefitPhoto._id}>
             <img
+             loading="lazy"
               className="w-40 h-40"
               src={investmentBenefitPhoto.investmentImage}
               alt=""

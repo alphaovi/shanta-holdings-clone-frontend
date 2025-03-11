@@ -7,20 +7,21 @@ const SaltanatTeaResortThird = () => {
   return (
     <section>
       <div
-        className={`lg:grid grid-cols-2 lg:m-20 m-5 ${
+        className={`lg:grid grid-cols-2 lg:mx-20 m-5 ${
           darkMode ? "text-white" : "text-black"
         }`}
       >
         <div>
-          <img className="w-[28rem]" src={safetyImage1} alt="" />
+          <img  loading="lazy" className="w-[28rem]" src={safetyImage1} alt="" />
         </div>
         <div>
-          <h1 className="text-3xl font-semibold mb-10">Resort Details</h1>
-          <li className="mb-5">
+          <h1 className="text-3xl font-semibold mb-5">Resort Details</h1>
+          <li className="mb-1
+          ">
             Project Location: Kamalaganj, Sreemangal, Moulvibazar Sylhet, Sylhet
             Division, Bangladesh,
           </li>
-          <li className="mb-5">
+          <li className="mb-1">
             <a
               href="www.facebook.com/SaltanatTeaResortBD"
               target="_blank"
@@ -29,7 +30,7 @@ const SaltanatTeaResortThird = () => {
               www.facebook.com/SaltanatTeaResortBD
             </a>
           </li>
-          <li className="mb-5">
+          <li className="mb-1">
             <a href="thesaltanat.com" target="_blank" rel="noopener noreferrer">
               Website: thesaltanat.com
             </a>

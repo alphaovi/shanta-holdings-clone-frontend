@@ -145,6 +145,7 @@ const AdminCreateOurTeam = () => {
           <label className="text-xl">Team Member Photo</label>
           {selectedImage && (
             <img
+             loading="lazy"
               className="w-1/4 mb-3 object-cover"
               src={selectedImage}
               alt="Preview"

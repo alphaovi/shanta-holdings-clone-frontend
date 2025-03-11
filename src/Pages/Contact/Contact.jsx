@@ -81,6 +81,7 @@ const Contact = () => {
 
         <div className="mt-10 lg:mt-0">
           <img
+           loading="lazy"
             className="p-5 w-full h-auto lg:h-[475px] lg:w-[650px]"
             src="https://i.ibb.co.com/6BYbr6w/7.jpg"
             alt=""

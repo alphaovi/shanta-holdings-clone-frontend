@@ -144,6 +144,7 @@ const AdminCreateSeniorTeam = () => {
           <label className="text-xl">Senior Team Member Photo</label>
           {selectedImage && (
             <img
+             loading="lazy"
               className="w-1/4 mb-3 object-cover"
               src={selectedImage}
               alt="Preview"

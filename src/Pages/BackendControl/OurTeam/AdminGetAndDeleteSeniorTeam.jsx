@@ -13,7 +13,7 @@ const AdminGetAndDeleteSeniorTeam = ({ ourSeniorTeam, onDelete }) => {
       <h1 className="text-2xl">Name: {name}</h1>
       <h3 className="text-xl mt-5">Designation: {designation}</h3>
       <p className="text-xl mt-5">Bio: {bio}</p>
-      <img className="mt-5 h-60 " src={photo} alt="" />
+      <img  loading="lazy" className="mt-5 h-60 " src={photo} alt="" />
       <button
       onClick={handleDeleteSeniorTeamMember}
        className="btn btn-error border-none mt-5 text-white ">

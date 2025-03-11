@@ -10,12 +10,13 @@ const Career = () => {
       className={`${darkMode ? "text-white" : "text-black"} mt-20 static`}
     >
       <div className="-mb-10 flex justify-center items-center">
-        <h1 className={`text-8xl text-center absolute top-20 md:text-7xl sm:text-6xl ${darkMode ? "projectWordDesign" : "projectWordDesignForLight"}`}>
+        <h1 className={`lg:text-8xl text-center absolute top-20 text-6xl ${darkMode ? "projectWordDesign" : "projectWordDesignForLight"}`}>
           Current Openings
         </h1>
       </div>
       <div className="mx-auto flex justify-center items-center">
         <img
+         loading="lazy"
           src="https://i.ibb.co/KwQYxKC/Rectangle-1-7-2e16d0ba-fill-2560x1440-c0-format-avif.jpg"
           alt=""
         />

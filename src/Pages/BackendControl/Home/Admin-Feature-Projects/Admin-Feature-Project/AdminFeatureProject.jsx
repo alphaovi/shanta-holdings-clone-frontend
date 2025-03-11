@@ -51,7 +51,7 @@ const AdminFeatureProject = ({ featureProject, index, onDelete }) => {
             defaultValue={address}
           />
           <h3 className="mb-5">Image of your project</h3>
-          <img className="w-3/4 h-2/4" src={projectImg} alt="Preview" />
+          <img loading="lazy" className="w-3/4 h-2/4" src={projectImg} alt="Preview" />
           <h3 className="my-5">Video of your project</h3>
           <a
             href={projectVideo}

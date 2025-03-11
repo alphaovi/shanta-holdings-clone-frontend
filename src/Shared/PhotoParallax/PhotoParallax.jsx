@@ -36,6 +36,7 @@ const PhotoParallax = ({ src, containerHeight = 600 }) => {
       style={{ height: `${containerHeight}px` }}
     >
       <img
+        loading="lazy"
         ref={photoRef}
         src={src}
         alt=""

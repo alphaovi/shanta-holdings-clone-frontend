@@ -367,7 +367,7 @@ const AdminCreateProjectData = () => {
 
         <div className="flex gap-2 mt-5 items-center">
           <p className="w-32">Project Cover Photo: </p>
-          <img className="w-40 h-40" src={selectedImage} alt="Preview" />
+          <img loading="lazy" className="w-40 h-40" src={selectedImage} alt="Preview" />
           <input
             className="border border-gray-500 p-2 w-96 rounded"
             ref={fileInputRef}

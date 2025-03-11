@@ -17,7 +17,7 @@ const SaltanaTeaResortSecond = () => {
         </p>
       </div>
       <div>
-        <img className="h-96" src={healthyPhoto} alt="" />
+        <img  loading="lazy" className="h-96" src={healthyPhoto} alt="" />
       </div>
     </section>
   );

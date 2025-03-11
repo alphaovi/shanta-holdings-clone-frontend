@@ -10,19 +10,19 @@ const EnvironmentHealthSafetyFront = () => {
         <h1
           className={`${
             darkMode ? "text-white" : "text-black"
-          } lg:text-8xl text-3xl text-center  uppercase`}
+          } lg:text-8xl text-3xl text-center  uppercase font-sans`}
         >
-          Chuti Harmony, <br /> Facilities
+          Chuti Harmony <br /> Facilities
         </h1>
       </div>
       <div className="mx-20">
-        <img src={ehsFrontImage} alt="" />
+        <img  loading="lazy" src={ehsFrontImage} alt="" />
       </div>
       <div>
         <h3
           className={`${
             darkMode ? "text-white" : "text-black"
-          } text-2xl text-center  lg:m-20 m-3`}
+          } text-2xl text-center  lg:mx-20 my-5 m-3 font-sans`}
         >
           Chuti is a well-known name in the development and expansion of the
           tourism industry in Bangladesh, providing high-quality hospitality

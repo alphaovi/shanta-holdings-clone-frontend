@@ -34,16 +34,16 @@ const InvestmentPropertySlider = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src={image1} alt="" />
+          <img  loading="lazy" src={image1} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={image2} alt="" />
+          <img  loading="lazy" src={image2} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={image3} alt="" />
+          <img  loading="lazy" src={image3} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={image4} alt="" />
+          <img  loading="lazy" src={image4} alt="" />
         </SwiperSlide>
       </Swiper>
     </div>

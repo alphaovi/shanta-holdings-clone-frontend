@@ -41,6 +41,7 @@ const Foundation = () => {
       <div className="m-10 lg:flex">
         <div className="mx-20">
           <img
+            loading="lazy"
             className="transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300"
             style={{ width: "6000px" }}
             src={ourStory.foundationImage}
@@ -48,10 +49,10 @@ const Foundation = () => {
           />
         </div>
         <div className="">
-          <h3 className="text-2xl font-bold mb-5">
+          <h3 className="text-2xl font-bold lg:mb-5 mb-20">
             {ourStory.foundationTitle}
           </h3>
-          <p className="transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300">
+          <p className="transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300 lg:mb-2 mb-10">
             {ourStory.foundationDescriptionFirst}
           </p>
           <br />

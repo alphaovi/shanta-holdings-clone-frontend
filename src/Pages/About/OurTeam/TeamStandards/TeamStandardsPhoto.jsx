@@ -11,15 +11,18 @@ const TeamStandardsPhoto = () => {
 
   // Show a loading message until data is fetched
   if (!ourManagementTeamDatas) {
-    return <div>
-    <Loading></Loading>
-  </div>;
+    return (
+      <div>
+        <Loading></Loading>
+      </div>
+    );
   }
 
   return (
     <div>
       {/* Ensure teamCoverPhoto exists */}
       <img
+        loading="lazy"
         src={ourManagementTeamDatas.teamCoverPhoto}
         alt="Team Cover"
         className="w-full h-auto"

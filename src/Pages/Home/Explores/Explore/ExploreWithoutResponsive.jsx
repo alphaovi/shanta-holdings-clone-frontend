@@ -92,7 +92,7 @@ const ExploreWithoutResponsive = () => {
                   Your browser does not support the video tag.
                 </video>
               ) : (
-                <img src={photo.url} alt={`Slide ${photo.id}`} />
+                <img  loading="lazy" src={photo.url} alt={`Slide ${photo.id}`} />
               )}
               <h1
                 className={`text-6xl text-center -mt-6 opacity-50 ${

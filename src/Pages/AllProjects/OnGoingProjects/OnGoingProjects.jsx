@@ -19,6 +19,7 @@ const OnGoingProjects = () => {
     <section className="bg-[#FFFAF4]">
       <div className="">
         <img
+          loading="lazy"
           className="w-full h-48 md:h-64 lg:h-96 -mt-16 md:-mt-24 lg:-mt-32"
           src={projectPageBackground}
           alt="Project Cover"
@@ -30,7 +31,11 @@ const OnGoingProjects = () => {
       <div className="absolute bg-[#827466] p-4 w-full md:w-[72rem] mt-5 left-1/2 transform -translate-x-1/2 grid grid-cols-1 md:grid-cols-3 gap-4 z-10">
         {/* Project Type Dropdown */}
         <div className="dropdown dropdown-hover">
-          <div tabIndex={0} role="button" className="m-1 text-white text-lg md:text-xl">
+          <div
+            tabIndex={0}
+            role="button"
+            className="m-1 text-white text-lg md:text-xl"
+          >
             <span className="flex items-center gap-2">
               Project Type
               {hoveredDropdown === "status" ? (

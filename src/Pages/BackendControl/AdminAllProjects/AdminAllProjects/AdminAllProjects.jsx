@@ -7,14 +7,14 @@ const AdminAllProjects = () => {
   const [ongoingProjectFullDetails, error, loading] = useProjectFullDetails();
 
   return (
-    <div className="font-serif">
+    <div className="font-sans">
       <div>
         <h1>All Projects</h1>
       </div>
       <div className="mt-10">
         <Link
           to={"/admin/create-admin-project"}
-          className="border border-gray-500 p-2 rounded bg-[#8E8A20] text-white font-serif"
+          className="border border-gray-500 p-2 rounded bg-[#8E8A20] text-white font-sans"
         >
           Create Project
         </Link>

@@ -79,7 +79,7 @@ const AdminAllProjectData = ({ projectFullDetail, index }) => {
         <p>Number of apartments: {numberOfApartments}</p>
         <p>Number of basements: {numberOfBaseMents}</p>
         <p>Rajuk approval no: {rajukApprovalNo}</p>
-        <img className="w-60 h-60 mt-5" src={projectCoverPhoto} alt="" />
+        <img  loading="lazy" className="w-60 h-60 mt-5" src={projectCoverPhoto} alt="" />
         <div className="flex gap-20 p-2">
           <button className="btn btn-warning">Edit</button>
           <button

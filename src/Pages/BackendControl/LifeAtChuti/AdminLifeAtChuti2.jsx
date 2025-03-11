@@ -91,7 +91,7 @@ const AdminLifeAtChuti2 = () => {
     }
   };
   return (
-    <div className="font-serif">
+    <div className="font-sans">
       <div>
         <p className="text-3xl font-bold">Gallery</p>
       </div>
@@ -99,9 +99,7 @@ const AdminLifeAtChuti2 = () => {
         <form onSubmit={handleUpdateDataIntoDB}>
           <div className="grid grid-cols-2 gap-4 items-center">
             <div className="border-r-2 border-gray-500">
-              <p className="text-xl font-bold">
-                Write Your Photo Title Here:
-              </p>
+              <p className="text-xl font-bold">Write Your Photo Title Here:</p>
               {loading ? (
                 <Loading></Loading>
               ) : (
@@ -130,6 +128,7 @@ const AdminLifeAtChuti2 = () => {
                 <Loading></Loading>
               ) : (
                 <img
+                  loading="lazy"
                   className="mt-5 w-72"
                   src={whyChutiData.coverPhoto}
                   alt="Cover Photo"
@@ -137,6 +136,7 @@ const AdminLifeAtChuti2 = () => {
               )}
               <p className="mt-5 font-bold">Update Image</p>
               <img
+                loading="lazy"
                 className="mt-5 w-40 h-40"
                 src={selectedPhoto}
                 alt="Preview"

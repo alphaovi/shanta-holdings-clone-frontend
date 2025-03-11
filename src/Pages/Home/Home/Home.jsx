@@ -38,7 +38,7 @@ const Home = () => {
       <div className="">
         <Explores></Explores>
       </div>
-      <div className="lg:mt-40 md:-mt-20">
+      <div className="lg:mt-40 -mt-96">
         <LetConnect></LetConnect>
       </div>
     </div>

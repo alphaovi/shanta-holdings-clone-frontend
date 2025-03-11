@@ -58,7 +58,7 @@ const Values = () => {
       </div>
       <div className="lg:flex w-full">
         <div className="w-full flex-1 h-auto p-20">
-          <img src={ourStory.valueImage} alt="" />
+          <img  loading="lazy" src={ourStory.valueImage} alt="" />
           <p className="text-white font-semibold mt-4">
             {ourStory.valueDescription}
           </p>

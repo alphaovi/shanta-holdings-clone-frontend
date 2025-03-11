@@ -8,21 +8,21 @@ const ChutiAronnobashSecond = () => {
     <section
       className={`${
         darkMode ? "text-white" : "text-black"
-      } lg:grid grid-cols-2  lg:p-24 p-5`}
+      } lg:grid grid-cols-2  lg:px-24 px-5 font-sans`}
     >
-      <div>
-        <h1 className="lg:text-5xl text-3xl uppercase mb-10">Capacity</h1>
-        <li className="mb-5">09 Rooms</li>
-        <li className="mb-5"> 2 Workshop Venue</li>
-        <li className="mb-5">
+      <div className="font-sans">
+        <h1 className="lg:text-5xl text-3xl uppercase mb-5">Capacity</h1>
+        <li className="mb-1">09 Rooms</li>
+        <li className="mb-1"> 2 Workshop Venue</li>
+        <li className="mb-1">
           {" "}
           Fine Dining and Dayout capacity 1500 person per day
         </li>
-        <li className="mb-5"> Dayout capacity 2500 person per day</li>
-        <li className="mb-5"> 45 car parking facility</li>
+        <li className="mb-1"> Dayout capacity 2500 person per day</li>
+        <li className="mb-1"> 45 car parking facility</li>
       </div>
       <div>
-        <img className="h-96" src={healthyPhoto} alt="" />
+        <img  loading="lazy" className="h-96" src={healthyPhoto} alt="" />
       </div>
     </section>
   );

@@ -41,7 +41,7 @@ const AboutCsr = () => {
   return (
     <section className={`grid grid-cols-2 gap-6 mx-20 ${darkMode ? "text-white" : "text-black"}`}>
       <div className="p-10">
-        <img src={doctorImg} alt="" />
+        <img loading="lazy" src={doctorImg} alt="" />
       </div>
       <div className="p-10">
         <h3 className="text-3xl font-bold uppercase mb-10">

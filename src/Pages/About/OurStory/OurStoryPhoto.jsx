@@ -15,6 +15,7 @@ const OurStoryPhoto = () => {
   return (
     <div>
       <img
+       loading="lazy"
         className="opacity-75 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-300"
         src={ourStory.storyBannerImage}
         alt=""

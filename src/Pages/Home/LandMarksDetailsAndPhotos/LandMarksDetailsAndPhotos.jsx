@@ -90,7 +90,7 @@ const LandMarksDetailsAndPhotos = () => {
         </div>
       </div>
       <div className="block">
-        <img className="w-[450px] p-5" src={commitment.image} alt="" />
+        <img  loading="lazy" className="w-[450px] p-5" src={commitment.image} alt="" />
       </div>
       <div className="lg:ml-20">
         <div className="mb-20 font-familyPortfolio w-72">

@@ -38,7 +38,7 @@ const BoardOfDirectors = () => {
       <div className="mx-20">
         <div className="lg:flex">
           <div className="flex-1">
-            <img src={ourManagementTeamDatas.managingDirectorImage} alt="" />
+            <img  loading="lazy" src={ourManagementTeamDatas.managingDirectorImage} alt="" />
           </div>
           <div className="flex-1 lg:p-40">
             <h3 className="uppercase text-2xl font-bold">
@@ -56,7 +56,7 @@ const BoardOfDirectors = () => {
         <div className="grid lg:grid-cols-3 md:grid-cols-2">
           {ourTeamDatas.map((ourTeamData) => (
             <div className="mb-10 flex-1 p-2" key={ourTeamData._id}>
-              <img className="h-60 w-72" src={ourTeamData.photo} alt="" />
+              <img  loading="lazy" className="h-60 w-72" src={ourTeamData.photo} alt="" />
               <h3 className="text-xl font-bold uppercase my-3">
                 {ourTeamData.name}
               </h3>

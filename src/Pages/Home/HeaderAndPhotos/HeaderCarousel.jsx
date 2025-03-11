@@ -58,6 +58,7 @@ const HeaderCarousel = () => {
         {photos.map((photo) => (
           <div key={photo.id}>
             <img
+            //  loading="lazy"
               src={photo.url}
               alt={`Slide ${photo.id}`}
               style={{ width: "100%", height: "auto" }}

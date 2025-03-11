@@ -44,6 +44,7 @@ const ProjectImageSlider = ({ featureProject }) => {
       <Slider {...settings}>
         <div className="slider-item">
           <img
+           loading="lazy"
             src={projectImg}
             alt={projectName}
             className="slider-image"

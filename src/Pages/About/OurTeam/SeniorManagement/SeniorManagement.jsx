@@ -62,13 +62,13 @@ const SeniorManagement = () => {
             </button>
           </div>
           <div className="lg:flex-1">
-            <img className="" src={ourManagementTeamDatas.ceoPhoto} alt="" />
+            <img  loading="lazy" className="" src={ourManagementTeamDatas.ceoPhoto} alt="" />
           </div>
         </div>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 mt-20">
           {ourSeniorTeams.map((seniorTeam) => (
             <div className="mb-10 flex-1 p-2" key={seniorTeam._id}>
-              <img className="h-60" src={seniorTeam.photo} alt="" />
+              <img  loading="lazy" className="h-60" src={seniorTeam.photo} alt="" />
               <h3 className="text-xl font-bold uppercase my-3">
                 {seniorTeam.name}
               </h3>

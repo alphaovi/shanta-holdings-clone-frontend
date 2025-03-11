@@ -153,12 +153,14 @@ const AdminOurStory = () => {
                   <label>{key}</label>
                   {imagePreviews[key] ? (
                     <img
+                     loading="lazy"
                       src={imagePreviews[key]}
                       alt="Preview"
                       className="w-40 h-40 object-cover mb-4"
                     />
                   ) : storyData[key] ? (
                     <img
+                     loading="lazy"
                       src={storyData[key]}
                       alt="Preview"
                       className="w-40 h-40 object-cover mb-4"

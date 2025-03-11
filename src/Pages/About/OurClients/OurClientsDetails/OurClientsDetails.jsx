@@ -8,12 +8,12 @@ import clients6 from "../../../../assets/images/chuti-harmony/clients/6.jpg";
 const OurClientsDetails = () => {
   return (
     <div className="">
-      <img className="lg:px-40" src={clients1} alt="" />
-      <img className="lg:px-40" src={clients2} alt="" />
-      <img className="lg:px-40" src={clients3} alt="" />
-      <img className="lg:px-40" src={clients4} alt="" />
-      <img className="lg:px-40" src={clients5} alt="" />
-      <img className="lg:px-40" src={clients6} alt="" />
+      <img  loading="lazy" className="lg:px-40" src={clients1} alt="" />
+      <img  loading="lazy" className="lg:px-40" src={clients2} alt="" />
+      <img  loading="lazy" className="lg:px-40" src={clients3} alt="" />
+      <img  loading="lazy" className="lg:px-40" src={clients4} alt="" />
+      <img  loading="lazy" className="lg:px-40" src={clients5} alt="" />
+      <img  loading="lazy" className="lg:px-40" src={clients6} alt="" />
     </div>
   );
 };

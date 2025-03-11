@@ -19,7 +19,7 @@ const TheTeam = () => {
         <h1 className="text-6xl text-center">The Team</h1>
       </div>
       <div>
-        <img className="lg:w-[1920px]" src={ourManagementTeamDatas.fullTeamImage} alt="" />
+        <img  loading="lazy" className="lg:w-[1920px]" src={ourManagementTeamDatas.fullTeamImage} alt="" />
       </div>
       <div className="lg:flex text-xl bg-[#5C5151] ">
         <p className="flex-1 mx-10 p-20">

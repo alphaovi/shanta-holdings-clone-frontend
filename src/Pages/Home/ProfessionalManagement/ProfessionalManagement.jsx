@@ -20,6 +20,10 @@ const ProfessionalManagement = () => {
       autoplay: 1,
       mute: isMute ? 1 : 0,
       controls: 0,
+      modestbranding: 1,
+      rel: 0,
+      playsinline: 1, // Prevent fullscreen on iOS
+      disablekb: 1, // Disable keyboard controls
     },
   };
 
@@ -50,9 +54,16 @@ const ProfessionalManagement = () => {
     };
   }, []);
 
+  // Handle video end
+  const handleVideoEnd = (event) => {
+    const player = event.target;
+    player.seekTo(0); // Restart the video from the beginning
+    player.playVideo(); // Play the video again
+  };
+
   return (
     <MotionAnimate animation="scrollFadeIn" scrollPositions={[0.1, 0.9]}>
-      <section className="relative">
+      <section className="relative lg:-mt-0 -mt-72">
         <div
           ref={containerRef}
           className="parallax-container ml-40 z-10 relative"
@@ -73,7 +84,7 @@ const ProfessionalManagement = () => {
             <p
               className={`${
                 darkMode ? "text-white" : "text-black bg-[#FFFFFF80]"
-              } text-5xl font-bold uppercase space-y-5`}
+              } text-5xl font-bold uppercase space-y-5 mb-10`}
             >
               Prime Locations . Leading Consultants . Top Quality Materials .
               Uncompromising Safety . On-time Delivery . Professional Management
@@ -85,6 +96,7 @@ const ProfessionalManagement = () => {
             videoId="DcY2QIf4D9I" // Replace with your YouTube video ID
             opts={videoOptions}
             className="w-full lg:h-[750px]"
+            onEnd={handleVideoEnd} // Handle video end event
           />
           <p
             onClick={toggleHandleMute}

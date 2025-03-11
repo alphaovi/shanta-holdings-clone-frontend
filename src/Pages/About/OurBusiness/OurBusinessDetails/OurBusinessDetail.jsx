@@ -13,7 +13,7 @@ const OurBusinessDetail = ({ businessDetail }) => {
     >
       <div className="mb-4">
         <div>
-          <img
+          <img  loading="lazy"
             src={photo || "https://via.placeholder.com/400"}
             alt={name || "Business"}
             className="w-full h-[250px] object-cover"

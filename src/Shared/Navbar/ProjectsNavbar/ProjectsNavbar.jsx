@@ -49,12 +49,14 @@ const ProjectsNavbar = () => {
           <Link to={"/"} className="text-start block">
             {darkMode ? (
               <img
+                loading="lazy"
                 src={navbarLogoForLight}
                 alt="Logo"
                 className="h-14 md:h-20"
               />
             ) : (
               <img
+                loading="lazy"
                 src={navbarLogoForDark}
                 alt="Logo"
                 className="h-14 md:h-20"
@@ -140,7 +142,7 @@ const ProjectsNavbar = () => {
                   <MdOutlineKeyboardArrowRight className="ml-3 md:ml-5" />
                 </button>
               </li>
-              <li className="px-5 ">
+              {/* <li className="px-5 ">
                 <button
                   onClick={() => showSubMenu("projects")}
                   className="flex items-center w-full hover:text-[#8F8933]"
@@ -149,10 +151,10 @@ const ProjectsNavbar = () => {
                   Projects{" "}
                   <MdOutlineKeyboardArrowRight className="ml-3 md:ml-5" />
                 </button>
-              </li>
+              </li> */}
               <li className="mt-5 px-5 md:mt-10 hover:text-[#8F8933]">
-                <Link to="/life-at-chuti" onClick={handleShowMenu}>
-                  Life At Chuti
+                <Link to="/gallery" onClick={handleShowMenu}>
+                  Gallery
                 </Link>
               </li>
               <li className="mt-5 px-5 md:mt-10 hover:text-[#8F8933]">
@@ -206,11 +208,11 @@ const ProjectsNavbar = () => {
               <li className="hover:text-[#8F8933] px-7">
                 <Link to="/our-story">Our Story</Link>
               </li>
-              <li className="hover:text-[#8F8933] px-7">
+              {/* <li className="hover:text-[#8F8933] px-7">
                 <Link to={"/our-team"} onClick={handleShowMenu}>
                   Our Team
                 </Link>
-              </li>
+              </li> */}
               <li className="hover:text-[#8F8933] px-7">
                 <Link to={"/why-chuti"} onClick={handleShowMenu}>
                   Why Chuti ?
@@ -231,11 +233,11 @@ const ProjectsNavbar = () => {
                   Facilities
                 </Link>
               </li>
-              <li className="hover:text-[#8F8933] px-7">
+              {/* <li className="hover:text-[#8F8933] px-7">
                 <Link to={"/csr"} onClick={handleShowMenu}>
                   CSR
                 </Link>
-              </li>
+              </li> */}
             </ul>
           )}
 

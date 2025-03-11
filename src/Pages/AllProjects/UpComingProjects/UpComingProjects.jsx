@@ -18,6 +18,7 @@ const UpComingProjects = () => {
     <section className="bg-[#FFFAF4]">
       <div className="">
         <img
+         loading="lazy"
           className="w-full h-96 -mt-32"
           src={projectPageBackground}
           alt=""

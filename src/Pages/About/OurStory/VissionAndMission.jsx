@@ -38,6 +38,7 @@ const VissionAndMission = () => {
           </h1>
           <p className="lg:text-xl lg:mr-10 my-10">{ourStory.visionTitle}</p>
           <img
+            loading="lazy"
             className=" lg:h-[450px]"
             src={ourStory.visionImage}
             alt="Vision Image"
@@ -57,8 +58,11 @@ const VissionAndMission = () => {
             <span className="mr-10">O</span>
             <span>N</span>
           </h1>
-          <p className="lg:text-xl lg:mr-10 mr-2 my-10">{ourStory.missionTitle}</p>
+          <p className="lg:text-xl lg:mr-10 mr-2 my-10">
+            {ourStory.missionTitle}
+          </p>
           <img
+            loading="lazy"
             className="w-full lg:h-[450px] "
             src={ourStory.misssionImage}
             alt="Mission Image"

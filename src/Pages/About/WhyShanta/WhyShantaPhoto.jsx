@@ -7,7 +7,7 @@ const WhyShantaPhoto = () => {
         <h1 className="lg:text-8xl font-bold text-center uppercase">Why Chuti Harmony?</h1>
       </div>
       <div>
-        <img src={whyShantaPhoto} alt="" />
+        <img  loading="lazy" src={whyShantaPhoto} alt="" />
       </div>
     </section>
   );

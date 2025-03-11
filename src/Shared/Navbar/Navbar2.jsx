@@ -48,12 +48,14 @@ const Navbar2 = () => {
           <Link to={"/"} className="text-start block" onClick={handleCloseMenu}>
             {darkMode ? (
               <img
+               loading="lazy"
                 src={navbarLogoForLight}
                 alt="Logo"
                 className="h-10 md:h-20"
               />
             ) : (
               <img
+               loading="lazy"
                 src={navbarLogoForDark}
                 alt="Logo"
                 className="h-10 md:h-20"

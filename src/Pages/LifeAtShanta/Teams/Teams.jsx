@@ -20,10 +20,10 @@ const Teams = () => {
     <div className="slider-container mx-48 my-20 opacity-75">
       <Slider {...settings}>
         <div>
-          <img src={teamMember1} />
+          <img  loading="lazy" src={teamMember1} />
         </div>
         <div>
-          <img src={teamMember2} />
+          <img  loading="lazy" src={teamMember2} />
         </div>
       </Slider>
     </div>

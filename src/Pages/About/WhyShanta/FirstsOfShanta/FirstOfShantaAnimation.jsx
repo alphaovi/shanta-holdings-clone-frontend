@@ -38,31 +38,31 @@ const FirstOfShantaAnimation = () => {
           <div>
             <p className="text-xl uppercase">Chuti Resort Purbachal</p>
 
-            <img className="h-96" src="https://i.ibb.co.com/Wq16pfq/66371bad924c6.jpg" />
+            <img  loading="lazy" className="h-96" src="https://i.ibb.co.com/Wq16pfq/66371bad924c6.jpg" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div>
             <p className="text-xl uppercase">Chuti Resort Gazipur</p>
-            <img className="h-96" src="https://i.ibb.co.com/1YDbF71v/banner-1.jpg" />
+            <img  loading="lazy" className="h-96" src="https://i.ibb.co.com/1YDbF71v/banner-1.jpg" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div>
             <p className="text-xl uppercase">Chuti Harmony</p>
-            <img className="h-96" src="https://i.ibb.co.com/DPSqkSBp/5.jpg" />
+            <img  loading="lazy" className="h-96" src="https://i.ibb.co.com/DPSqkSBp/5.jpg" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div>
             <p className="text-xl uppercase">Saltanat Tea Resort</p>
-            <img className="h-96" src="https://i.ibb.co.com/M3TJ32v/full-view-6.jpg" />
+            <img  loading="lazy" className="h-96" src="https://i.ibb.co.com/M3TJ32v/full-view-6.jpg" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div>
             <p className="text-xl uppercase">Chuti Aronnobash Resort</p>
-            <img className="h-96" src="https://i.ibb.co.com/B2kGCWS2/imageye-about-ccollage-1.jpg" />
+            <img  loading="lazy" className="h-96" src="https://i.ibb.co.com/B2kGCWS2/imageye-about-ccollage-1.jpg" />
           </div>
         </SwiperSlide>
         {/* <SwiperSlide>

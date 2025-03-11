@@ -3,7 +3,7 @@ const OurBusinessSinglePhoto = ({ ourBusinessPhoto }) => {
 
   return (
     <div className="">
-      <img src={image} alt="Business Photo" className="w-full h-full" />
+      <img  loading="lazy" src={image} alt="Business Photo" className="w-full h-full" />
     </div>
   );
 };

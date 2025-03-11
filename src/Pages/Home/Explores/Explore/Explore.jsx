@@ -61,10 +61,20 @@ const ExploreVideos = () => {
       controls: 0,
       loop: 1,
       playlist: videoId,
+      modestbranding: 1,
+      rel: 0,
+      disablekb: 1, 
     },
   });
 
   const toggleMute = () => setIsMute((prev) => !prev);
+
+   // Handle video end
+   const handleVideoEnd = (event) => {
+    const player = event.target;
+    player.seekTo(0); // Restart the video from the beginning
+    player.playVideo(); // Play the video again
+  };
 
   return (
     <div
@@ -91,13 +101,14 @@ const ExploreVideos = () => {
                   opts={videoOptions(videoId)}
                   className="w-full lg:h-[650px]"
                   containerClassName="youtube-container" // Add container class if needed
+                  onEnd={handleVideoEnd}
                 />
                 <h1
                   className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center absolute bottom-8 left-1/2 transform -translate-x-1/2  ${
                     darkMode ? "exploreWordDesign" : "exploreWordDesignForLight"
                   }`}
                 >
-                  {video.name}
+                  {/* {video.name} */}
                 </h1>
                 {/* <h1
                   className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center absolute bottom-8 left-1/2 transform -translate-x-1/2  ${

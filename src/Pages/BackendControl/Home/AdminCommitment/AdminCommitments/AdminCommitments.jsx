@@ -124,6 +124,7 @@ const AdminCommitments = () => {
           <h3 className="mb-5">Image of your project</h3>
           {selectedImage && (
             <img
+             loading="lazy"
               className="w-[200px] h-2/4 mb-3"
               src={selectedImage}
               alt="Preview"

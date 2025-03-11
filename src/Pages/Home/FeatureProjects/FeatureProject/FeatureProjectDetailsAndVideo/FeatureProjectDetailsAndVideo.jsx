@@ -49,7 +49,7 @@ const FeatureProjectDetailsAndVideo = () => {
   };
 
   return (
-    <section className="px-4 sm:px-8 lg:px-16">
+    <section className="px-4 sm:px-8 lg:px-16 lg:-mt-0 -mt-96">
       <div
         className={`ml-8 lg:ml-36 mt-8 sm:mt-12 lg:-mt-[480px] uppercase ${
           darkMode ? "text-white" : "text-black"
@@ -85,7 +85,7 @@ const FeatureProjectDetailsAndVideo = () => {
                   onClick={() => handleViewProject(featureProject._id)}
                   className={`${
                     darkMode ? "text-white" : "text-white "
-                  } btn btn-outline hover:bg-none mt-8 sm:mt-12 lg:mt-16 featureProject-font text-sm sm:text-lg lg:text-xl border-none bg-none`}
+                  } btn btn-outline hover:bg-[#8F8933] mt-8 sm:mt-12 lg:mt-16 featureProject-font text-sm sm:text-lg lg:text-xl border-none bg-none`}
                 >
                   <FiArrowRightCircle className="inline-block mr-2" />
                   View Project

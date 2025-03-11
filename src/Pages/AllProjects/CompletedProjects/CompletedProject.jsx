@@ -29,6 +29,7 @@ const CompletedProject = ({ completedProject }) => {
         onMouseMove={handleMouseMove}
       >
         <img
+          loading="lazy"
           className="project-image w-[367px] h-[367px] mb-2"
           src={projectCoverPhoto}
           alt=""
@@ -42,7 +43,7 @@ const CompletedProject = ({ completedProject }) => {
           View Details
         </div>
         <h1 className="text-2xl font-bold text-[#8E8A1F]">{projectName}</h1>
-        <h3 className="font-serif">{address}</h3>
+        <h3 className="font-sans">{address}</h3>
       </div>
     </section>
   );

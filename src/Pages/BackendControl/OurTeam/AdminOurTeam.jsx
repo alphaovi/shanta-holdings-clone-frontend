@@ -233,6 +233,7 @@ const AdminOurTeam = () => {
                 <label className="font-bold text-xl">Cover Image</label>
                 {previewImages.teamCoverPhoto && (
                   <img
+                   loading="lazy"
                     src={previewImages.teamCoverPhoto}
                     alt="Cover Preview"
                     className="w-40 h-40 object-cover mb-4"
@@ -288,6 +289,7 @@ const AdminOurTeam = () => {
                 </label>
                 {previewImages.managingDirectorImage && (
                   <img
+                   loading="lazy"
                     src={previewImages.managingDirectorImage}
                     alt="MD Preview"
                     className="w-40 h-40 object-cover mb-4"
@@ -322,6 +324,7 @@ const AdminOurTeam = () => {
                 <label className="font-bold text-xl">CEO Photo</label>
                 {previewImages.ceoPhoto && (
                   <img
+                   loading="lazy"
                     src={previewImages.ceoPhoto}
                     alt="CEO Preview"
                     className="w-40 h-40 object-cover mb-4"
@@ -355,6 +358,7 @@ const AdminOurTeam = () => {
                 <label className="font-bold text-xl">Full Team Image</label>
                 {previewImages.fullTeamImage && (
                   <img
+                   loading="lazy"
                     src={previewImages.fullTeamImage}
                     alt="Team Preview"
                     className="w-40 h-40 object-cover mb-4"

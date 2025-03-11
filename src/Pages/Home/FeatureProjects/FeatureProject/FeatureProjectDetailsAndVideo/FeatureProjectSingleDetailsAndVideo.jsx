@@ -14,7 +14,7 @@ const FeatureProjectSingleDetailsAndVideo = () => {
     <div className="text-black">
       <h1>{featureProjectSingleFullDetails.projectName}</h1>
       <p>{featureProjectSingleFullDetails.address}</p>
-      <img src={featureProjectSingleFullDetails.projectCoverPhoto} alt="" />
+      <img  loading="lazy" src={featureProjectSingleFullDetails.projectCoverPhoto} alt="" />
       {/* Add more details as needed */}
     </div>
   );

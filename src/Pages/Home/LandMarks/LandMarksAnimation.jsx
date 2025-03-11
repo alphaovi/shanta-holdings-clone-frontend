@@ -2,9 +2,9 @@ import { TypeAnimation } from "react-type-animation";
 
 const LandMarksAnimation = () => {
   return (
-    <div className="w-full sm:px-4 md:px-8 lg:px-16 lg:-mt-20 -mt-[650px] ">
+    <div className="w-full sm:px-4 md:px-8 lg:px-16 lg:-mt-20 -mt-[550px] ">
       <TypeAnimation
-        style={{ whiteSpace: "pre-line", height: "195px", display: "block" }}
+        style={{ whiteSpace: "pre-line", height: "15px", display: "block" }}
         
         sequence={[
           // `Escape to Excellence: 

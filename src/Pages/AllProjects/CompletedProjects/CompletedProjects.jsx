@@ -21,6 +21,7 @@ const CompletedProjects = () => {
       {/* Background Image and Heading */}
       <div className="">
         <img
+         loading="lazy"
           className="w-full h-48 md:h-64 lg:h-96 -mt-16 md:-mt-24 lg:-mt-32"
           src={projectPageBackground}
           alt="Project Cover"

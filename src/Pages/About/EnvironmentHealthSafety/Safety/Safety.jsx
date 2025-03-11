@@ -7,20 +7,20 @@ const Safety = () => {
   return (
     <section>
       <div
-        className={`lg:grid grid-cols-2 lg:m-20 m-5 ${
+        className={`lg:grid grid-cols-2 lg:mx-20 mx-5 ${
           darkMode ? "text-white" : "text-black"
         }`}
       >
         <div>
-          <img className="w-[28rem]" src={safetyImage1} alt="" />
+          <img  loading="lazy" className="w-[28rem]" src={safetyImage1} alt="" />
         </div>
         <div>
-          <h1 className="text-3xl font-semibold mb-10">Resort Details</h1>
-          <li className="mb-5">
+          <h1 className="text-3xl font-semibold mb-5 font-sans">Resort Details</h1>
+          <li className="mb-1 font-sans">
             Resort Location: Sukundi, Amtoli, Joydebpur, Gazipur, Bangladesh,
             Post code: 1700
           </li>
-          <li className="mb-5">
+          <li className="mb-1 font-sans">
             <a
               href="https://www.facebook.com/chutiresort"
               target="_blank"
@@ -29,7 +29,7 @@ const Safety = () => {
               www.facebook.com/chutiresort
             </a>
           </li>
-          <li className="mb-5">
+          <li className="mb-1 font-sans">
             <a
               href="https://www.instagram.com/chutiresortgazipur"
               target="_blank"
@@ -38,7 +38,7 @@ const Safety = () => {
               www.instagram.com/chutiresortgazipur
             </a>
           </li>
-          <li className="mb-5">
+          <li className="mb-1 font-sans">
             <a
               href="https://www.chutiresort.com"
               target="_blank"

@@ -21,6 +21,7 @@ const AllProjects = () => {
     <section className="bg-[#FFFAF4]">
       <div className="">
         <img
+         loading="lazy"
           className="-mt-16 md:-mt-5 lg:-mt-5"
           src={projectPageBackground}
           alt="Project Cover"

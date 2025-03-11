@@ -76,7 +76,7 @@ const ContactForm = () => {
           <p
             className={`${darkMode ? "text-white" : "text-black"} text-xl mb-2`}
           >
-            First Name
+            Full Name
           </p>
           <input
             type="text"
@@ -91,13 +91,13 @@ const ContactForm = () => {
               darkMode ? "text-white" : "text-black"
             } text-xl mb-2 mt-2`}
           >
-            Last Name
+            Phone Number
           </p>
           <input
             type="text"
             className="w-full lg:w-[35rem] h-10 rounded px-2"
-            value={lastName}
-            onChange={(event) => setLastName(event.target.value)}
+            value={phoneNumber}
+            onChange={(event) => setPhoneNumber(event.target.value)}
           />
         </div>
         <div>
@@ -115,19 +115,20 @@ const ContactForm = () => {
             onChange={(event) => setEmail(event.target.value)}
           />
         </div>
+
         <div>
           <p
             className={`${
               darkMode ? "text-white" : "text-black"
             } text-xl mb-2 mt-2`}
           >
-            Phone Number
+            Job Title
           </p>
           <input
             type="text"
             className="w-full lg:w-[35rem] h-10 rounded px-2"
-            value={phoneNumber}
-            onChange={(event) => setPhoneNumber(event.target.value)}
+            value={lastName}
+            onChange={(event) => setLastName(event.target.value)}
           />
         </div>
         <div>

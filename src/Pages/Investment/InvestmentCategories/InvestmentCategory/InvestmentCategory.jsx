@@ -4,6 +4,7 @@ const InvestmentCategory = ({ investmentCategory }) => {
     <div className={`${category1 && category2 && category3 && category4 && category5 ? "bg-[#E72929]" : "bg-[#8F8933]"} px-10 py-2 text-white w-96 h-96`}>
       <div className="">
         <img
+         loading="lazy"
           style={{ filter: "brightness(0) invert(1)" }}
           className="w-16 mt-5"
           src={icon}
