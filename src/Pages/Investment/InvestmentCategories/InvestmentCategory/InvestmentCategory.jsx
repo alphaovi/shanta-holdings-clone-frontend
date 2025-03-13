@@ -10,7 +10,7 @@ const InvestmentCategory = ({ investmentCategory }) => {
           src={icon}
           alt=""
         />
-        <h1 className="text-3xl font-bold my-2 w-96 mt-5">{name}</h1>
+        <h1 className="text-3xl font-bold my-2 w-72 mt-5">{name}</h1>
         <p className="text-xl mt-5">{description}</p>
         {
           category1 && category2 && category3 && category4 && category5 && (

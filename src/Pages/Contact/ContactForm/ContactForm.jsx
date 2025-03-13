@@ -70,7 +70,7 @@ const ContactForm = () => {
     }
   };
   return (
-    <div className={"w-full text-black mt-10"}>
+    <div className={"w-full text-black mt-10 lg:px-0 px-5"}>
       <form onSubmit={handleSubmit}>
         <div>
           <p

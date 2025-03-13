@@ -92,12 +92,29 @@ const ProfessionalManagement = () => {
           </Marquee>
         </div>
         <div className="w-3/4 mx-auto mb-10 items-center relative -mt-6">
-          <YouTube
-            videoId="DcY2QIf4D9I" // Replace with your YouTube video ID
-            opts={videoOptions}
-            className="w-full lg:h-[750px]"
-            onEnd={handleVideoEnd} // Handle video end event
-          />
+          {/* Wrapper div for YouTube player */}
+          <div
+            style={{
+              position: "relative",
+              paddingTop: "56.25%", // 16:9 aspect ratio (9 / 16 * 100)
+              width: "100%",
+              overflow: "hidden",
+            }}
+          >
+            <YouTube
+              videoId="DcY2QIf4D9I" // Replace with your YouTube video ID
+              opts={videoOptions}
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover", // Ensure the video fills the container
+              }}
+              onEnd={handleVideoEnd} // Handle video end event
+            />
+          </div>
           <p
             onClick={toggleHandleMute}
             className="flex justify-end mr-8 relative text-white"

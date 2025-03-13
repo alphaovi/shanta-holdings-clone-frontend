@@ -16,7 +16,7 @@ const InvestmentCategories = () => {
   }, []);
   return (
     <div>
-      <div className="lg:grid grid-cols-3 gap-5 lg:p-10 ">
+      <div className="grid lg:grid-cols-3 gap-5 lg:p-10 p-5 ">
         {investmentCategories.map((investmentCategory) => (
           <InvestmentCategory
             key={investmentCategory._id}

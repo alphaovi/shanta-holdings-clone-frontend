@@ -4,6 +4,7 @@ import FeatureProject from "../FeatureProjects/FeatureProject/FeatureProject";
 import HeaderAndPhotos from "../HeaderAndPhotos/HeaderAndPhotos";
 import LandMarks from "../LandMarks/LandMarks";
 import LandMarksDetailsAndPhotos from "../LandMarksDetailsAndPhotos/LandMarksDetailsAndPhotos";
+import OurClients from "../OurClients/OurClients/OurClients";
 import Portfolio from "../Portfolio/Portfolio";
 import ProfessionalManagement from "../ProfessionalManagement/ProfessionalManagement";
 import Projects from "../Projects/Projects";
@@ -38,7 +39,10 @@ const Home = () => {
       <div className="">
         <Explores></Explores>
       </div>
-      <div className="lg:mt-40 -mt-96">
+      <div className="lg:mb-0 mb-40">
+        <OurClients></OurClients>
+      </div>
+      <div className="-mt-[45rem]">
         <LetConnect></LetConnect>
       </div>
     </div>

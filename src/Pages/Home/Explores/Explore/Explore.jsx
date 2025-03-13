@@ -63,14 +63,14 @@ const ExploreVideos = () => {
       playlist: videoId,
       modestbranding: 1,
       rel: 0,
-      disablekb: 1, 
+      disablekb: 1,
     },
   });
 
   const toggleMute = () => setIsMute((prev) => !prev);
 
-   // Handle video end
-   const handleVideoEnd = (event) => {
+  // Handle video end
+  const handleVideoEnd = (event) => {
     const player = event.target;
     player.seekTo(0); // Restart the video from the beginning
     player.playVideo(); // Play the video again
@@ -78,7 +78,7 @@ const ExploreVideos = () => {
 
   return (
     <div
-      className="scrollable-element mx-auto font-familyPortfolio"
+      className="scrollable-element mx-auto font-familyPortfolio mb-10"
       style={{
         width: "100%",
         height: "90vh", // Increased height for larger videos
@@ -96,13 +96,31 @@ const ExploreVideos = () => {
                 className="relative w-full h-full overflow-hidden"
                 style={{ height: "100%" }}
               >
-                <YouTube
-                  videoId={videoId}
-                  opts={videoOptions(videoId)}
-                  className="w-full lg:h-[650px]"
-                  containerClassName="youtube-container" // Add container class if needed
-                  onEnd={handleVideoEnd}
-                />
+                {/* Wrapper div for YouTube player */}
+                <div
+                  style={{
+                    position: "relative",
+                    paddingTop: "56.25%", // 16:9 aspect ratio (9 / 16 * 100)
+                    width: "100%",
+                    height: "100%",
+                    overflow: "hidden",
+                  }}
+                >
+                  <YouTube
+                    videoId={videoId}
+                    opts={videoOptions(videoId)}
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover", // Ensure the video fills the container
+                    }}
+                    containerClassName="youtube-container"
+                    onEnd={handleVideoEnd}
+                  />
+                </div>
                 <h1
                   className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center absolute bottom-8 left-1/2 transform -translate-x-1/2  ${
                     darkMode ? "exploreWordDesign" : "exploreWordDesignForLight"
@@ -110,13 +128,6 @@ const ExploreVideos = () => {
                 >
                   {/* {video.name} */}
                 </h1>
-                {/* <h1
-                  className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center absolute bottom-8 left-1/2 transform -translate-x-1/2  ${
-                    darkMode ? "exploreWordDesign" : "exploreWordDesignForLight"
-                  }`}
-                >
-                  {video.name}
-                </h1> */}
                 <button
                   onClick={toggleMute}
                   className="absolute bottom-4 right-4  text-white px-4 py-2 rounded"
