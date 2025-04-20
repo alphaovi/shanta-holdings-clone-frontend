@@ -51,6 +51,8 @@ import CompletedProjects from "../Pages/AllProjects/CompletedProjects/CompletedP
 import NewsEvents from "../Pages/NewsEvents/NewsEvents/NewsEvents";
 import SingleNewsAndEventFullDetails from "../Pages/NewsEvents/AllNewAndEvents/SingleNewsAndEventFullDetails";
 import FeatureProjectSingleDetailsAndVideo from "../Pages/Home/FeatureProjects/FeatureProject/FeatureProjectDetailsAndVideo/FeatureProjectSingleDetailsAndVideo";
+import AdminOurClients from "../Pages/BackendControl/OurClients/AdminOurClients/AdminOurClients";
+import HomePagePopUp from "../Pages/BackendControl/HomePagePopUp/HomePagePopUp";
 
 const router = createBrowserRouter([
   {
@@ -195,6 +197,10 @@ const router = createBrowserRouter([
         element: <AdminOurTeam></AdminOurTeam>,
       },
       {
+        path: "/admin/our-clients",
+        element: <AdminOurClients></AdminOurClients>,
+      },
+      {
         path: "/admin/create-our-team",
         element: <AdminCreateOurTeam></AdminCreateOurTeam>,
       },
@@ -226,6 +232,10 @@ const router = createBrowserRouter([
       {
         path: "/admin/investment",
         element: <AdminInvestmentDetails></AdminInvestmentDetails>,
+      },
+      {
+        path: "/admin/pop-up",
+        element: <HomePagePopUp></HomePagePopUp>,
       },
     ],
   },

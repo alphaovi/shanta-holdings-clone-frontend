@@ -141,7 +141,7 @@ const AdminLayout = () => {
                       {" "}
                       <GrFolder />
                     </span>{" "}
-                    <Link>Our Clients</Link>
+                    <Link to="/admin/our-clients">Our Clients</Link>
                   </summary>
 
                   <summary className="m-1 cursor-pointer flex items-center gap-4">
@@ -282,6 +282,15 @@ const AdminLayout = () => {
                   <GrFolder />
                 </span>{" "}
                 <Link to={"/admin/message-box"}>Message Box</Link>
+              </summary>
+            </details>
+            <details className="dropdown">
+              <summary className="m-1 cursor-pointer flex items-center gap-4">
+                <span className="flex items-center gap-2">
+                  {" "}
+                  <GrFolder />
+                </span>{" "}
+                <Link to={"/admin/pop-up"}>Pop-Up</Link>
               </summary>
             </details>
           </ul>

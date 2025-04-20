@@ -1,3 +1,4 @@
+import HomePopUp from "../../../Shared/HomePopUp/HomePopUp";
 import LetConnect from "../Connect/LetConnect";
 import Explores from "../Explores/Explores";
 import FeatureProject from "../FeatureProjects/FeatureProject/FeatureProject";
@@ -14,6 +15,9 @@ import "./Home.css";
 const Home = () => {
   return (
     <div className="main-home">
+      <div>
+        <HomePopUp></HomePopUp>
+      </div>
       <div>
         <HeaderAndPhotos></HeaderAndPhotos>
       </div>
